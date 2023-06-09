@@ -1,0 +1,5 @@
+Script nemico che va verso al player (no lerp perchè il movimento sarebbe veloce all'inizio e lento alla fine)
+Script spawn nemici,
+script giorno notte,
+script time della notte,
+script nemici che fuggono da giocatore durante notte
