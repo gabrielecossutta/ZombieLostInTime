@@ -7,6 +7,16 @@ TagManager:
   tags: []
 =======
   tags:
+<<<<<<< Updated upstream
+  - Enemy
+  - Bullet
+>>>>>>> Stashed changes
+=======
+  - ExpBoss
+  - ExpBase
+  - DamageBoss
+  - DamageBase
+  - Health
   - Enemy
   - Bullet
 >>>>>>> Stashed changes
@@ -17,8 +27,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Bullet
+  - Player
   - 
   - 
   - 
