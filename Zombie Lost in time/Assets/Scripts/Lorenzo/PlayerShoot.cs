@@ -65,11 +65,11 @@ public class PlayerShoot : MonoBehaviour
 
     private void TripleFire() //Aggiunge i 2 spari laterali allo sparo base
     {
-        GameObject bullet2 = Instantiate(bulletPrefab, gunOffset2.position, transform.rotation);
+        GameObject bullet2 = Instantiate(bulletPrefab, gunOffset2.position, gunOffset2.rotation);
         Rigidbody rigidbody2 = bullet2.GetComponent<Rigidbody>();
         rigidbody2.velocity = bulletSpeed * gunOffset2.forward;
 
-        GameObject bullet3 = Instantiate(bulletPrefab, gunOffset3.position, transform.rotation);
+        GameObject bullet3 = Instantiate(bulletPrefab, gunOffset3.position, gunOffset3.rotation);
         Rigidbody rigidbody3 = bullet3.GetComponent<Rigidbody>();
         rigidbody3.velocity = bulletSpeed * gunOffset3.forward;
     }
@@ -81,11 +81,11 @@ public class PlayerShoot : MonoBehaviour
 
     private void QuintupleFire()
     {
-        GameObject bullet4 = Instantiate(bulletPrefab, gunOffset4.position, transform.rotation);
+        GameObject bullet4 = Instantiate(bulletPrefab, gunOffset4.position, gunOffset4.rotation);
         Rigidbody rigidbody4 = bullet4.GetComponent<Rigidbody>();
         rigidbody4.velocity = bulletSpeed * gunOffset4.forward;
 
-        GameObject bullet5 = Instantiate(bulletPrefab, gunOffset5.position, transform.rotation);
+        GameObject bullet5 = Instantiate(bulletPrefab, gunOffset5.position, gunOffset5.rotation);
         Rigidbody rigidbody5 = bullet5.GetComponent<Rigidbody>();
         rigidbody5.velocity = bulletSpeed * gunOffset5.forward;
     }
