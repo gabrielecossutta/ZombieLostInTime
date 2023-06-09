@@ -11,7 +11,7 @@ public class Spawner : MonoBehaviour
 
     [SerializeField] private bool canSpawn = true;
 
-    [SerializeField] private float nightTimer = 10f;
+    //[SerializeField] private float nightTimer = 10f;
 
     private Coroutine currentCoroutine;
 

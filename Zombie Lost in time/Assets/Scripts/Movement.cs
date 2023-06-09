@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Movement : MonoBehaviour
 {
     public float speed;
-
+    public Vector3 direction;
     void Start()
     {
         
@@ -15,7 +15,6 @@ public class Movement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        Vector3 direction = new Vector3(x, 0, z); //vettore direzione a cui vogliamo andare
 
         if (direction != Vector3.zero)
         {
@@ -25,6 +24,7 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime); //movimento player alla pressione dei tasti
+            direction = new Vector3(x, 0, z); //vettore direzione a cui vogliamo andare
 
         }
     }
