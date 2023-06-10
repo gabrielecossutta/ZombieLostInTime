@@ -15,10 +15,11 @@ public class Enemy : MonoBehaviour
 
     public Rigidbody Rb;
     public GameObject Target;
+    public GameObject[] drop;
 
     private bool seePlayer;
 
-    public float Damage;
+    public int Damage;
     public float KOTime;
 
     public bool CanAttack = true;
@@ -92,7 +93,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.collider.tag == "Player")
         {
-            collision.collider.gameObject.GetComponent<Health>().TakeDamage(Damage);
+            collision.collider.gameObject.GetComponent<Status>().TakeDamage(Damage);
             StartCoroutine(AttackDelay(KOTime));
         }
 
@@ -108,5 +109,11 @@ public class Enemy : MonoBehaviour
         CanAttack = true;
     }
 
+    public void SpawnExp()
+    {
+        int rand = Random.Range(0,drop.Length);
+        Instantiate(drop[rand], transform.position, Quaternion.identity);
+        
+    }
    
 }

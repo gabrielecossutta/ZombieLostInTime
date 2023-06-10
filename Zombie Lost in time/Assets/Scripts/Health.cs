@@ -14,13 +14,13 @@ public class Health : MonoBehaviour
     }
 
     
-    public void TakeDamage(float Damage)
-    {
-        currentHealth -= Damage;
-        if (currentHealth <= 0)
-        {
-            Debug.Log("The player is dead");
-            currentHealth = MaxHealth;
-        }
-    }
+    //public void TakeDamage(float Damage)
+    //{
+    //    currentHealth -= Damage;
+    //    if (currentHealth <= 0)
+    //    {
+    //        Debug.Log("The player is dead");
+    //        currentHealth = MaxHealth;
+    //    }
+    //}
 }

@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 2771820963438304541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.99, y: 1.28, z: 0.23}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,7 +116,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2771820963438304541}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -147,12 +147,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8aa89181d301e74ebaa312c430e7ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Zombie Lost in time/Assets/Prefabs/EnemyBig.prefab
   MaxSpeed: 100
+=======
+  MaxSpeed: 3
+>>>>>>> Stashed changes:Zombie Lost in time/Assets/Prefabs/Guglielmo/EnemyBig.prefab
   SightRange: 1000
   DetectionRange: 1000
   Rb: {fileID: 7683569192604829053}
   Target: {fileID: 0}
-  Damage: 20
+  drop:
+  - {fileID: 2986390646728335237, guid: 6f4e92a67ab73e94bbc644cc5c48f04c, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  Damage: 2
   KOTime: 1
   CanAttack: 0
   Notte: 0

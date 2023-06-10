@@ -255,7 +255,8 @@ MonoBehaviour:
   DetectionRange: 20
   Rb: {fileID: 97966315}
   Target: {fileID: 0}
-  Damage: 20
+  drop: []
+  Damage: 0
   KOTime: 1
   CanAttack: 0
   Notte: 0
@@ -478,13 +479,154 @@ MonoBehaviour:
   m_GameObject: {fileID: 103298146}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52015950c51135b409217ac09a89c0c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 0158e52d43264a244a2ee32502f55547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Zombie Lost in time/Assets/Scenes/Guglielmo.unity
   target: {fileID: 1981809859}
   offset: {x: 0, y: 15, z: -10}
 <<<<<<< Updated upstream
 =======
+=======
+  target: {fileID: 1686281187}
+  offset: {x: 0, y: 15, z: -10}
+--- !u!114 &118372951 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9069852260912406898, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+  m_PrefabInstance: {fileID: 139330748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3f3a34aa3d1f14f9c3b7ddec61c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &139330748
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 55348570280779804, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55348570280779804, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 607015946997440892, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11.999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 1304713417514742512, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 11.999878
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283065833914572745, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4283065833914572745, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7511767838190246419, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_Name
+      value: HUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7664614858828679382, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+>>>>>>> Stashed changes:Zombie Lost in time/Assets/Scenes/Guglielmo (3).unity
 --- !u!1001 &145949090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -500,6 +642,10 @@ PrefabInstance:
     - target: {fileID: 4864139004938680159, guid: 89e47232fad16f641857cf3664064e45, type: 3}
       propertyPath: m_Name
       value: QuintupleFirePowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864139004938680159, guid: 89e47232fad16f641857cf3664064e45, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7388632709251452386, guid: 89e47232fad16f641857cf3664064e45, type: 3}
       propertyPath: m_RootOrder
@@ -555,7 +701,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4163548398810973760, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
   m_PrefabInstance: {fileID: 472226910}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Zombie Lost in time/Assets/Scenes/Guglielmo.unity
 >>>>>>> Stashed changes
+=======
+--- !u!114 &324506106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 786591663331615879, guid: ede17d787a476aa4d93f38c90db95a63, type: 3}
+  m_PrefabInstance: {fileID: 139330748}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c3f3a34aa3d1f14f9c3b7ddec61c33e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes:Zombie Lost in time/Assets/Scenes/Guglielmo (3).unity
 --- !u!1 &355159934
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +1006,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 594760800404185577, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1686281188}
+    - targetCorrespondingSourceObject: {fileID: 594760800404185577, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1686281199}
   m_SourcePrefab: {fileID: 100100000, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
 >>>>>>> Stashed changes
 --- !u!1 &483679545
@@ -1183,12 +1346,80 @@ PrefabInstance:
       propertyPath: m_Name
       value: TripleFirePowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 7966262245340409687, guid: d8ebbe0538bd009419342887125fe651, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8ebbe0538bd009419342887125fe651, type: 3}
+<<<<<<< Updated upstream:Zombie Lost in time/Assets/Scenes/Guglielmo.unity
 >>>>>>> Stashed changes
+=======
+--- !u!1001 &1374418560
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4784934878057810751, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8942795623307492128, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+      propertyPath: m_Name
+      value: Health
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 01ea85015a2ef9a459a4fc8e5c8ce018, type: 3}
+>>>>>>> Stashed changes:Zombie Lost in time/Assets/Scenes/Guglielmo (3).unity
 --- !u!1 &1541426284
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1508,8 @@ MonoBehaviour:
   DetectionRange: 20
   Rb: {fileID: 1673050144}
   Target: {fileID: 0}
-  Damage: 20
+  drop: []
+  Damage: 0
   KOTime: 1
   CanAttack: 0
   Notte: 0
@@ -1392,10 +1624,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream:Zombie Lost in time/Assets/Scenes/Guglielmo.unity
 <<<<<<< Updated upstream
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 =======
+=======
+>>>>>>> Stashed changes:Zombie Lost in time/Assets/Scenes/Guglielmo (3).unity
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686281181 stripped
@@ -1435,17 +1670,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 8576070537804046234, guid: ea9df055a5d15ce44bd80626c2ab3a2f, type: 3}
-  bulletSpeed: 100
   gunOffset: {fileID: 252967183}
   gunOffset2: {fileID: 43385477}
   gunOffset3: {fileID: 1916416878}
   gunOffset4: {fileID: 1112379415}
   gunOffset5: {fileID: 5352236}
   fireRate: 0.5
-  TripleFireSkill: 1
+  TripleFireSkill: 0
   FireRateSkill: 0
   QuintupleFireSkill: 0
+<<<<<<< Updated upstream:Zombie Lost in time/Assets/Scenes/Guglielmo.unity
 >>>>>>> Stashed changes
+=======
+--- !u!114 &1686281199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686281181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec15a932e96e56548be2a8ca787a8647, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 20
+  damageBoss: 0
+  damageBase: 0
+  currentExp: 0
+  currentHealth: 0
+  expToLvlUp: 0
+  healUp: 2
+  currentLevel: 0
+  healthBar: {fileID: 324506106}
+  expBar: {fileID: 118372951}
+>>>>>>> Stashed changes:Zombie Lost in time/Assets/Scenes/Guglielmo (3).unity
 --- !u!1 &1701048252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1542,6 +1801,10 @@ PrefabInstance:
     - target: {fileID: 2705454856922486760, guid: facfeea4a4f709b40a5981aebaf08490, type: 3}
       propertyPath: m_Name
       value: FireRatePowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705454856922486760, guid: facfeea4a4f709b40a5981aebaf08490, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4745316922725124323, guid: facfeea4a4f709b40a5981aebaf08490, type: 3}
       propertyPath: m_RootOrder

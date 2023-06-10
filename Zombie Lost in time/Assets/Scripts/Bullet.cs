@@ -5,10 +5,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [Range(1, 100)]
-    [SerializeField] private float speed = 100f;
+    [SerializeField] public float speed = 100f;
 
     [Range(1, 10)]
     [SerializeField] private float lifeTime = 3f;
+
+    
 
     private Rigidbody rb;
     public float damage;
@@ -25,10 +27,13 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Enemy")
-        {
+       if (collision.collider.tag == "Enemy")
+       {
             collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            
             Destroy(gameObject);
-        }
+       }
     }
+
+    
 }

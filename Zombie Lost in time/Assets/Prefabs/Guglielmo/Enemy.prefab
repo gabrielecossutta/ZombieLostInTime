@@ -152,7 +152,12 @@ MonoBehaviour:
   DetectionRange: 1000
   Rb: {fileID: 8640631047204404460}
   Target: {fileID: 0}
-  Damage: 20
+  drop:
+  - {fileID: 3209686805209046360, guid: 9354a2f5a78f9d94baca82d3150e0ccc, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  Damage: 1
   KOTime: 1
   CanAttack: 0
   Notte: 0
