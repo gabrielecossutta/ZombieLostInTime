@@ -12,6 +12,7 @@ public class QuintupleFire : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             playerShoot.QuintupleFireSkill = true;
+            Destroy(gameObject);
         }
     }
 

@@ -19,9 +19,11 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= Damage;
         if (currentHealth <= 0)
         {
-            Debug.Log("Enemy dead");
+            //Debug.Log("Enemy dead");
             //currentHealth = MaxHealth;
             Destroy(gameObject);
+            gameObject.GetComponent<Enemy>().SpawnExp();
+
         }
     }
 }

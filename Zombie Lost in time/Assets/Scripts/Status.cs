@@ -22,10 +22,15 @@ public class Status : MonoBehaviour
         healthBar.SetMaxHealth(maxHealth);
         expBar.SetMaxExp(expToLvlUp);
         expBar.SetExp(currentExp);
+        currentHealth = maxHealth;
     }
     void Update()
     {
-        
+        if (currentHealth <= 0)                         //Check verifica se la vita scende a 0 o sotto
+        {
+            gameObject.SetActive(false);
+            //Destroy(gameObject);
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -49,31 +54,30 @@ public class Status : MonoBehaviour
         else if (other.CompareTag("ExpBoss"))           //Esperienza Boss
         {
             ExpGained(5);
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
         else if (other.CompareTag("ExpBase"))           //Esperienza Base
         {
             ExpGained(2);
-            other.gameObject.SetActive(false);
+            //other.gameObject.SetActive(false);
+            Destroy(other.gameObject);
         }
-        else if (other.CompareTag("DamageBoss"))        //Danno Boss
-        {
-            currentHealth -= damageBoss;
-            healthBar.SetHealth(currentHealth);         //set vita aggiornato
-            Debug.Log(currentHealth);
-            other.gameObject.SetActive(false);
-        }
-        else if (other.CompareTag("DamageBase"))        //Danno Base
-        {
-            currentHealth -= damageBase;
-            healthBar.SetHealth(currentHealth);         //set vita aggiornato
-            Debug.Log(currentHealth);
-            other.gameObject.SetActive(false);
-        }
-        if (currentHealth <= 0)                         //Check verifica se la vita scende a 0 o sotto
-        {
-            gameObject.SetActive(false);
-        }
+        //else if (other.CompareTag("DamageBoss"))        //Danno Boss
+        //{
+        //    currentHealth -= damageBoss;
+        //    healthBar.SetHealth(currentHealth);         //set vita aggiornato
+        //    Debug.Log(currentHealth);
+        //    other.gameObject.SetActive(false);
+        //}
+        //else if (other.CompareTag("DamageBase"))        //Danno Base
+        //{
+        //    currentHealth -= damageBase;
+        //    healthBar.SetHealth(currentHealth);         //set vita aggiornato
+        //    Debug.Log(currentHealth);
+        //    other.gameObject.SetActive(false);
+        //}
+
     }
 
     public void ExpGained(int exp)                      //Funzione per l'esperienza acquisita
@@ -97,5 +101,19 @@ public class Status : MonoBehaviour
         Debug.Log("Livello " + currentLevel);
         Debug.Log("Esperienza in eccesso:" + currentExp);
 
+    }
+
+    public void TakeDamage(int Damage)
+    {
+        currentHealth -= Damage;
+        healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Debug.Log("The player is dead Status");
+            //currentHealth = maxHealth;
+            healthBar.SetHealth(currentHealth);
+
+        }
     }
 }

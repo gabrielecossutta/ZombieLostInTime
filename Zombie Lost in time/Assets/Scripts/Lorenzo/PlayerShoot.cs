@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerShoot : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private float bulletSpeed; //velocita del proiettile
+    private float bulletSpeed; //velocita del proiettile
     [SerializeField] private Transform gunOffset; //punto da dove esce il proiettile
     [SerializeField] private Transform gunOffset2; //offset utilizzato in caso di sparo triplo
     [SerializeField] private Transform gunOffset3; //offset utilizzato in caso di sparo triplo
@@ -21,6 +21,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Start()
     {
+        bulletSpeed = GetComponent<Bullet>().speed;
         TripleFireSkill = false;
         FireRateSkill = false;
         QuintupleFireSkill = false;

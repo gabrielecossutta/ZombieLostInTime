@@ -11,7 +11,8 @@ public class TripleFire : MonoBehaviour
     {
         if(collider.CompareTag("Player"))
         {
-            playerShoot.TripleFireSkill = true;  
+            playerShoot.TripleFireSkill = true;
+            Destroy(gameObject);
         }
     }
 

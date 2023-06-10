@@ -12,6 +12,7 @@ public class FireRate : MonoBehaviour
         if (collider.CompareTag("Player"))
         {
             playerShoot.FireRateSkill = true;
+            Destroy(gameObject);
         }
     }
 
