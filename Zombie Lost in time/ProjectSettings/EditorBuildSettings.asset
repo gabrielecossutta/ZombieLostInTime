@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GabrieleTest.unity
+    path: Assets/Scenes/Gabriele/GabrieleTest.unity
     guid: 6836769e5dc690d45aae1ebea8e24417
   - enabled: 1
     path: Assets/Scenes/Gabriele/Giorno.unity
