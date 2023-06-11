@@ -6,8 +6,6 @@ public class EnemyHealth : MonoBehaviour
 {
     public float MaxHealth;
     [SerializeField] private float currentHealth;
-
-
     void Start()
     {
         currentHealth = MaxHealth;
@@ -19,6 +17,7 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= Damage;
         if (currentHealth <= 0)
         {
+            EnemyKilledCounter.Instance.EnemyKilled();
             //Debug.Log("Enemy dead");
             //currentHealth = MaxHealth;
             Destroy(gameObject);

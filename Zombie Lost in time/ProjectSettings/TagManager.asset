@@ -12,6 +12,8 @@ TagManager:
   - ExpBoss
   - DamageBase
   - EmptyDrop
+  - EnemyBig
+  - Undefined
   layers:
   - Default
   - TransparentFX

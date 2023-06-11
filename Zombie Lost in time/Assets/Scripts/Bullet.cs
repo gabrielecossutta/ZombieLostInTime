@@ -29,8 +29,14 @@ public class Bullet : MonoBehaviour
     {
        if (collision.collider.tag == "Enemy")
        {
-            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBase);
             
+            Destroy(gameObject);
+       }
+       else if (collision.collider.tag == "EnemyBig")
+       {
+            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
+
             Destroy(gameObject);
        }
     }

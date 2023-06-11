@@ -18,6 +18,10 @@ public class MenuScena: MonoBehaviour
     {
         SceneManager.LoadScene("Notte");
     }
+    public void Test() // metodo per quando si clicca il tasto e viene caricata il test
+    {
+        SceneManager.LoadScene("GabrieleTest");
+    }
     public void quitScene()
     {
         Application.Quit();
