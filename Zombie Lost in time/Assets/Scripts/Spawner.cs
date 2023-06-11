@@ -12,16 +12,21 @@ public class Spawner : MonoBehaviour
     [SerializeField] private bool canSpawn = true;
 
     //[SerializeField] private float nightTimer = 10f;
+    public Transform EnemyContainer;
 
     private Coroutine currentCoroutine;
 
     public bool isNight;
 
-    
     private void Start()
     {
-        currentCoroutine = StartCoroutine(Spawning());
+
+
         //StartCoroutine(StopSpawning(nightTimer));
+    }
+    private void OnEnable()
+    {
+        currentCoroutine = StartCoroutine(Spawning());
     }
     public void Update()
     {
@@ -34,16 +39,13 @@ public class Spawner : MonoBehaviour
         while (canSpawn)
         {
             yield return wait;
-
             int rand = Random.Range(0, enemyPrefabs.Length);
             GameObject enemyToSpawn = enemyPrefabs[rand];
-
-            Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            Instantiate(enemyToSpawn, transform.position, Quaternion.identity, EnemyContainer);
         }
 
-        
-    }
 
+    }
    //public IEnumerator StopSpawning(float nightTime)
    // {
    //     yield return new WaitForSeconds(nightTimer);
