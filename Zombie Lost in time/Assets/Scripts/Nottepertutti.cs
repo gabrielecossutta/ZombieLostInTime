@@ -7,18 +7,29 @@ public class Nottepertutti : MonoBehaviour
     public GameObject enemyContainer;
     public List<Enemy> allchildren = new List<Enemy>();
     public List<Spawner> allSpawner = new List<Spawner>();
+        public GameObject[] players; // Lista dei nemici
+    private Transform player;
     // Start is called before the first frame update
     void Start()
     {
         //Trova il gameobject chiamato EnemyContainer
         enemyContainer = GameObject.Find("EnemyContainer");
-
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {// cancella i cubi se troppo lontani dal player per non averne troppi
+    players = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in players)
+        {
+            Vector3 direction = enemy.transform.position - player.position;
+            float currentDistance = direction.magnitude;
+            if (currentDistance>50)
+            {
+                Destroy(enemy);
+            }
+        }
     }
     public void SetNotteToAllEnemy()
     {
@@ -33,6 +44,7 @@ public class Nottepertutti : MonoBehaviour
         foreach(Enemy child in allchildren)
         {
             child.setNotteTrue(); //gli dico che è notte e che devono scappare
+            
         }
         foreach(Spawner spawner in allSpawner)
         {

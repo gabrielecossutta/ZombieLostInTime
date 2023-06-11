@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
     public float Speed; // velocita di allontanamento
     public float distance;// distanza da cui iniziano ad allontanarsi
     private Transform player; // transform del player
+    
     public float velocitaSguardo; // quanto veloce si girano
     void Start()
     {
@@ -55,7 +56,7 @@ public class Enemy : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
             Quaternion targetRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
-
+            
         }
         else
         {//VANNO VERSO IL PLAYER
@@ -64,7 +65,7 @@ public class Enemy : MonoBehaviour
         }
 
 
-
+        
 
 
     }
