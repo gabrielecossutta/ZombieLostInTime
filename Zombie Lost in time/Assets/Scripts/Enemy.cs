@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour
     public float Speed; // velocita di allontanamento
     public float distance;// distanza da cui iniziano ad allontanarsi
     private Transform player; // transform del player
-    
     public float velocitaSguardo; // quanto veloce si girano
     void Start()
     {
@@ -92,10 +91,10 @@ public class Enemy : MonoBehaviour
 
     public void setNotteTrue()
     {
-        Notte = true;
+        TimerController.Instance.IsNight = true;
     }
     public void setNotteFalse()
     {
-        Notte = false;
+        TimerController.Instance.IsNight = false;
     }
 }

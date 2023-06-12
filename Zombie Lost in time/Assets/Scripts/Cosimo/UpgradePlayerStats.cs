@@ -10,33 +10,34 @@ public class UpgradePlayerStats : Singleton<UpgradePlayerStats>
     int maxSpeedUpgrade = 20;
     int cont = 0;
     public Button speedButton;
-    public bool isMaxed;
 
     public void UpgradeHealth()
     {
         if(UpgradeMenu.Instance.pointsOwned > 0) 
         {
             Status.Instance.maxHealth += healthUpgrade;
+            //HUDBar.Instance.slider.maxValue = Status.Instance.maxHealth;
             UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
         }
     }
 
-    public void UpgradeSpeed()
+    public void UpgradeAtkSpeed()
     {
+
         if (cont < maxSpeedUpgrade)
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
             {
-                cont++;
-                Status.Instance.speedUpgradedValue += speedUpgrade;
+                Status.Instance.fireRate += speedUpgrade;
                 UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
+                cont++;
+            }
+            if (cont == maxSpeedUpgrade)
+            {
+                speedButton.interactable = false;
             }
         }
-        else
-        {
-            speedButton.interactable = false;
-        }
-
     }
+
 
 }

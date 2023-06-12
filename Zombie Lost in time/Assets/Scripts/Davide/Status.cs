@@ -67,13 +67,11 @@ public class Status : Singleton<Status>
         else if (other.CompareTag("ExpBoss"))           //Esperienza Boss
         {
             ExpGained(5);
-            //other.gameObject.SetActive(false);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("ExpBase"))           //Esperienza Base
         {
             ExpGained(2);
-            //other.gameObject.SetActive(false);
             Destroy(other.gameObject);
         }
         //else if (other.CompareTag("DamageBoss"))        //Danno Boss

@@ -9,7 +9,6 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
     [SerializeField] public float atkSpeedUpgrade;
     int maxAtkSpeedUpgrade = 6;
     int cont = 0;
-    public bool isMaxed;
     public Button atkSpeedButton;
     public void UpgradeDamage()
     {
@@ -23,6 +22,7 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
 
     public void UpgradeAtkSpeed()
     {
+
         if (cont < maxAtkSpeedUpgrade)
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
@@ -31,10 +31,11 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
                 UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
                 cont++;
             }
-        }
-        else
-        {
-            atkSpeedButton.interactable = false;
+            if (cont == maxAtkSpeedUpgrade)
+            {
+                atkSpeedButton.interactable = false;
+            }
         }
     }
+
 }
