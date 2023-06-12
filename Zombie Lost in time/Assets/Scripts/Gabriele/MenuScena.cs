@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEditor;
 public class MenuScena: MonoBehaviour
 {
+    public GameObject canvas;
     public void Start()
     {
         DontDestroyOnLoad(this);
@@ -21,6 +22,7 @@ public class MenuScena: MonoBehaviour
     public void Test() // metodo per quando si clicca il tasto e viene caricata il test
     {
         SceneManager.LoadScene("GabrieleTest");
+        canvas.SetActive(false);
     }
     public void quitScene()
     {

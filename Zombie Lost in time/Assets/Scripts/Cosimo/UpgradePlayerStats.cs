@@ -21,14 +21,14 @@ public class UpgradePlayerStats : Singleton<UpgradePlayerStats>
         }
     }
 
-    public void UpgradeAtkSpeed()
+    public void UpgradeSpeed()
     {
 
         if (cont < maxSpeedUpgrade)
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
             {
-                Status.Instance.fireRate += speedUpgrade;
+                Status.Instance.speedUpgradedValue += speedUpgrade;
                 UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
                 cont++;
             }
