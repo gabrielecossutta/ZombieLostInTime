@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Zombie Lost in time/Assets/Prefabs/Bullet.prefab.meta
 guid: 141bfbcea7acd8447aab26521bd9853b
+========
+guid: 4b7f8f9c7129e4e4eb972825c68352d5
+>>>>>>>> Lorenzo:Zombie Lost in time/Assets/Scripts/Lorenzo/Rotating Sphere.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

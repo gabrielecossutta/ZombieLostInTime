@@ -3,25 +3,6 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  tags: []
-=======
-  tags:
-<<<<<<< Updated upstream
-  - Enemy
-  - Bullet
->>>>>>> Stashed changes
-=======
-  - ExpBoss
-  - ExpBase
-  - DamageBoss
-  - DamageBase
-  - Health
-  - Enemy
-  - Bullet
->>>>>>> Stashed changes
-=======
   tags:
   - Enemy
   - Bullet
@@ -31,7 +12,8 @@ TagManager:
   - ExpBoss
   - DamageBase
   - EmptyDrop
->>>>>>> Stashed changes
+  - EnemyBig
+  - Undefined
   layers:
   - Default
   - TransparentFX
@@ -39,8 +21,8 @@ TagManager:
   - 
   - Water
   - UI
-  - Bullet
-  - Player
+  - 
+  - 
   - 
   - 
   - 

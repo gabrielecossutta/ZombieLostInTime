@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Zombie Lost in time/Assets/Prefabs.meta
 guid: 60af50f3843129c4b9bb97c68bdb1b1c
 folderAsset: yes
 DefaultImporter:
+========
+guid: 40f3a4a985d79b34ca9468b716f656c7
+PrefabImporter:
+>>>>>>>> Lorenzo:Zombie Lost in time/Assets/Scripts/Lorenzo/TripleFirePowerUp.prefab.meta
   externalObjects: {}
   userData: 
   assetBundleName: 

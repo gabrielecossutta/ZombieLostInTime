@@ -25,14 +25,13 @@ public class PlayerShoot : MonoBehaviour
         TripleFireSkill = false;
         FireRateSkill = false;
         QuintupleFireSkill = false;
-}
+    }
 
 
     void Update()
     {
         float timeSinceLastFire = Time.time - lastFireTime;
-
-        if (timeSinceLastFire >= fireRate)
+        if (timeSinceLastFire >= Status.Instance.fireRate)
         {
             FireBullet();
 
