@@ -7,32 +7,27 @@ public class Enemy : MonoBehaviour
     public float MaxSpeed;
     private float speed;
 
-    private Collider[] hitCollider;
-    private RaycastHit Hit;
-
     public float SightRange;
     public float DetectionRange;
 
-    public Rigidbody Rb;
-    public GameObject Target;
-    public GameObject[] drop;
-
-    private bool seePlayer;
+    [SerializeField]private Rigidbody Rb;
 
     public int Damage;
     public float KOTime;
 
-    public bool CanAttack = true;
-    public bool Notte;
+    private bool CanAttack = true;
 
     public Transform Enemycontainer;
-
+    [SerializeField] private Animator animator;
     //vita enemy
 
     public float Speed; // velocita di allontanamento
     public float distance;// distanza da cui iniziano ad allontanarsi
     private Transform player; // transform del player
     public float velocitaSguardo; // quanto veloce si girano
+
+    public GameObject[] drop;
+
     void Start()
     {
         distance = 10;
@@ -40,7 +35,8 @@ public class Enemy : MonoBehaviour
         velocitaSguardo = 7.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         speed = MaxSpeed;
-        Notte = false;
+        animator.SetFloat("Speed_f", 1);
+        animator.SetInteger("WeaponType_int", 0);
     }
 
 
@@ -85,8 +81,7 @@ public class Enemy : MonoBehaviour
     public void SpawnExp()
     {
         int rand = Random.Range(0, drop.Length);
-        Instantiate(drop[rand], transform.position, Quaternion.identity);
-
+        Instantiate(drop[rand], transform.position + new Vector3(0,1,0), Quaternion.identity);
     }
 
     public void setNotteTrue()

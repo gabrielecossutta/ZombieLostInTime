@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -215,7 +215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &97966313
 GameObject:
@@ -260,6 +260,10 @@ MonoBehaviour:
   KOTime: 1
   CanAttack: 0
   Notte: 0
+  Enemycontainer: {fileID: 0}
+  Speed: 0
+  distance: 0
+  velocitaSguardo: 0
 --- !u!54 &97966315
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -371,7 +375,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &103298146
 GameObject:
@@ -478,7 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0158e52d43264a244a2ee32502f55547, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1686281187}
+  target: {fileID: 1915252928}
   offset: {x: 0, y: 15, z: -10}
 --- !u!114 &118372951 stripped
 MonoBehaviour:
@@ -638,7 +642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7388632709251452386, guid: 89e47232fad16f641857cf3664064e45, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7388632709251452386, guid: 89e47232fad16f641857cf3664064e45, type: 3}
       propertyPath: m_LocalPosition.x
@@ -750,6 +754,7 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!1001 &472226910
 PrefabInstance:
@@ -770,6 +775,10 @@ PrefabInstance:
     - target: {fileID: 594760800404185577, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 594760800404185577, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1756460578997793486, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
       propertyPath: m_Layer
@@ -1041,6 +1050,7 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!1 &691668029
 GameObject:
@@ -1091,6 +1101,7 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!1 &706434154
 GameObject:
@@ -1141,6 +1152,7 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!4 &708641958 stripped
 Transform:
@@ -1171,7 +1183,7 @@ PrefabInstance:
       objectReference: {fileID: 1686281188}
     - target: {fileID: 6111679275779294280, guid: d8ebbe0538bd009419342887125fe651, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6111679275779294280, guid: d8ebbe0538bd009419342887125fe651, type: 3}
       propertyPath: m_LocalScale.x
@@ -1348,6 +1360,7 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!1 &1673050142
 GameObject:
@@ -1392,6 +1405,10 @@ MonoBehaviour:
   KOTime: 1
   CanAttack: 0
   Notte: 0
+  Enemycontainer: {fileID: 0}
+  Speed: 0
+  distance: 0
+  velocitaSguardo: 0
 --- !u!54 &1673050144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1503,7 +1520,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1686281181 stripped
 GameObject:
@@ -1524,6 +1541,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   direction: {x: 0, y: 0, z: 0}
+  animator: {fileID: 0}
 --- !u!4 &1686281187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4641302528940986574, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
@@ -1548,6 +1566,7 @@ MonoBehaviour:
   gunOffset4: {fileID: 1112379415}
   gunOffset5: {fileID: 833119911}
   fireRate: 0.5
+  animator: {fileID: 0}
   TripleFireSkill: 0
   FireRateSkill: 0
   QuintupleFireSkill: 0
@@ -1564,8 +1583,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
-  damageBoss: 0
-  damageBase: 0
   currentExp: 0
   currentHealth: 0
   expToLvlUp: 0
@@ -1573,6 +1590,14 @@ MonoBehaviour:
   currentLevel: 0
   healthBar: {fileID: 324506106}
   expBar: {fileID: 118372951}
+  HUD: {fileID: 0}
+  enemyKilledText: {fileID: 0}
+  currentHeathText: {fileID: 0}
+  damageBase: 0
+  damageBoss: 0
+  fireRate: 0
+  speedUpgradedValue: 0
+  damageUpgradedValue: 0
 --- !u!1 &1701048252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,6 +1647,7 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!1001 &1876729736
 PrefabInstance:
@@ -1645,7 +1671,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4745316922725124323, guid: facfeea4a4f709b40a5981aebaf08490, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4745316922725124323, guid: facfeea4a4f709b40a5981aebaf08490, type: 3}
       propertyPath: m_LocalScale.x
@@ -1753,6 +1779,7 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!1 &1908962610
 GameObject:
@@ -1858,8 +1885,13 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1915252928 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+  m_PrefabInstance: {fileID: 9221127175061763897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1943326861
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,9 +1948,79 @@ MonoBehaviour:
   - {fileID: 3798109664114732946, guid: bec4ac1573b0af441b6b81140aef6061, type: 3}
   - {fileID: 2771820963438304541, guid: 970a437ae2df90e4fa0df6de7444501e, type: 3}
   canSpawn: 1
+  EnemyContainer: {fileID: 0}
   isNight: 0
 --- !u!4 &2048118250 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5417898199569358972, guid: 3840d604ceb1b464c99ad058ee5044b6, type: 3}
   m_PrefabInstance: {fileID: 472226910}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &9221127175061763897
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: expBar
+      value: 
+      objectReference: {fileID: 118372951}
+    - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 324506106}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.358629
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.107021
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9073554589986762486, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: m_Name
+      value: SA_Zombie_Businessman
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}

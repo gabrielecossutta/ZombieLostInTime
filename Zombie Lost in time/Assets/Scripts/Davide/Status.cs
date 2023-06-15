@@ -23,6 +23,7 @@ public class Status : Singleton<Status>
     public float fireRate;
     [HideInInspector] public float speedUpgradedValue;
     [HideInInspector] public float damageUpgradedValue;
+    public Animator animator;
 
     void Start()
     {
