@@ -6,17 +6,16 @@ TagManager:
   tags:
   - Enemy
   - Bullet
-  - Health
-  - DamageBoss
+  - EnemyBig
   - ExpBase
-  - ExpBoss
-  - DamageBase
   - EmptyDrop
+  - ExpBoss
+  - Health
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Proiettile
   - Water
   - UI
   - 

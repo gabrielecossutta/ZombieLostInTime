@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (Notte)
+        if (TimerController.Instance.IsNight)
         {
             // VANNO VIA DAL PLAYER
             Vector3 direction = transform.position - player.position; // direzione di dove devono scappare (in contrario di dove arriva il player)
@@ -63,11 +63,6 @@ public class Enemy : MonoBehaviour
             transform.LookAt(player); // i nemici guardano il player
             transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
         }
-
-
-        
-
-
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -77,8 +72,6 @@ public class Enemy : MonoBehaviour
             collision.collider.gameObject.GetComponent<Status>().TakeDamage(Damage);
             StartCoroutine(AttackDelay(KOTime));
         }
-
-
     }
 
     IEnumerator AttackDelay(float Delay)

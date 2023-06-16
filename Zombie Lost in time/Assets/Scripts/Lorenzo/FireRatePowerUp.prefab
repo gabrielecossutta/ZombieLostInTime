@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4745316922725124323}
   - component: {fileID: 1662938388044704731}
   - component: {fileID: 6307126122713611332}
-  - component: {fileID: 1672761851331846531}
   - component: {fileID: 6407686522740469824}
+  - component: {fileID: 1854398700647487212}
   m_Layer: 0
   m_Name: FireRatePowerUp
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1662938388044704731
 MeshFilter:
@@ -85,19 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1672761851331846531
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2705454856922486760}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bc54948a17d58d4389e3445f08f1eef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerShoot: {fileID: 0}
 --- !u!65 &6407686522740469824
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1854398700647487212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2705454856922486760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6133cee7b39bcf346b8e90e31c5f659b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpType: 1

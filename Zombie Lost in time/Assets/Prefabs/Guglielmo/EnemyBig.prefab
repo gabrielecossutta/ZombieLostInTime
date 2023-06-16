@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3803249461062178038}
   m_Layer: 2
   m_Name: EnemyBig
-  m_TagString: Enemy
+  m_TagString: EnemyBig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -66,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2cdfce850af0e3440ad5757282195e3f, type: 2}
+  - {fileID: 2100000, guid: c06014b46cb94c540917f02811cab134, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  Damage: 2
+  Damage: 5
   KOTime: 1
   CanAttack: 0
   Notte: 0
