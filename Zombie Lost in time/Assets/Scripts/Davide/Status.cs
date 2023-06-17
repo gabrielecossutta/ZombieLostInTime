@@ -6,6 +6,7 @@ using TMPro;
 
 public class Status : Singleton<Status>
 {
+    [SerializeField] private int baseExpGain;
     public int maxHealth;
     public int currentExp;
     public int currentHealth;

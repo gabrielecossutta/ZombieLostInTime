@@ -4,78 +4,72 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float MaxSpeed;
-    private float speed;
+    [SerializeField] private float SightRange;
+    [SerializeField] private float DetectionRange;
 
-    public float SightRange;
-    public float DetectionRange;
-
-    [SerializeField]private Rigidbody Rb;
-
-    public int Damage;
-    public float KOTime;
-
-    private bool CanAttack = true;
-
-    public Transform Enemycontainer;
+    [SerializeField] private int Damage;
+    [SerializeField] private Transform Enemycontainer;
     [SerializeField] private Animator animator;
-    //vita enemy
 
-    public float Speed; // velocita di allontanamento
-    public float distance;// distanza da cui iniziano ad allontanarsi
-    private Transform player; // transform del player
-    public float velocitaSguardo; // quanto veloce si girano
+    [SerializeField] private float Speed; // velocita di allontanamento
+    [SerializeField] private Transform player; // transform del player
+    [SerializeField] private float velocitaSguardo; // quanto veloce si girano
 
-    public GameObject[] drop;
+    [SerializeField] private GameObject[] drop;
 
+    [SerializeField] private float attackRange = 5f;
     void Start()
     {
-        distance = 10;
         Speed = 2.5f;
         velocitaSguardo = 7.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        speed = MaxSpeed;
         animator.SetFloat("Speed_f", 1);
         animator.SetInteger("WeaponType_int", 0);
     }
 
-
     void Update()
     {
-        if (TimerController.Instance.IsNight)
+        // Calcola la distanza tra il nemico e il giocatore
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Controlla se il giocatore è nel range di attacco
+        if (distanceToPlayer <= attackRange)
         {
-            // VANNO VIA DAL PLAYER
-            Vector3 direction = transform.position - player.position; // direzione di dove devono scappare (in contrario di dove arriva il player)
-            float currentDistance = direction.magnitude; //calcola quanto � distante dal player
-            Vector3 targetPosition = transform.position + direction.normalized;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
-            
+            animator.SetFloat("Speed_f", 0f);
+            animator.SetInteger("WeaponType_int", 12);
         }
         else
-        {//VANNO VERSO IL PLAYER
-            transform.LookAt(player); // i nemici guardano il player
-            transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player")
         {
-            collision.collider.gameObject.GetComponent<Status>().TakeDamage(Damage);
-            StartCoroutine(AttackDelay(KOTime));
+            animator.SetFloat("Speed_f", 1);
+            animator.SetInteger("WeaponType_int", 0);
+
+            if (TimerController.Instance.IsNight)
+            {
+                // VANNO VIA DAL PLAYER
+                Vector3 direction = transform.position - player.position; // direzione di dove devono scappare (in contrario di dove arriva il player)
+                float currentDistance = direction.magnitude; //calcola quanto � distante dal player
+                Vector3 targetPosition = transform.position + direction.normalized;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+
+            }
+            else
+            {   //VANNO VERSO IL PLAYER
+                transform.LookAt(player); // i nemici guardano il player
+                transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
+            }
         }
     }
 
-    IEnumerator AttackDelay(float Delay)
+    private void OnAnimationComplete()
     {
-        speed = 0.2f;
-        CanAttack = false;
-        yield return new WaitForSeconds(Delay);
-        speed = MaxSpeed;
-        CanAttack = true;
+        AttackPlayer();
+    }
+    private void AttackPlayer()
+    {
+        // Applica danni al giocatore
+        Status.Instance.TakeDamage(Damage);
     }
 
     public void SpawnExp()

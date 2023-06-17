@@ -20,14 +20,10 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-
-
         //StartCoroutine(StopSpawning(nightTimer));
+        StartCoroutine(Spawning());
     }
-    private void OnEnable()
-    {
-        currentCoroutine = StartCoroutine(Spawning());
-    }
+
     public void Update()
     {
         
