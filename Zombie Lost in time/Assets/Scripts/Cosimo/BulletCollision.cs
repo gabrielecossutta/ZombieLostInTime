@@ -10,15 +10,14 @@ public class BulletCollision : Singleton<BulletCollision>
         if (other.gameObject.CompareTag("Enemy"))
         {
             Vector3 collisionPoint = other.ClosestPointOnBounds(transform.position);
-            //enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBase);
+            other.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBase);
             Instantiate(hitFx, collisionPoint, Quaternion.identity);
         }
         else if (other.gameObject.CompareTag("EnemyBig"))
         {
             Vector3 collisionPoint = other.ClosestPointOnBounds(transform.position);
-            //enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
+            other.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
             Instantiate(hitFx, collisionPoint, Quaternion.identity);
-            Debug.Log("BulletCollider");
         }
     }
 }

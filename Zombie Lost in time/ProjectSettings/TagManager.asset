@@ -13,8 +13,10 @@ TagManager:
   - DamageBase
   - EmptyDrop
   - EnemyBig
-  - Undefined
   - Barrel
+  - Ak-47
+  - ShotgunDB
+  - Minigun
   layers:
   - Default
   - TransparentFX

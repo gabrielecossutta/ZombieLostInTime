@@ -36,13 +36,13 @@ public class Enemy : MonoBehaviour
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
-            animator.SetFloat("Speed_f", 0f);
             animator.SetInteger("WeaponType_int", 12);
+            animator.SetFloat("Speed_f", 0f);
         }
         else
         {
-            animator.SetFloat("Speed_f", 1);
             animator.SetInteger("WeaponType_int", 0);
+            animator.SetFloat("Speed_f", 1);
 
             if (TimerController.Instance.IsNight)
             {
@@ -58,7 +58,7 @@ public class Enemy : MonoBehaviour
             else
             {   //VANNO VERSO IL PLAYER
                 transform.LookAt(player); // i nemici guardano il player
-                //transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
+                transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
             }
         }
     }

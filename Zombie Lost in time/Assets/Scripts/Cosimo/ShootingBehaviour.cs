@@ -5,12 +5,11 @@ using UnityEngine;
 
 public class ShootingBehaviour : MonoBehaviour
 {
+    public List<Weapon> weapons = new List<Weapon>();
     public GameObject BulletPrefab;
-    private Queue<GameObject> BulletPool;
-    private float timer;
-    private float timer_elapsed;
-
+    public int currentWeaponIndex = 0;
     public float bulletsPerSecond;
+
     [SerializeField] private int bulletLifeTime;
     [SerializeField] private int poolSize;
     [SerializeField] private int magSize;
@@ -19,12 +18,15 @@ public class ShootingBehaviour : MonoBehaviour
     [SerializeField] private float shotAngleSpread;
     [SerializeField] private float randomSpread;
     [SerializeField] private int burstSize;
-    [SerializeField] private float burstTimer;
+    [SerializeField] private float burstTimer;//tempo tra il primo colpo e il seguente all'interno di una raffica
     [SerializeField] private float bulletSpeed;
     [SerializeField] private LayerMask collisionLayers;
     [SerializeField] private float raycastRange;
     [SerializeField] private ParticleSystem hitFx;
 
+    private Queue<GameObject> BulletPool;
+    private float timer;
+    private float timer_elapsed;
     private float shotAngleDelta;
     private float halfSpread;
     private float reloadTimer_elapsed;
@@ -35,9 +37,15 @@ public class ShootingBehaviour : MonoBehaviour
     private bool shootRoutine;
 
     private Animator animator;
+    private bool weaponSwitched = false;
 
     void Start()
     {
+        if (weapons.Count > 0)
+        {
+            SetWeaponValues(weapons[0]);
+        }
+
         animator = GetComponent<Status>().animator;
 
         currentMag = magSize;
@@ -52,6 +60,7 @@ public class ShootingBehaviour : MonoBehaviour
         shotAngleDelta = shotAngleSpread / (roundsPerShot > 1 ? roundsPerShot - 1 : roundsPerShot);
         halfSpread = shotAngleSpread * 0.5f;
         BulletPool = new Queue<GameObject>();
+
         for (int i = 0; i < poolSize; i++)
         {
             GameObject gO = Instantiate(BulletPrefab);
@@ -62,53 +71,152 @@ public class ShootingBehaviour : MonoBehaviour
 
     void Update()
     {
-        //if (currentMag > 0)
-        //{
+        SelectWeaponByInput();
 
-        //}
-        //else
-        //{
-        //    if (reloadTimer_elapsed >= reloadTimer)
-        //    {
-        //        reloadTimer_elapsed = 0f;
-        //        currentMag = magSize;
-        //    }
-        //    else
-        //    {
-        //        reloadTimer_elapsed += Time.deltaTime;
-        //    }
-        //}
-
-        if (timer_elapsed >= timer)
+        if (weaponSwitched)
         {
-            timer_elapsed = 0f;
-            shootRoutine = true;
-            currentMag--;
+            timer_elapsed = -0.2f;
+            weaponSwitched = false;
+        }
 
-            if (bulletsPerSecondAtStart < bulletsPerSecond)
+        if (currentMag > 0)
+        {
+            if (timer_elapsed >= timer)
             {
-                timer = 1f / bulletsPerSecond;
-                bulletsPerSecondAtStart = bulletsPerSecond;
+                timer_elapsed = 0f;
+                shootRoutine = true;
+                animator.SetBool("Shoot_b", true);
+                if (bulletsPerSecond > 2)
+                {
+                    animator.SetBool("FullAuto_b", true);
+                }
+                else
+                {
+                    animator.SetBool("FullAuto_b", false);
+                }
+                currentMag--;
+   
+                if (bulletsPerSecondAtStart < bulletsPerSecond) // Upgrade del fire rate tramite UpgradeMenu
+                {
+                    timer = 1f / bulletsPerSecond;
+                    bulletsPerSecondAtStart = bulletsPerSecond;
+                }
+            }
+            timer_elapsed += Time.deltaTime;
+ 
+        }
+        else
+        {
+            if (reloadTimer_elapsed >= reloadTimer)
+            {
+                reloadTimer_elapsed = 0f;
+                currentMag = magSize;
+            }
+            else
+            {
+                animator.SetBool("Shoot_b", false);
+                reloadTimer_elapsed += Time.deltaTime;
             }
         }
-        timer_elapsed += Time.deltaTime;
 
         if (shootRoutine)
         {
             ShootingRoutine();
-            animator.SetBool("Shoot_b", true);
-            if (bulletsPerSecond > 2)
-            {
-                animator.SetBool("FullAuto_b", true);
-            }
-            else
-            {
-                animator.SetBool("FullAuto_b", false);
-            }
+            
         }
 
         // Controlla le collisioni dei proiettili attivi
         CheckBulletCollisions();
+    }
+
+    public void AddWeapon(Weapon weapon)
+    {
+        weapons.Add(weapon);
+
+        // Imposta l'arma appena aggiunta se è la prima arma ottenuta
+        if (weapons.Count == 1)
+        {
+            SetWeaponValues(weapon);
+        }
+    }
+
+    void SetWeaponValues(Weapon weapon)
+    {
+        bulletsPerSecond = weapon.bulletsPerSecond;
+        bulletLifeTime = weapon.bulletLifeTime;
+        magSize = weapon.magSize;
+        reloadTimer = weapon.reloadTimer;
+        roundsPerShot = weapon.roundsPerShot;
+        shotAngleSpread = weapon.shotAngleSpread;
+        randomSpread = weapon.randomSpread;
+        burstSize = weapon.burstSize;
+        burstTimer = weapon.burstTimer;
+        bulletSpeed = weapon.bulletSpeed;
+
+        currentMag = magSize;
+        currentBurst = burstSize;
+        bulletsPerSecondAtStart = bulletsPerSecond;
+        timer_elapsed = 0;
+        timer = 1f / bulletsPerSecond;
+        reloadTimer_elapsed = 0f;
+        burstTimer_elapsed = burstTimer;
+        shotAngleDelta = shotAngleSpread / (roundsPerShot > 1 ? roundsPerShot - 1 : roundsPerShot);
+        halfSpread = shotAngleSpread * 0.5f;
+    }
+
+    void SwitchToNextWeapon()
+    {
+        if (weapons.Count <= 1)
+        {
+            return; // Non ci sono altre armi da cambiare
+        }
+
+        currentWeaponIndex++;
+        if (currentWeaponIndex >= weapons.Count)
+        {
+            currentWeaponIndex = 0;
+        }
+
+        SetWeaponValues(weapons[currentWeaponIndex]);
+    }
+
+    void SelectWeaponByInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1) && weapons.Count >= 1)
+        {
+            weaponSwitched = true;
+            SetWeaponValues(weapons[0]);
+            currentWeaponIndex = 0;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.akOwned)
+        {
+            weaponSwitched = true;
+            SetWeaponValues(weapons[1]);
+            currentWeaponIndex = 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.shotgunDBOwned)
+        {
+            weaponSwitched = true;
+            SetWeaponValues(weapons[2]);
+            currentWeaponIndex = 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned)
+        {
+            weaponSwitched = true;
+            SetWeaponValues(weapons[3]);
+            currentWeaponIndex = 3;
+        }
+    }
+
+    public string GetCurrentWeaponName()
+    {
+        if (currentWeaponIndex >= 0 && currentWeaponIndex < weapons.Count)
+        {
+            Weapon currentWeapon = weapons[currentWeaponIndex];
+            return currentWeapon.WeaponName;
+        }
+
+        return string.Empty;
     }
 
     void CheckBulletCollisions()
@@ -129,12 +237,12 @@ public class ShootingBehaviour : MonoBehaviour
                     {
                         if (hit.collider.CompareTag("Enemy"))
                         {
-                            //enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBase);
+                            enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBase);
                             Instantiate(hitFx, hit.point, Quaternion.LookRotation(hit.normal));
                         }
                         else if (hit.collider.CompareTag("EnemyBig"))
                         {
-                            //enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
+                            enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
                             Instantiate(hitFx, hit.point, Quaternion.LookRotation(hit.normal));
                         }
                     }
@@ -152,6 +260,7 @@ public class ShootingBehaviour : MonoBehaviour
         {
             burstTimer_elapsed = 0f;
             currentBurst--;
+
             if (roundsPerShot == 1)
             {
                 GameObject bullet = BulletPool.Dequeue();
