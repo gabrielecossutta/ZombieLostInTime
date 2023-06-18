@@ -3919,8 +3919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3c7a7f6dff0454e950a74e2aceb1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bullet: {fileID: 324833062561044795, guid: 4f4431f909522c34f99ae2be21620be1, type: 3}
   PowerUpTaken: 0
-  RotatingPrefab: {fileID: 324833062561044795, guid: 4f4431f909522c34f99ae2be21620be1, type: 3}
 --- !u!114 &1686281211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3933,8 +3933,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c86ccfff0700e4e845c09a929dd11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PowerUpTaken: 0
   bullet: {fileID: 324833062561044795, guid: 7e865940339fa4240a4a0c43697cb074, type: 3}
+  PowerUpTaken: 0
+  Time: 2.5
 --- !u!114 &1686281212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3947,12 +3948,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95477dabdfecfa45812e718466b1037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyContainer: {fileID: 396689553}
   closestEnemy: {fileID: 0}
-  childTransforms: []
-  childTransforms2: []
-  childTransforms3: []
-  allchildren: []
+  EnemyContainer: []
+  BigEnemyContainer: []
+  MergedContainer: []
 --- !u!1 &1701048252
 GameObject:
   m_ObjectHideFlags: 0

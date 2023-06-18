@@ -42,12 +42,12 @@ public class PickUp : MonoBehaviour
             
             case PowerUpType.RotatingPowerUp:
 
-                player.GetComponent<PowerUpRotante>().PowerUpTaken = true;
+                player.GetComponent<RotatingPowerUp>().PowerUpTaken = true;
                 break;
             
             case PowerUpType.AttackClosestEnemy:
 
-                player.GetComponent<PowerUpNemicoVicino>().PowerUpTaken = true;
+                player.GetComponent<ClosestEnemyPowerUp>().PowerUpTaken = true;
                 break;
 
         }

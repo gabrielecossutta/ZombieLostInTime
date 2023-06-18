@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpRotante : MonoBehaviour
+public class RotatingPowerUp : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Bullet;  //Riferimento Proiettile
     public bool PowerUpTaken = false;
-    public GameObject RotatingPrefab;  
     private bool Executed = false;
     void Start()
     {
@@ -18,9 +17,9 @@ public class PowerUpRotante : MonoBehaviour
     {
         if (PowerUpTaken)
         {
-            if (!Executed)
+            if (!Executed) // booleana per eseguire il codice solo una volta
             {
-            Instantiate(RotatingPrefab);
+            Instantiate(Bullet);
             Executed = true;
             }
         }
