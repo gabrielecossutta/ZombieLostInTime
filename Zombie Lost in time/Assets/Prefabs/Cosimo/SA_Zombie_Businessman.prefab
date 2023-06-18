@@ -5223,7 +5223,6 @@ GameObject:
   - component: {fileID: 2924747088396760885}
   - component: {fileID: 3362653020969984282}
   - component: {fileID: 8445995674850891853}
-  - component: {fileID: 6304202573813454592}
   m_Layer: 0
   m_Name: SA_Zombie_Businessman
   m_TagString: Player
@@ -5344,6 +5343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec15a932e96e56548be2a8ca787a8647, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseExpGain: 0
   maxHealth: 20
   currentExp: 0
   currentHealth: 0
@@ -5411,28 +5411,6 @@ CapsuleCollider:
   m_Height: 3
   m_Direction: 1
   m_Center: {x: 0, y: 1.5, z: 0}
---- !u!114 &6304202573813454592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9073554589986762486}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec7729cd686d78e4090d7449ba84af61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 8576070537804046234, guid: ea9df055a5d15ce44bd80626c2ab3a2f, type: 3}
-  gunOffset: {fileID: 744087411668969683}
-  gunOffset2: {fileID: 0}
-  gunOffset3: {fileID: 0}
-  gunOffset4: {fileID: 0}
-  gunOffset5: {fileID: 0}
-  fireRate: 0
-  TripleFireSkill: 0
-  FireRateSkill: 0
-  QuintupleFireSkill: 0
 --- !u!1 &9073554589986764540
 GameObject:
   m_ObjectHideFlags: 0

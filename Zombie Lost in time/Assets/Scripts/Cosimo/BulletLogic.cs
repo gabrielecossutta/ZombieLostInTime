@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BulletLogic : MonoBehaviour
+public class BulletLogic : Singleton<BulletLogic>
 {
     public float bulletSpeed = 10f;
     public float bulletRange = 100f;
@@ -42,12 +42,12 @@ public class BulletLogic : MonoBehaviour
                     Instantiate(hitFx, hit.point, Quaternion.LookRotation(hit.normal));
 
                 }
-                // Distruggi il proiettile
-                Destroy(gameObject);
+                //Destroy(gameObject);
             }
         }
+        Debug.Log("Raycast Fallito");
 
-        Destroy(gameObject, lifeTime);
+        //Destroy(gameObject, lifeTime);
     }
 }
 

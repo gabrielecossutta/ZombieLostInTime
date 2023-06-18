@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2676090506573972080}
   - component: {fileID: 7245260533920489596}
   - component: {fileID: 383899962510578531}
-  - component: {fileID: 7337410833267137999}
+  - component: {fileID: -3857847468856450108}
   m_Layer: 6
   m_Name: Bullet
   m_TagString: Bullet
@@ -101,7 +101,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 1
---- !u!114 &7337410833267137999
+--- !u!114 &-3857847468856450108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,13 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8576070537804046234}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea57509c68fad5c40891e82593363645, type: 3}
+  m_Script: {fileID: 11500000, guid: 768a07191bf8ea741898f53c22386ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 40
-  bulletRange: 2
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 8
   hitFx: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
-  lifeTime: 2

@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject[] drop;
 
     [SerializeField] private float attackRange = 5f;
+
     void Start()
     {
         Speed = 2.5f;
@@ -57,7 +58,7 @@ public class Enemy : MonoBehaviour
             else
             {   //VANNO VERSO IL PLAYER
                 transform.LookAt(player); // i nemici guardano il player
-                transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
+                //transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
             }
         }
     }
@@ -66,10 +67,11 @@ public class Enemy : MonoBehaviour
     {
         AttackPlayer();
     }
+
     private void AttackPlayer()
     {
         // Applica danni al giocatore
-        Status.Instance.TakeDamage(Damage);
+        //Status.Instance.TakeDamage(Damage);
     }
 
     public void SpawnExp()
@@ -82,6 +84,7 @@ public class Enemy : MonoBehaviour
     {
         TimerController.Instance.IsNight = true;
     }
+
     public void setNotteFalse()
     {
         TimerController.Instance.IsNight = false;

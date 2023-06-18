@@ -23,7 +23,6 @@ public class UpgradePlayerStats : Singleton<UpgradePlayerStats>
 
     public void UpgradeSpeed()
     {
-
         if (cont < maxSpeedUpgrade)
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
@@ -38,6 +37,4 @@ public class UpgradePlayerStats : Singleton<UpgradePlayerStats>
             }
         }
     }
-
-
 }
