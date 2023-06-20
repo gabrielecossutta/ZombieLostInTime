@@ -17,6 +17,7 @@ TagManager:
   - Ak-47
   - ShotgunDB
   - Minigun
+  - Obstacles
   layers:
   - Default
   - TransparentFX
@@ -24,8 +25,8 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - 
-  - 
+  - Terrain
+  - Obstacles
   - 
   - 
   - 

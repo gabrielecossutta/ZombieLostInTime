@@ -175,8 +175,8 @@ ModelImporter:
     animationImportWarnings: "\nClip 'Take 001' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Body_jnt' has translation animation that
-      will be discarded.\nEvent OnAnimationComplete has a time (0.166667) outside
-      the clip's valid range (0.000000..0.166666). It will never be fired"
+      will be discarded.\nEvent OnAnimationComplete has a time (1.166667) outside
+      the clip's valid range (0.000000..1.166666). It will never be fired"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -201,7 +201,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1

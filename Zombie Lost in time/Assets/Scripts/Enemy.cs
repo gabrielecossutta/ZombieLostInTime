@@ -36,6 +36,7 @@ public class Enemy : MonoBehaviour
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
+            transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
         }
@@ -71,13 +72,13 @@ public class Enemy : MonoBehaviour
     private void AttackPlayer()
     {
         // Applica danni al giocatore
-        //Status.Instance.TakeDamage(Damage);
+        Status.Instance.TakeDamage(Damage);
     }
 
     public void SpawnExp()
     {
         int rand = Random.Range(0, drop.Length);
-        Instantiate(drop[rand], transform.position + new Vector3(0,1,0), Quaternion.identity);
+        Instantiate(drop[rand], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
     }
 
     public void setNotteTrue()

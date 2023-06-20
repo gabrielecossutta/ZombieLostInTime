@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Status : Singleton<Status>
 {
@@ -91,6 +92,7 @@ public class Status : Singleton<Status>
     public void LevelUp()                               //Funzione per il nuovo livello raggiunto
     {
         UpgradeMenu.Instance.OpenUpgradeMenu(1);
+        UpgradeMenu.Instance._eventSystem.currentSelectedGameObject = UpgradeMenu.Instance.newFirstSelectedGameObject;
         currentLevel++;
         int excessExp = currentExp - expToLvlUp;
         currentExp = excessExp;

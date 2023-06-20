@@ -19,6 +19,10 @@ public class BulletCollision : Singleton<BulletCollision>
             other.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
             Instantiate(hitFx, collisionPoint, Quaternion.identity);
         }
+        else if (other.gameObject.CompareTag("Obstacles"))
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
 

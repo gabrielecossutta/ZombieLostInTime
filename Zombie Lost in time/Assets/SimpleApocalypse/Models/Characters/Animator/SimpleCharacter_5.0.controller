@@ -9240,7 +9240,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Melee_OneHanded
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110172812}
@@ -10299,7 +10299,7 @@ AnimatorStateMachine:
     m_Position: {x: -372, y: -432, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110269964}
-    m_Position: {x: -144, y: -624, z: 0}
+    m_Position: {x: -150, y: -620, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110285788}
     m_Position: {x: 12, y: -564, z: 0}
