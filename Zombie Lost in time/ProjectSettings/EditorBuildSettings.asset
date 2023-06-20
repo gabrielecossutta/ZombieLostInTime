@@ -6,15 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Gabriele/Menu.unity
-    guid: 1c1d3458993bccb419ed6edc33758fb7
+    path: Assets/Scenes/Cosimo/TestAnimation.unity
+    guid: 75e9e9d7ee78a7b48a6507be13d680bf
   - enabled: 1
-    path: Assets/Scenes/Gabriele/Giorno.unity
-    guid: 9d138d882802b224aac168f445ba845e
+    path: Assets/Scenes/Map_01.unity
+    guid: 44afe86f9eba114419b5056ceafa73ea
   - enabled: 1
-    path: Assets/Scenes/Gabriele/Notte.unity
-    guid: 853790e1638a9ed4891508eb0d1bfb2f
-  - enabled: 1
-    path: Assets/Scenes/Gabriele/GabrieleTest.unity
-    guid: 6836769e5dc690d45aae1ebea8e24417
+    path: Assets/Scenes/Map_02.unity
+    guid: 9adb9cb7090ace146ad0634251485582
   m_configObjects: {}

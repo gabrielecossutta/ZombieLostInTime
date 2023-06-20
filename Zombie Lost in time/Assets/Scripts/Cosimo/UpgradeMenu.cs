@@ -10,7 +10,6 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
     public GameObject UpgradeWeaponsStatsMenu;
     public TMP_Text pointOwnedText;
 
-    private bool isPaused = false;
     [HideInInspector]public int pointToLvlUp = 1;
     public int pointsOwned;
 
@@ -32,14 +31,12 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
         UpgradePlayerStatsMenu.SetActive(false);
         UpgradeWeaponsStatsMenu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
     }
 
     void Pause()
     {
         UpgradeMenuPanel.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
     }
 
     public void SetActivePlayerUpgradeMenu()

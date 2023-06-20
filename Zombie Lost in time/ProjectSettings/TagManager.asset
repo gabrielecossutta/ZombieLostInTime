@@ -13,16 +13,22 @@ TagManager:
   - DamageBase
   - EmptyDrop
   - EnemyBig
-  - Undefined
+  - Barrel
+  - Ak-47
+  - ShotgunDB
+  - Minigun
+  - Obstacles
+  - EnemyBoss
+  - Portal
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
-  - 
+  - Terrain
+  - Obstacles
   - 
   - 
   - 
