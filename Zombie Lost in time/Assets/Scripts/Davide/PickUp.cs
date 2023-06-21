@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
-    public enum PowerUpType {DamageZone, FireRate, TripleFire, QuintupleFire, RotatingPowerUp, AttackClosestEnemy};
+    public enum PowerUpType {DamageZone, FireRate, TripleFire, QuintupleFire, RotatingPowerUp, AttackClosestEnemy, RandomEnemy };
     public PowerUpType powerUpType;
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("Player"))
         {
             ApplyPowerUp(collider.gameObject);
-
             Destroy(gameObject);
         }
     }
@@ -48,6 +47,11 @@ public class PickUp : MonoBehaviour
             case PowerUpType.AttackClosestEnemy:
 
                 player.GetComponent<ClosestEnemyPowerUp>().PowerUpTaken = true;
+                break;
+
+            case PowerUpType.RandomEnemy:
+
+                player.GetComponent<RandomBPowerUP>().PowerUpTaken = true;
                 break;
 
         }
