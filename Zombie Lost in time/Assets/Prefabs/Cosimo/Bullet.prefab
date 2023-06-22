@@ -29,11 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8576070537804046234}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-<<<<<<<< Updated upstream:Zombie Lost in time/Assets/Prefabs/Cosimo/Bullet.prefab
   m_LocalPosition: {x: 0, y: 0, z: 0}
-========
-  m_LocalPosition: {x: 0, y: 1.33, z: 1.247}
->>>>>>>> Stashed changes:Zombie Lost in Time/Assets/Prefabs/Lorenzo/Bullet.prefab
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,10 +146,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 768a07191bf8ea741898f53c22386ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<<< Updated upstream:Zombie Lost in time/Assets/Prefabs/Cosimo/Bullet.prefab
   hitFx: {fileID: 19886758, guid: 8c27aeead6d968e4ba986702d6b84335, type: 3}
-========
-  speed: 20.1
-  lifeTime: 1.98
-  damage: 10
->>>>>>>> Stashed changes:Zombie Lost in Time/Assets/Prefabs/Lorenzo/Bullet.prefab

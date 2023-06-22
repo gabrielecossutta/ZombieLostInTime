@@ -12,12 +12,8 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] private Transform gunOffset5; //offset utilizzato in caso di sparo quintuplo
     [SerializeField] private float fireRate; //piu e' basso e piu spara veloce
     private Animator animator;
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 
-    public bool SimpleBulletEnable;
     public bool TripleFireSkill;
     public bool FireRateSkill;
     public bool QuintupleFireSkill;
@@ -30,7 +26,6 @@ public class PlayerShoot : MonoBehaviour
         TripleFireSkill = false;
         FireRateSkill = false;
         QuintupleFireSkill = false;
-
     }
 
 

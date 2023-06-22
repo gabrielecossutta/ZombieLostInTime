@@ -122,7 +122,6 @@ public class ShootingBehaviour : MonoBehaviour
         if (shootRoutine)
         {
             ShootingRoutine();
-            
         }
 
         // Controlla le collisioni dei proiettili attivi
@@ -182,25 +181,25 @@ public class ShootingBehaviour : MonoBehaviour
 
     void SelectWeaponByInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && weapons.Count >= 1)
+        if ((Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButton("YButton")) && weapons.Count >= 1)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[0]);
             currentWeaponIndex = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.akOwned)
+        else if ((Input.GetButton("BButton") || Input.GetKeyDown(KeyCode.Alpha2)) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.akOwned)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[1]);
             currentWeaponIndex = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.shotgunDBOwned)
+        else if ((Input.GetButton("AButton") || Input.GetKeyDown(KeyCode.Alpha3)) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.shotgunDBOwned)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[2]);
             currentWeaponIndex = 2;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned)
+        else if ((Input.GetButton("XButton") || Input.GetKeyDown(KeyCode.Alpha4)) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[3]);
@@ -315,6 +314,7 @@ public class ShootingBehaviour : MonoBehaviour
         bullet.SetActive(false);
         BulletPool.Enqueue(bullet);
     }
+
 }
 
 

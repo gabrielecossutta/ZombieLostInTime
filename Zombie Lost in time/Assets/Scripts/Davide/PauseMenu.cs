@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !gamePaused)
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetButton("StartButton") && !gamePaused)
         {
             if (gamePaused)
             {

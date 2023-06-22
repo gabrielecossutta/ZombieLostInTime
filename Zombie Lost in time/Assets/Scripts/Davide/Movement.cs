@@ -23,56 +23,17 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        if (currentWeapon.GetCurrentWeaponName() == "Revolver")
-        {
-            animator.SetInteger("WeaponType_int", 1);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "Ak-47")
-        {
-            animator.SetInteger("WeaponType_int", 2);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "ShotgunDB")
-        {
-            animator.SetInteger("WeaponType_int", 4);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "Minigun")
-        {
-            animator.SetInteger("WeaponType_int", 9);
-        }
+        SetAnimatorWeaponParameter();
     }
 
     private void FixedUpdate()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        KeyboardInuput();
 
-        if (direction != Vector3.zero)
-        {
-            Quaternion ToRotate = Quaternion.LookRotation(direction);
-            transform.rotation = ToRotate; //rotazione del player in base a dove stiamo andando
-        }
-
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            direction = new Vector3(x, 0, z); //vettore direzione a cui vogliamo andare
-            if (direction.magnitude > 1f)
-            {
-                direction.Normalize();
-            }
-
-            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
-            animator.SetFloat("Speed_f", 1);
-            SetAnimationParameter();
-        }
-        else
-        {
-            Rb.velocity = Vector3.zero;
-            animator.SetFloat("Speed_f", 0);
-            SetAnimationParameter();
-        }
+        ControllerInput();
     }
 
-    void SetAnimationParameter()
+    void SetAnimatorParameter()
     {
         if (currentWeapon.GetCurrentWeaponName() == "Revolver")
         {
@@ -130,5 +91,82 @@ public class Movement : MonoBehaviour
                     animator.SetFloat("Head_Horizontal_f", -0.6f);
                 }
             }
+    }
+
+    void ControllerInput()
+    {
+        float x = UserInput.instance.MoveInput.x;
+        float z = UserInput.instance.MoveInput.y;
+
+        if (Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f)
+        {
+            direction = new Vector3(x, 0, z);
+            if (direction.magnitude > 1f)
+            {
+                direction.Normalize();
+            }
+
+            Quaternion toRotate = Quaternion.LookRotation(direction);
+            transform.rotation = toRotate;
+
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
+            animator.SetFloat("Speed_f", 1);
+            SetAnimatorParameter();
+        }
+        else
+        {
+            Rb.velocity = Vector3.zero;
+            animator.SetFloat("Speed_f", 0);
+            SetAnimatorParameter();
+        }
+    }
+
+    void KeyboardInuput()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            direction = new Vector3(x, 0, z);
+            if (direction.magnitude > 1f)
+            {
+                direction.Normalize();
+            }
+
+            Quaternion toRotate = Quaternion.LookRotation(direction);
+            transform.rotation = toRotate;
+
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
+            animator.SetFloat("Speed_f", 1);
+            SetAnimatorParameter();
+        }
+        else
+        {
+            Rb.velocity = Vector3.zero;
+            animator.SetFloat("Speed_f", 0);
+            SetAnimatorParameter();
+        }
+    }
+
+    void SetAnimatorWeaponParameter()
+
+    {
+        if (currentWeapon.GetCurrentWeaponName() == "Revolver")
+        {
+            animator.SetInteger("WeaponType_int", 1);
+        }
+        else if (currentWeapon.GetCurrentWeaponName() == "Ak-47")
+        {
+            animator.SetInteger("WeaponType_int", 2);
+        }
+        else if (currentWeapon.GetCurrentWeaponName() == "ShotgunDB")
+        {
+            animator.SetInteger("WeaponType_int", 4);
+        }
+        else if (currentWeapon.GetCurrentWeaponName() == "Minigun")
+        {
+            animator.SetInteger("WeaponType_int", 9);
+        }
     }
 }

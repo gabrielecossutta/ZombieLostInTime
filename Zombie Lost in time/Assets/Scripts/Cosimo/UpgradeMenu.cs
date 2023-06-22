@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class UpgradeMenu : Singleton<UpgradeMenu>
 {
@@ -13,6 +14,10 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
     [HideInInspector]public int pointToLvlUp = 1;
     public int pointsOwned;
 
+    [Header("First Selected Options")]
+    [SerializeField] private GameObject _playerMenuFirst;
+    [SerializeField] private GameObject _weaponMenuFirst;
+
     // Update is called once per frame
     void Update()
     {
@@ -22,11 +27,14 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
     public void OpenUpgradeMenu(int pointsOwned)
     {
         Pause();
+        UpgradeMenuPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(_playerMenuFirst);
         this.pointsOwned += pointsOwned;
     }
 
     public void Resume()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         UpgradeMenuPanel.SetActive(false);
         UpgradePlayerStatsMenu.SetActive(false);
         UpgradeWeaponsStatsMenu.SetActive(false);
@@ -35,7 +43,6 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
 
     void Pause()
     {
-        UpgradeMenuPanel.SetActive(true);
         Time.timeScale = 0f;
     }
 

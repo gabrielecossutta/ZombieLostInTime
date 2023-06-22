@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Status : Singleton<Status>
 {
@@ -42,7 +43,6 @@ public class Status : Singleton<Status>
         {
             gameObject.SetActive(false);
             HUD.SetActive(false);
-            TimerController.Instance.PlayerDeath();
         }
     }
     public void OnTriggerEnter(Collider other)
