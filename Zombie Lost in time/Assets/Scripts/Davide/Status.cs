@@ -43,7 +43,6 @@ public class Status : Singleton<Status>
         {
             gameObject.SetActive(false);
             HUD.SetActive(false);
-            TimerController.Instance.PlayerDeath();
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -92,7 +91,6 @@ public class Status : Singleton<Status>
     public void LevelUp()                               //Funzione per il nuovo livello raggiunto
     {
         UpgradeMenu.Instance.OpenUpgradeMenu(1);
-        UpgradeMenu.Instance._eventSystem.currentSelectedGameObject = UpgradeMenu.Instance.newFirstSelectedGameObject;
         currentLevel++;
         int excessExp = currentExp - expToLvlUp;
         currentExp = excessExp;

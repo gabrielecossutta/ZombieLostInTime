@@ -95,8 +95,8 @@ public class Movement : MonoBehaviour
 
     void ControllerInput()
     {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = UserInput.instance.MoveInput.x;
+        float z = UserInput.instance.MoveInput.y;
 
         if (Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f)
         {
@@ -126,19 +126,16 @@ public class Movement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
-        if (direction != Vector3.zero)
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
         {
-            Quaternion ToRotate = Quaternion.LookRotation(direction);
-            transform.rotation = ToRotate; //rotazione del player in base a dove stiamo andando
-        }
-
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-        {
-            direction = new Vector3(x, 0, z); //vettore direzione a cui vogliamo andare
+            direction = new Vector3(x, 0, z);
             if (direction.magnitude > 1f)
             {
                 direction.Normalize();
             }
+
+            Quaternion toRotate = Quaternion.LookRotation(direction);
+            transform.rotation = toRotate;
 
             Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
             animator.SetFloat("Speed_f", 1);

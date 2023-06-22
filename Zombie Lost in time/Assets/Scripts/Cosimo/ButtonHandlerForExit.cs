@@ -6,26 +6,36 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
-public class ButtonHandlerForExit : Singleton<ButtonHandlerForExit>
+public class ButtonHandlerForExit : MonoBehaviour
 {
-    public GameObject canvas;
-    [SerializeField] EventSystem _eventSystem;
-    [SerializeField] GameObject newFirstSelectedGameObject;
+    public GameObject deathMenu;
+
+    [Header("First Selected Options")]
+    [SerializeField] private GameObject _restartButtonFirst;
+
+    private void OnEnable()
+    {
+        EventSystem.current.SetSelectedGameObject(_restartButtonFirst);
+    }
+    private void OnDisable()
+    {
+        Time.timeScale = 1.0f;
+
+    }
 
     private void Update()
     {
-        if (Status.Instance.currentHealth < 0)
+        if (Status.Instance.currentHealth <= 0)
         {
-            canvas.SetActive(true);
+            Time.timeScale = 0f;
+            deathMenu.SetActive(true);
         }
-        _eventSystem.currentSelectedGameObject = newFirstSelectedGameObject;
-
     }
 
     public void Restart()
     {
+        deathMenu.SetActive(false);
         SceneManager.LoadScene("DefaultMap");
-        Time.timeScale = 1.0f;
     }
 
     public void QuitGame()

@@ -26,7 +26,22 @@ public class Spawner : MonoBehaviour
 
     public void Update()
     {
-        
+        if (transform.position.z >= -160)
+        {
+            transform.position = new Vector3(transform.position.x, 0, -160);
+        }
+        else if (transform.position.z <= -390)
+        {
+            transform.position = new Vector3(transform.position.x, 0, -390);
+        }
+        else if (transform.position.x <= -110)
+        {
+            transform.position = new Vector3(-117, 0, transform.position.z);
+        }
+        else if (transform.position.x >= 117)
+        {
+            transform.position = new Vector3(110, 0, transform.position.z);
+        }
     }
     private IEnumerator Spawning()
     {

@@ -7,7 +7,6 @@ public class TimerController : Singleton<TimerController>
 {
     public TMP_Text timerText; // Riferimento all'elemento di testo TMP per mostrare il timer
     public TMP_Text survivedTimeText; // Riferimento all'elemento di testo TMP per mostrare il survivedTime
-    public GameObject DeathPanel;
     public bool IsNight = false;
     public float dayDuration; // Durata del gioco in secondi
     public float dayTimer;
@@ -57,12 +56,6 @@ public class TimerController : Singleton<TimerController>
         // Aggiorna il testo del timer
 
         survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + "s";
-    }
-
-    public void PlayerDeath()
-    {
-        Time.timeScale = 0f; // Ferma il tempo di gioco
-        DeathPanel.SetActive(true);
     }
 }
 
