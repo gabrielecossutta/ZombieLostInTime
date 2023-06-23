@@ -5,9 +5,10 @@ using UnityEngine;
 public enum PowerUpType
 {
     DamageZone,
-    SimpleBullet,
     RotatingBullet,
-    AIMBullet
+    AIMBullet,
+    Flamethrower,
+    SplitBullet
 };
 public class PowerUpEnums : MonoBehaviour
 {

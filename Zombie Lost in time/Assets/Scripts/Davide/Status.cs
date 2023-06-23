@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Status : Singleton<Status>
 {
@@ -21,9 +22,11 @@ public class Status : Singleton<Status>
     [SerializeField] private TMP_Text currentHeathText;
     public float damageBase;
     public float damageBoss;
+    public float damageBig;
     public float fireRate;
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
+    public GameObject loadingPanel;
 
     void Start()
     {
@@ -74,6 +77,18 @@ public class Status : Singleton<Status>
             ExpGained(baseExpGain);
             Destroy(other.gameObject);
         }
+        else if (other.CompareTag("Portal"))
+        {
+
+
+            TimerController.Instance.changingEra = false;
+
+            MapLoader.Instance.portal.SetActive(false);
+            
+
+            StartCoroutine(ActivateLoadingPanelAfterDelay(2f));
+
+        }
     }
 
     public void ExpGained(int exp)                      //Funzione per l'esperienza acquisita
@@ -91,6 +106,7 @@ public class Status : Singleton<Status>
     public void LevelUp()                               //Funzione per il nuovo livello raggiunto
     {
         UpgradeMenu.Instance.OpenUpgradeMenu(1);
+        UpgradeMenu.Instance._eventSystem.currentSelectedGameObject = UpgradeMenu.Instance.newFirstSelectedGameObject;
         currentLevel++;
         int excessExp = currentExp - expToLvlUp;
         currentExp = excessExp;
@@ -115,5 +131,17 @@ public class Status : Singleton<Status>
             healthBar.SetHealth(currentHealth);
 
         }
+    }
+
+    private IEnumerator ActivateLoadingPanelAfterDelay(float delay)
+    {
+        loadingPanel.SetActive(true); // Disattiva il loadingPanel
+        MapLoader.Instance.ChangeScene();
+
+
+        yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
+
+
+        loadingPanel.SetActive(false); // Attiva nuovamente il loadingPanel
     }
 }

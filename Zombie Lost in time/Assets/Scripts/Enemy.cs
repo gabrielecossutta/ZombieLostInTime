@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private GameObject[] drop;
 
     [SerializeField] private float attackRange = 5f;
+    public GameObject bossDrop;
 
     void Start()
     {
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
+            transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
         }
@@ -48,7 +50,7 @@ public class Enemy : MonoBehaviour
             {
                 // VANNO VIA DAL PLAYER
                 Vector3 direction = transform.position - player.position; // direzione di dove devono scappare (in contrario di dove arriva il player)
-                float currentDistance = direction.magnitude; //calcola quanto � distante dal player
+                float currentDistance = direction.magnitude; //calcola quanto è distante dal player
                 Vector3 targetPosition = transform.position + direction.normalized;
                 transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
@@ -71,13 +73,24 @@ public class Enemy : MonoBehaviour
     private void AttackPlayer()
     {
         // Applica danni al giocatore
-        //Status.Instance.TakeDamage(Damage);
+        Status.Instance.TakeDamage(Damage);
     }
 
     public void SpawnExp()
     {
-        int rand = Random.Range(0, drop.Length);
-        Instantiate(drop[rand], transform.position + new Vector3(0,1,0), Quaternion.identity);
+        if (TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
+        {
+            Instantiate(drop[6], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
+        }
+        else if (!TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
+        {
+            int rand = Random.Range(0, drop.Length);
+            Instantiate(drop[rand], transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
+        }
+        else if (CompareTag("EnemyBoss"))
+        {
+            Instantiate(bossDrop, transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
+        }
     }
 
     public void setNotteTrue()
@@ -90,3 +103,4 @@ public class Enemy : MonoBehaviour
         TimerController.Instance.IsNight = false;
     }
 }
+
