@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 474887005265860572}
   - component: {fileID: 2809369506522300802}
   - component: {fileID: 8696083562537026457}
-  - component: {fileID: 6575402892389939358}
+  - component: {fileID: 7627257151449349681}
   m_Layer: 0
   m_Name: RandomBulletPowerUp
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &474887005265860572
 MeshFilter:
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 585af23ecc961bf4b9b9620e687b3492, type: 2}
+  - {fileID: 2100000, guid: 3a13a3971d802b94bba8f0fee43c8a7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6575402892389939358
+--- !u!114 &7627257151449349681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567856447458724856}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6133cee7b39bcf346b8e90e31c5f659b, type: 3}
+  m_Script: {fileID: 11500000, guid: 09ada63365e1fa64ca10a5099572a9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpType: 6
+  powerUpType: 4

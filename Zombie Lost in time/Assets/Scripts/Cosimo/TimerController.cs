@@ -14,11 +14,13 @@ public class TimerController : Singleton<TimerController>
     public float nightDuration;
     public float nightTimer;
     private float survivedTime;
+    public bool changingEra;
 
     private void Start()
     {
         ResetDayTimer();
         ResetNightTimer();
+        changingEra = false;
     }
 
     private void ResetDayTimer()
@@ -32,37 +34,35 @@ public class TimerController : Singleton<TimerController>
 
     private void Update()
     {
-        if(!IsNight)
+        if (changingEra == false)
         {
-            dayTimer -= Time.deltaTime;
-            timerText.text = "Night in: " + Mathf.RoundToInt(dayTimer).ToString();
-            if (dayTimer <= 0f)
+
+            if(!IsNight)
             {
-                IsNight = true;
-                ResetDayTimer();
+                dayTimer -= Time.deltaTime;
+                timerText.text = "Night in: " + Mathf.RoundToInt(dayTimer).ToString();
+                if (dayTimer <= 0f)
+                {
+                    IsNight = true;
+                    ResetDayTimer();
+                }
             }
-        }
-        else
-        {
-            nightTimer -= Time.deltaTime;
-            timerText.text = "Day in: " + Mathf.RoundToInt(nightTimer).ToString();
-            if (nightTimer <= 0f)
+            else
             {
-                IsNight = false;
-                ResetNightTimer();
+                nightTimer -= Time.deltaTime;
+                timerText.text = "Day in: " + Mathf.RoundToInt(nightTimer).ToString();
+                if (nightTimer <= 0f)
+                {
+                    IsNight = false;
+                    changingEra = true;
+                    ResetNightTimer();
+                }
             }
-        }
 
         survivedTime = Time.time;
         // Aggiorna il testo del timer
-
         survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + "s";
-    }
-
-    public void PlayerDeath()
-    {
-        Time.timeScale = 0f; // Ferma il tempo di gioco
-        DeathPanel.SetActive(true);
+        }
     }
 }
 

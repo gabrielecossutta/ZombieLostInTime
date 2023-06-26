@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7037370630679493416}
   - component: {fileID: 4695274794045243408}
   - component: {fileID: 5501890644128536483}
-  - component: {fileID: 900295861334923036}
+  - component: {fileID: 6469968854141191567}
   m_Layer: 0
   m_Name: RotatingPowerup
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7037370630679493416
 MeshFilter:
@@ -100,13 +100,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &900295861334923036
+--- !u!114 &6469968854141191567
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7082311609165040521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6133cee7b39bcf346b8e90e31c5f659b, type: 3}
+  m_Script: {fileID: 11500000, guid: 09ada63365e1fa64ca10a5099572a9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpType: 4
+  powerUpType: 1

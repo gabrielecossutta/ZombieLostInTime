@@ -10,8 +10,6 @@ public class Bullet : MonoBehaviour
     [Range(1, 10)]
     [SerializeField] private float lifeTime = 3f;
 
-    
-
     private Rigidbody rb;
     public float damage;
 
@@ -25,6 +23,7 @@ public class Bullet : MonoBehaviour
     {
         rb.velocity = transform.forward * speed;
     }
+
     private void OnCollisionEnter(Collision collision)
     {
        if (collision.collider.tag == "Enemy")
@@ -35,10 +34,16 @@ public class Bullet : MonoBehaviour
        }
        else if (collision.collider.tag == "EnemyBig")
        {
-            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
+            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBig);
 
             Destroy(gameObject);
        }
+        else if (collision.collider.tag == "EnemyBoss")
+        {
+            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
+
+            Destroy(gameObject);
+        }
     }
 
     

@@ -8,12 +8,6 @@ public class RandomBPowerUP : MonoBehaviour
     public bool PowerUpTaken = false;
     private bool Executed = false;
     public float Time = 1.5f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (PowerUpTaken)

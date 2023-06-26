@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
 {
     [SerializeField] public float damageUpgrade;
-    [SerializeField] public float atkSpeedUpgrade;
-    int maxAtkSpeedUpgrade = 6;
+    [SerializeField] public float fireRateUpgrade;
+
+    int maxFireRateUpgrade = 6;
     int cont = 0;
-    public bool isMaxed;
-    public Button atkSpeedButton;
+    public Button fireRateButton;
+
     public void UpgradeDamage()
     {
         if (UpgradeMenu.Instance.pointsOwned > 0)
@@ -21,20 +22,21 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
         }
     }
 
-    public void UpgradeAtkSpeed()
+    public void UpgradeFireRate()
     {
-        if (cont < maxAtkSpeedUpgrade)
+        if (cont < maxFireRateUpgrade)
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
             {
-                Status.Instance.fireRate += atkSpeedUpgrade;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingBehaviour>().bulletsPerSecond += fireRateUpgrade;
                 UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
                 cont++;
             }
-        }
-        else
-        {
-            atkSpeedButton.interactable = false;
+            if (cont == maxFireRateUpgrade)
+            {
+                fireRateButton.interactable = false;
+            }
         }
     }
+
 }

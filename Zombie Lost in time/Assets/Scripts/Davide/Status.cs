@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Status : Singleton<Status>
 {
+    [SerializeField] private int baseExpGain;
     public int maxHealth;
     public int currentExp;
     public int currentHealth;
@@ -13,16 +15,19 @@ public class Status : Singleton<Status>
     public int healUp;
     public int currentLevel;
     private int enemyKilledCounter;
-    public HUDBar healthBar;
-    public HUDBar expBar;
-    public GameObject HUD;
-    public TMP_Text enemyKilledText;
-    public TMP_Text currentHeathText;
+    [SerializeField] private HUDBar healthBar;
+    [SerializeField] private HUDBar expBar;
+    [SerializeField] private GameObject HUD;
+    [SerializeField] private TMP_Text enemyKilledText;
+    [SerializeField] private TMP_Text currentHeathText;
     public float damageBase;
     public float damageBoss;
+    public float damageBig;
     public float fireRate;
     [HideInInspector] public float speedUpgradedValue;
-    [HideInInspector] public float damageUpgradedValue;
+    public Animator animator;
+    public GameObject loadingPanel;
+    public int c;
 
     void Start()
     {
@@ -33,6 +38,7 @@ public class Status : Singleton<Status>
         expBar.SetExp(currentExp);
         currentHealth = maxHealth;
         currentHeathText.text = currentHealth.ToString();
+        c = 0;
     }
 
     void Update()
@@ -41,8 +47,6 @@ public class Status : Singleton<Status>
         {
             gameObject.SetActive(false);
             HUD.SetActive(false);
-            TimerController.Instance.PlayerDeath();
-            //Destroy(gameObject);
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -66,31 +70,26 @@ public class Status : Singleton<Status>
         }
         else if (other.CompareTag("ExpBoss"))           //Esperienza Boss
         {
-            ExpGained(5);
-            //other.gameObject.SetActive(false);
+            ExpGained(baseExpGain);
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("ExpBase"))           //Esperienza Base
         {
-            ExpGained(2);
-            //other.gameObject.SetActive(false);
+            ExpGained(baseExpGain);
             Destroy(other.gameObject);
         }
-        //else if (other.CompareTag("DamageBoss"))        //Danno Boss
-        //{
-        //    currentHealth -= damageBoss;
-        //    healthBar.SetHealth(currentHealth);         //set vita aggiornato
-        //    Debug.Log(currentHealth);
-        //    other.gameObject.SetActive(false);
-        //}
-        //else if (other.CompareTag("DamageBase"))        //Danno Base
-        //{
-        //    currentHealth -= damageBase;
-        //    healthBar.SetHealth(currentHealth);         //set vita aggiornato
-        //    Debug.Log(currentHealth);
-        //    other.gameObject.SetActive(false);
-        //}
+        else if (other.CompareTag("Portal"))
+        {
 
+
+            TimerController.Instance.changingEra = false;
+
+            MapLoader.Instance.portal.SetActive(false);
+            
+
+            StartCoroutine(ActivateLoadingPanelAfterDelay(2f));
+            c++;
+        }
     }
 
     public void ExpGained(int exp)                      //Funzione per l'esperienza acquisita
@@ -132,5 +131,28 @@ public class Status : Singleton<Status>
             healthBar.SetHealth(currentHealth);
 
         }
+    }
+
+    private IEnumerator ActivateLoadingPanelAfterDelay(float delay)
+    {
+        
+        loadingPanel.SetActive(true); // Disattiva il loadingPanel
+        if (c == 0)
+        {
+            MapLoader.Instance.ChangeScene();
+            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
+            
+        }
+        if (c == 1)
+        {
+            MapLoader.Instance.ChangeScene2();
+            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
+        }
+
+
+        yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
+
+
+        loadingPanel.SetActive(false); // Attiva nuovamente il loadingPanel
     }
 }

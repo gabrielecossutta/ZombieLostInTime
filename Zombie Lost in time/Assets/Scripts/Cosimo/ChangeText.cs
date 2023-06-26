@@ -8,7 +8,7 @@ public class ChangeText : MonoBehaviour
 
     private void Start()
     {
-        textMeshPro.text = "Lvl :" + lvl;
+        textMeshPro.text = lvl.ToString();
     }
 
     public void AddValue()
@@ -16,7 +16,7 @@ public class ChangeText : MonoBehaviour
         if (UpgradeMenu.Instance.pointsOwned > 0)
         {
             lvl++;
-            textMeshPro.text = "Lvl :" + lvl;
+            textMeshPro.text = lvl.ToString();
         }
         //if (UpgradeWeaponsStats.Instance.isMaxed)
         //{

@@ -8,12 +8,6 @@ public class ClosestEnemyPowerUp : MonoBehaviour
     public bool PowerUpTaken = false;
     private bool Executed = false;
     public float Time = 2.5f;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (PowerUpTaken)

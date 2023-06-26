@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUDBar : MonoBehaviour
+public class HUDBar : Singleton<HUDBar>
 {
     public Slider slider;
 

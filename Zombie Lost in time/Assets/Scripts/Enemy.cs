@@ -4,98 +4,110 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float MaxSpeed;
-    private float speed;
+    [SerializeField] private float SightRange;
+    [SerializeField] private float DetectionRange;
 
-    private Collider[] hitCollider;
-    private RaycastHit Hit;
+    [SerializeField] private int Damage;
+    [SerializeField] private Transform Enemycontainer;
+    [SerializeField] private Animator animator;
 
-    public float SightRange;
-    public float DetectionRange;
+    [SerializeField] public float SpeedA ; // velocita di allontanamento
+    [SerializeField] private float Speed; // velocita di allontanamento
+    [SerializeField] private Transform player; // transform del player
+    [SerializeField] private float velocitaSguardo; // quanto veloce si girano
+    public Rigidbody enemyRB;
+    [SerializeField] private GameObject[] drop;
 
-    public Rigidbody Rb;
-    public GameObject Target;
-    public GameObject[] drop;
+    [SerializeField] private float attackRange = 5f;
+    public GameObject bossDrop;
 
-    private bool seePlayer;
-
-    public int Damage;
-    public float KOTime;
-
-    public bool CanAttack = true;
-    public bool Notte;
-
-    public Transform Enemycontainer;
-
-    //vita enemy
-
-    public float Speed; // velocita di allontanamento
-    public float distance;// distanza da cui iniziano ad allontanarsi
-    private Transform player; // transform del player
-    
-    public float velocitaSguardo; // quanto veloce si girano
     void Start()
     {
-        distance = 10;
-        Speed = 2.5f;
+        enemyRB = GetComponent<Rigidbody>();
+           Speed =2.5f;
+        SpeedA = 3f;
         velocitaSguardo = 7.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        speed = MaxSpeed;
-        Notte = false;
+        animator.SetFloat("Speed_f", 1);
+        animator.SetInteger("WeaponType_int", 0);
     }
-
 
     void Update()
     {
-        if (TimerController.Instance.IsNight)
+        // Calcola la distanza tra il nemico e il giocatore
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        // Controlla se il giocatore è nel range di attacco
+        if (distanceToPlayer <= attackRange)
         {
-            // VANNO VIA DAL PLAYER
-            Vector3 direction = transform.position - player.position; // direzione di dove devono scappare (in contrario di dove arriva il player)
-            float currentDistance = direction.magnitude; //calcola quanto � distante dal player
-            Vector3 targetPosition = transform.position + direction.normalized;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
-            
+            transform.LookAt(player); // i nemici guardano il player
+            animator.SetInteger("WeaponType_int", 12);
+            animator.SetFloat("Speed_f", 0f);
         }
         else
-        {//VANNO VERSO IL PLAYER
-            transform.LookAt(player); // i nemici guardano il player
-            transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.collider.tag == "Player")
         {
-            collision.collider.gameObject.GetComponent<Status>().TakeDamage(Damage);
-            StartCoroutine(AttackDelay(KOTime));
+            animator.SetInteger("WeaponType_int", 0);
+            animator.SetFloat("Speed_f", 1);
+
+            if (TimerController.Instance.IsNight)
+            {
+                // VANNO VIA DAL PLAYER
+                Vector3 direction = enemyRB.transform.position - player.transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                direction.Normalize();
+                Vector3 movement = direction * SpeedA;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+            }
+            else
+            {
+                Vector3 direction = player.position - transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                direction.Normalize();
+                Vector3 movement = direction * SpeedA ;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+
+            }
         }
     }
 
-    IEnumerator AttackDelay(float Delay)
+    private void OnAnimationComplete()
     {
-        speed = 0.2f;
-        CanAttack = false;
-        yield return new WaitForSeconds(Delay);
-        speed = MaxSpeed;
-        CanAttack = true;
+        AttackPlayer();
+    }
+
+    private void AttackPlayer()
+    {
+        // Applica danni al giocatore
+        Status.Instance.TakeDamage(Damage);
     }
 
     public void SpawnExp()
     {
-        int rand = Random.Range(0, drop.Length);
-        Instantiate(drop[rand], transform.position, Quaternion.identity);
-
+        if (TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
+        {
+            Instantiate(drop[0], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
+        }
+        else if (!TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
+        {
+            int rand = Random.Range(0, drop.Length);
+            Instantiate(drop[rand], transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
+        }
+        else if (CompareTag("EnemyBoss"))
+        {
+            Instantiate(bossDrop, transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
+        }
     }
 
     public void setNotteTrue()
     {
-        Notte = true;
+        TimerController.Instance.IsNight = true;
     }
+
     public void setNotteFalse()
     {
-        Notte = false;
+        TimerController.Instance.IsNight = false;
     }
 }
+
