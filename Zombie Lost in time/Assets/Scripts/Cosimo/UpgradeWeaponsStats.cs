@@ -24,23 +24,16 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
 
     public void UpgradeFireRate()
     {
-        Debug.Log("fuori if");
         if (cont < maxFireRateUpgrade)
         {
-            Debug.Log("dentro if");
             if (UpgradeMenu.Instance.pointsOwned > 0)
             {
-                Debug.Log("scala punti if");
-
                 GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingBehaviour>().bulletsPerSecond += fireRateUpgrade;
                 UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
                 cont++;
-                Debug.Log(UpgradeMenu.Instance.pointsOwned);
             }
             if (cont == maxFireRateUpgrade)
             {
-                Debug.Log("cont == if");
-
                 fireRateButton.interactable = false;
             }
         }

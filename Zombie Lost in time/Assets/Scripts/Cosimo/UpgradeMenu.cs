@@ -9,7 +9,7 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
     public GameObject UpgradeWeaponsStatsMenu;
     public TMP_Text pointOwnedText;
 
-    [HideInInspector]public int pointToLvlUp = 1;
+    [HideInInspector] public int pointToLvlUp = 1;
     public int pointsOwned;
 
     [Header("First Selected Options")]

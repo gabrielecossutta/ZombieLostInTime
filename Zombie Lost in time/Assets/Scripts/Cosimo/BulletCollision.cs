@@ -19,7 +19,7 @@ public class BulletCollision : Singleton<BulletCollision>
             other.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
             Instantiate(hitFx, collisionPoint, Quaternion.identity);
         }
-        else if (other.gameObject.CompareTag("Obstacles"))
+        else if (other.gameObject.CompareTag("Obstacles") || other.gameObject.CompareTag("Portal"))
         {
             gameObject.SetActive(false);
         }

@@ -18,6 +18,9 @@ TagManager:
   - ShotgunDB
   - Minigun
   - Obstacles
+  - EnemyBoss
+  - Portal
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -27,7 +30,7 @@ TagManager:
   - UI
   - Terrain
   - Obstacles
-  - 
+  - MiniMap
   - 
   - 
   - 

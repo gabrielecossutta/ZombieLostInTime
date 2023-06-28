@@ -4,75 +4,172 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
     [SerializeField] private float spawnRate = 1f;
-
+    [SerializeField] private float bossSpawnRate = 10f;
     [SerializeField] private GameObject[] enemyPrefabs;
-
-    [SerializeField] private bool canSpawn = true;
-
-    //[SerializeField] private float nightTimer = 10f;
+    [SerializeField] private List<GameObject> bossPrefab;
+    [SerializeField] public bool canSpawn = true;
+    [SerializeField] private bool bossCanSpawn = true;
     public Transform EnemyContainer;
-
-    private Coroutine currentCoroutine;
-
     public bool isNight;
+    public int howManyBoss;
+    public int bossNumber;
+    private Coroutine spawningCoroutine;
+    private Coroutine bossSpawningCoroutine;
+    public int EraStart;
+    public int EraEnd;
+    
+
 
     private void Start()
     {
-        //StartCoroutine(StopSpawning(nightTimer));
-        StartCoroutine(Spawning());
+        howManyBoss = 0;
+        bossNumber = 2;
+        EraStart = 0;
+        EraEnd = 2;
+        StartSpawning();
+        
+    }
+
+    private void OnEnable()
+    {
+        StartSpawning();
+        StartBossSpawning();
+    }
+
+    private void OnDisable()
+    {
+        StopSpawning();
+        StopBossSpawning();
+    }
+
+    public void StartSpawning()
+    {
+        if (spawningCoroutine == null)
+        {
+            spawningCoroutine = StartCoroutine(Spawning());
+        }
+    }
+
+    public void StartBossSpawning()
+    {
+        if (bossSpawningCoroutine == null)
+        {
+            bossSpawningCoroutine = StartCoroutine(BossSpawning());
+        }
+    }
+
+    public void StopSpawning()
+    {
+        if (spawningCoroutine != null)
+        {
+            StopCoroutine(spawningCoroutine);
+            spawningCoroutine = null;
+        }
+    }
+
+    public void StopBossSpawning()
+    {
+        if (bossSpawningCoroutine != null)
+        {
+            StopCoroutine(bossSpawningCoroutine);
+            bossSpawningCoroutine = null;
+        }
+    }
+
+    public void SetCanSpawn(bool spawn)
+    {
+        canSpawn = spawn;
+
+        if (canSpawn && spawningCoroutine == null)
+        {
+            StartSpawning();
+        }
+    }
+
+    public void SetBossCanSpawn(bool spawn)
+    {
+        bossCanSpawn = spawn;
+
+        if (bossCanSpawn && bossSpawningCoroutine == null)
+        {
+            StartBossSpawning();
+        }
     }
 
     public void Update()
     {
-        if (transform.position.z >= -160)
+        if (!canSpawn && spawningCoroutine != null)
         {
-            transform.position = new Vector3(transform.position.x, 0, -160);
+            StopSpawning();
+            spawningCoroutine = null;
         }
-        else if (transform.position.z <= -390)
+        else if (canSpawn && spawningCoroutine == null)
         {
-            transform.position = new Vector3(transform.position.x, 0, -390);
+            StartSpawning();
         }
-        else if (transform.position.x <= -110)
+
+        if (!bossCanSpawn && bossSpawningCoroutine != null)
         {
-            transform.position = new Vector3(-117, 0, transform.position.z);
+            StopBossSpawning();
+            bossSpawningCoroutine = null;
         }
-        else if (transform.position.x >= 117)
+        else if (bossCanSpawn && bossSpawningCoroutine == null)
         {
-            transform.position = new Vector3(110, 0, transform.position.z);
+            StartBossSpawning();
+        }
+
+        if (howManyBoss == bossNumber)
+        {
+            SetBossCanSpawn(false);
         }
     }
+
     private IEnumerator Spawning()
     {
-        WaitForSeconds wait = new WaitForSeconds(spawnRate);
+        WaitForSeconds wait = new WaitForSeconds(spawnRate );
 
-        while (canSpawn)
+        while (true)
         {
-            yield return wait;
-            int rand = Random.Range(0, enemyPrefabs.Length);
-            GameObject enemyToSpawn = enemyPrefabs[rand];
-            Instantiate(enemyToSpawn, transform.position, Quaternion.identity, EnemyContainer);
+            if (canSpawn)
+            {
+                int rand = Random.Range(EraStart, EraEnd);
+                GameObject enemyToSpawn = enemyPrefabs[rand];
+                Instantiate(enemyToSpawn, transform.position, Quaternion.identity, EnemyContainer);
+                yield return wait;
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
         }
-
-
     }
-   //public IEnumerator StopSpawning(float nightTime)
-   // {
-   //     yield return new WaitForSeconds(nightTimer);
-   //     Debug.Log("Stopping spawning" );
 
-        
+    private IEnumerator BossSpawning()
+    {
+        WaitForSeconds waitBoss = new WaitForSeconds(bossSpawnRate);
 
-   //     // Trova tutti gli oggetti istanziati nel gioco
-   //     GameObject[] instantiatedObjects = GameObject.FindGameObjectsWithTag("Enemy");
+        while (true)
+        {
+            if (bossCanSpawn)
+            {
+                yield return waitBoss;
+                //int rand = Random.Range(EraStart, EraEnd);
+                Instantiate(bossPrefab[howManyBoss], transform.position, Quaternion.identity, EnemyContainer);
+                bossPrefab.RemoveAt(howManyBoss);
+                Debug.Log(bossPrefab.Count);
+                //howManyBoss++;
+            }
+            else
+            {
+                yield return new WaitForSeconds(0.1f);
+            }
+        }
+    }
 
-   //     // Loop attraverso tutti gli oggetti e cambia la variabile
-   //     foreach (GameObject obj in instantiatedObjects)
-   //     {
-   //         obj.GetComponent<Enemy>().Notte = true;
-   //     }
-
-   //     StopCoroutine(currentCoroutine);
-   // }
+    public void SetSpawnRate(int value)
+    {
+        spawnRate = value;
+    }
 }
+
