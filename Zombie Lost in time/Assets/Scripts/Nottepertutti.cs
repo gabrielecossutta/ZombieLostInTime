@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Nottepertutti : MonoBehaviour
+public class Nottepertutti : Singleton<Nottepertutti>
 {
     public GameObject enemyContainer;
     public List<Enemy> allchildren = new List<Enemy>();
     public List<Spawner> allSpawner = new List<Spawner>();
         public GameObject[] players; // Lista dei nemici
     private Transform player;
+    public GameObject[] boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,26 @@ public class Nottepertutti : MonoBehaviour
     void Update()
     {// cancella i cubi se troppo lontani dal player per non averne troppi
     players = GameObject.FindGameObjectsWithTag("Enemy");
+    boss = GameObject.FindGameObjectsWithTag("EnemyBoss");
         foreach (GameObject enemy in players)
         {
             Vector3 direction = enemy.transform.position - player.position;
             float currentDistance = direction.magnitude;
-            if (currentDistance>50)
+            if (currentDistance>70)
             {
                 Destroy(enemy);
+            }
+            if (enemy.transform.position.y > 1)
+            {
+                Destroy(enemy);
+            }
+
+        }
+        foreach (GameObject boss in boss)
+        {
+            if (boss.transform.position.y > 1)
+            {
+                Destroy(boss);
             }
         }
     }
@@ -63,5 +77,18 @@ public class Nottepertutti : MonoBehaviour
             spawner.gameObject.SetActive(true); // riattivo gli spawner
         }
         allchildren.Clear();
+    }
+
+    public void ClearAll()
+    {
+        foreach (GameObject enemy in players)
+        {
+            Destroy(enemy);
+        }
+        foreach (GameObject boss in boss)
+        {
+            Destroy(boss);
+        }
+
     }
 }

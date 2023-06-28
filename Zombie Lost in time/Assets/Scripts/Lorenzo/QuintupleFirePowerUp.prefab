@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7388632709251452386}
   - component: {fileID: 724736576157778553}
   - component: {fileID: 2557056838233893895}
+  - component: {fileID: 469538623474365329}
   - component: {fileID: 7037214760469691925}
-  - component: {fileID: 7611723085001597073}
   m_Layer: 0
   m_Name: QuintupleFirePowerUp
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &724736576157778553
 MeshFilter:
@@ -85,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &469538623474365329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4864139004938680159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbbb5a6682d6c74d95db8e31e8335fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerShoot: {fileID: 0}
 --- !u!65 &7037214760469691925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -106,16 +119,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7611723085001597073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4864139004938680159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6133cee7b39bcf346b8e90e31c5f659b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerUpType: 3
