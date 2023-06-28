@@ -11,7 +11,8 @@ public class Movement : MonoBehaviour
     private Animator animator;
     private ShootingBehaviour currentWeapon;
     private string currentWeaponName;
-
+    [SerializeField] private float turnSmoothTime = 0.1f;
+    float turnSmoothVelocity;
     private void Start()
     {
         animator = GetComponent<Status>().animator;
@@ -28,9 +29,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        KeyboardInuput();
-
-        ControllerInput();
+        MovementInput();
     }
 
     void SetAnimatorParameter()
@@ -98,25 +97,28 @@ public class Movement : MonoBehaviour
         float x = UserInput.instance.MoveInput.x;
         float z = UserInput.instance.MoveInput.y;
 
-        if (Mathf.Abs(x) > 0.1f || Mathf.Abs(z) > 0.1f)
+        //float x = Input.GetAxisRaw("Horizontal");
+        //float z = Input.GetAxisRaw("Vertical");
+        Vector3 direction = new Vector3(x, 0, z).normalized;
+
+        if (direction.magnitude >= 0.1f)
         {
-            direction = new Vector3(x, 0, z);
-            if (direction.magnitude > 1f)
-            {
-                direction.Normalize();
-            }
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            //Quaternion toRotate = Quaternion.LookRotation(direction);
+            //transform.rotation = toRotate;
 
-            Quaternion toRotate = Quaternion.LookRotation(direction);
-            transform.rotation = toRotate;
-
-            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue)/* * Time.deltaTime*/;
             animator.SetFloat("Speed_f", 1);
+
             SetAnimatorParameter();
         }
         else
         {
             Rb.velocity = Vector3.zero;
             animator.SetFloat("Speed_f", 0);
+
             SetAnimatorParameter();
         }
     }
@@ -138,6 +140,26 @@ public class Movement : MonoBehaviour
             transform.rotation = toRotate;
 
             Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
+            animator.SetFloat("Speed_f", 1,10, Time.deltaTime);
+            SetAnimatorParameter();
+        }
+        else
+        {
+            Rb.velocity = Vector3.zero;
+            animator.SetFloat("Speed_f", 0, 10, Time.deltaTime);
+            SetAnimatorParameter();
+        }
+    }
+
+    void MovementInput()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            direction = new Vector3(x, 0, z).normalized; //vettore direzione a cui vogliamo andare
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
             animator.SetFloat("Speed_f", 1);
             SetAnimatorParameter();
         }
@@ -146,6 +168,33 @@ public class Movement : MonoBehaviour
             Rb.velocity = Vector3.zero;
             animator.SetFloat("Speed_f", 0);
             SetAnimatorParameter();
+        }
+
+        if (Mathf.Abs(Input.GetAxis("HorizontalGamepad")) > 0.1f || Mathf.Abs(Input.GetAxis("VerticalGamepad")) > 0.1f)
+        {
+            x = Input.GetAxis("HorizontalGamepad");
+            z = Input.GetAxis("VerticalGamepad");
+
+            direction = new Vector3(x, 0, z).normalized;
+            Quaternion toRotate = Quaternion.LookRotation(direction);
+            transform.rotation = toRotate;
+
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
+            animator.SetFloat("Speed_f", 1);
+            SetAnimatorParameter();
+
+            if (direction == Vector3.zero)
+            {
+                Rb.velocity = Vector3.zero;
+                animator.SetFloat("Speed_f", 0);
+                SetAnimatorParameter();
+            }
+        }
+
+        if (direction != Vector3.zero)
+        {
+            Quaternion ToRotate = Quaternion.LookRotation(direction);
+            transform.rotation = ToRotate; //rotazione del player in base a dove stiamo andando
         }
     }
 
