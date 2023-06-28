@@ -28,9 +28,7 @@ public class Movement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        KeyboardInuput();
-
-        ControllerInput();
+        MovementInput();
     }
 
     void SetAnimatorParameter()
@@ -93,6 +91,53 @@ public class Movement : MonoBehaviour
             }
     }
 
+    void MovementInput()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+        {
+            direction = new Vector3(x, 0, z).normalized; //vettore direzione a cui vogliamo andare
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
+            animator.SetFloat("Speed_f", 1);
+            SetAnimatorParameter();
+        }
+        else
+        {
+            Rb.velocity = Vector3.zero;
+            animator.SetFloat("Speed_f", 0);
+            SetAnimatorParameter();
+        }
+
+        if (Mathf.Abs(Input.GetAxis("HorizontalGamepad")) > 0.1f || Mathf.Abs(Input.GetAxis("VerticalGamepad")) > 0.1f)
+        {
+            x = Input.GetAxis("HorizontalGamepad");
+            z = Input.GetAxis("VerticalGamepad");
+
+            direction = new Vector3(x, 0, z).normalized;
+            Quaternion toRotate = Quaternion.LookRotation(direction);
+            transform.rotation = toRotate;
+
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
+            animator.SetFloat("Speed_f", 1);
+            SetAnimatorParameter();
+
+            if (direction == Vector3.zero)
+            {
+                Rb.velocity = Vector3.zero;
+                animator.SetFloat("Speed_f", 0);
+                SetAnimatorParameter();
+            }
+        }
+
+        if (direction != Vector3.zero)
+        {
+            Quaternion ToRotate = Quaternion.LookRotation(direction);
+            transform.rotation = ToRotate; //rotazione del player in base a dove stiamo andando
+        }
+    }
+
     void ControllerInput()
     {
         float x = Input.GetAxis("Horizontal");
@@ -153,7 +198,6 @@ public class Movement : MonoBehaviour
     }
 
     void SetAnimatorWeaponParameter()
-
     {
         if (currentWeapon.GetCurrentWeaponName() == "Revolver")
         {

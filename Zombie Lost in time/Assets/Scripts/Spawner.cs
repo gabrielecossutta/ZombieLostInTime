@@ -12,16 +12,23 @@ public class Spawner : MonoBehaviour
     [SerializeField] private bool bossCanSpawn = true;
     public Transform EnemyContainer;
     public bool isNight;
-    private int howManyBoss;
+    public int howManyBoss;
     public int bossNumber;
     private Coroutine spawningCoroutine;
     private Coroutine bossSpawningCoroutine;
+    public int EraStart;
+    public int EraEnd;
+    
+
 
     private void Start()
     {
         howManyBoss = 0;
         bossNumber = 2;
+        EraStart = 0;
+        EraEnd = 2;
         StartSpawning();
+        
     }
 
     private void OnEnable()
@@ -120,13 +127,13 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Spawning()
     {
-        WaitForSeconds wait = new WaitForSeconds(spawnRate);
+        WaitForSeconds wait = new WaitForSeconds(spawnRate );
 
         while (true)
         {
             if (canSpawn)
             {
-                int rand = Random.Range(0, enemyPrefabs.Length);
+                int rand = Random.Range(EraStart, EraEnd);
                 GameObject enemyToSpawn = enemyPrefabs[rand];
                 Instantiate(enemyToSpawn, transform.position, Quaternion.identity, EnemyContainer);
                 yield return wait;
@@ -147,17 +154,22 @@ public class Spawner : MonoBehaviour
             if (bossCanSpawn)
             {
                 yield return waitBoss;
-                int rand = Random.Range(0, bossPrefab.Count);
-                Instantiate(bossPrefab[rand], transform.position, Quaternion.identity, EnemyContainer);
-                bossPrefab.RemoveAt(rand);
+                //int rand = Random.Range(EraStart, EraEnd);
+                Instantiate(bossPrefab[howManyBoss], transform.position, Quaternion.identity, EnemyContainer);
+                bossPrefab.RemoveAt(howManyBoss);
                 Debug.Log(bossPrefab.Count);
-                howManyBoss++;
+                //howManyBoss++;
             }
             else
             {
                 yield return new WaitForSeconds(0.1f);
             }
         }
+    }
+
+    public void SetSpawnRate(int value)
+    {
+        spawnRate = value;
     }
 }
 

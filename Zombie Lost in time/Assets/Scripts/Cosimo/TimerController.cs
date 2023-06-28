@@ -61,15 +61,8 @@ public class TimerController : Singleton<TimerController>
 
         survivedTime = Time.time;
         // Aggiorna il testo del timer
-
         survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + "s";
         }
-    }
-
-    public void PlayerDeath()
-    {
-        Time.timeScale = 0f; // Ferma il tempo di gioco
-        DeathPanel.SetActive(true);
     }
 }
 

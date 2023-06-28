@@ -13,4 +13,5 @@ public enum PowerUpType
 public class PowerUpEnums : MonoBehaviour
 {
     public PowerUpType powerUpType;
+    public PowerUpData powerUpData;
 }

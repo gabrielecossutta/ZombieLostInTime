@@ -1058,6 +1058,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 473
@@ -1301,6 +1305,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -2145,6 +2153,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -5730,6 +5742,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 497
@@ -6115,6 +6131,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -7413,6 +7433,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 467
@@ -8684,6 +8708,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 489
@@ -9508,6 +9536,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -11986,6 +12018,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -15015,6 +15051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 465
@@ -16099,6 +16139,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -17782,6 +17826,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 513
@@ -18363,6 +18411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 482
@@ -18423,6 +18475,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -19903,6 +19959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 478
@@ -21114,6 +21174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 486
@@ -21756,6 +21820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 506
@@ -21893,6 +21961,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -22108,6 +22180,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -22905,6 +22981,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 504
@@ -23363,6 +23443,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -24388,6 +24472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 508
@@ -25183,6 +25271,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -25993,6 +26085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 509
@@ -26772,6 +26868,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -27568,6 +27668,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -28483,6 +28587,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -32837,6 +32945,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 469
@@ -34349,6 +34461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 475
@@ -34531,6 +34647,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -34990,6 +35110,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -36152,6 +36276,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -38721,6 +38849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 480
@@ -40387,6 +40519,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 435
@@ -42024,6 +42160,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 500
@@ -43077,6 +43217,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 494
@@ -43198,6 +43342,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -44727,6 +44875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 510
@@ -45307,6 +45459,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -48197,6 +48353,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 492
@@ -50130,6 +50290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 433
@@ -51150,6 +51314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 495
@@ -51271,6 +51439,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -53223,6 +53395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 472
@@ -53884,6 +54060,10 @@ PrefabInstance:
     - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_02 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
@@ -56334,6 +56514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 483
@@ -56394,6 +56578,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -58427,6 +58615,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_01 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
       value: 491
@@ -58487,6 +58679,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder
@@ -60536,6 +60732,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02 (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 476
@@ -61791,6 +61991,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Env_Stone_02
       objectReference: {fileID: 0}
+    - target: {fileID: 163730, guid: bc7587a1903408140949231ab23591ab, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
+      objectReference: {fileID: 0}
     - target: {fileID: 439656, guid: bc7587a1903408140949231ab23591ab, type: 3}
       propertyPath: m_RootOrder
       value: 484
@@ -62294,6 +62498,10 @@ PrefabInstance:
     - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_Name
       value: SM_Env_Stone_01 (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 194012, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
+      propertyPath: m_TagString
+      value: Obstacles
       objectReference: {fileID: 0}
     - target: {fileID: 447178, guid: 4736c3a5accc3c84da7267874a958ccc, type: 3}
       propertyPath: m_RootOrder

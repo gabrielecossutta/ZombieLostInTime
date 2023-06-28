@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,18 +26,23 @@ public class PowerUp : MonoBehaviour
     {
         if (collider.CompareTag("PowerUp"))
         {
-            PowerUpType powerUp = collider.gameObject.GetComponent<PowerUpEnums>().powerUpType;
+            PowerUpData pwrUpDatas = collider.gameObject.GetComponent<PowerUpEnums>().powerUpData;
+            PowerUpType powerUp = pwrUpDatas.powerUpType;
             if (!powerUpType.ContainsKey(powerUp) && powerUpList.Contains(powerUp))
             {
                 powerUpType.Add(powerUp, 0);
+                //PowerUpData pUpData = Instantiate(pwrUpDatas);
+                ToolManager.Instance.AddInvP(pwrUpDatas);
                 Debug.Log("Preso power up");
             }
-            if (powerUpType.ContainsKey(powerUp))
+            else if (powerUpType.ContainsKey(powerUp))
             {
                 if (powerUpType[powerUp] < MaxLevel)
                 {
                     powerUpType[powerUp]++;
                     UpgradePowerUp(powerUp, powerUpType[powerUp]);
+                    //PowerUpData pUpData = Instantiate(pwrUpDatas);
+                    ToolManager.Instance.AddInvP(pwrUpDatas);
                     Debug.Log(powerUp + "Livello:" + powerUpType[powerUp]);
                 }
                 else if (powerUpType[powerUp] == MaxLevel)

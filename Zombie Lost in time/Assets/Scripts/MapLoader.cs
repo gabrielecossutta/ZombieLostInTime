@@ -13,7 +13,7 @@ public class MapLoader : Singleton<MapLoader>
     public List<Spawner> spawnerList;
     public Vector3 startPlayerPos;
     public bool destroyEnemy;
-   
+    public int Era;
     // Start is called before the first frame update
     private void Start()
     {
@@ -33,8 +33,10 @@ public class MapLoader : Singleton<MapLoader>
         {
 
             ResetPlayerPos();
+            EraSelector(Era);
             RestartSpawn();
             Nottepertutti.Instance.ClearAll();
+            isChanging = false;
         }
 
 
@@ -46,7 +48,8 @@ public class MapLoader : Singleton<MapLoader>
         if (TimerController.Instance.changingEra)
         {
             isChanging = true;
-
+            Era++;
+            Debug.Log(Era);
             for (int i = 0; i < spawnerList.Count; i++)
             {
                 spawnerList[i].GetComponent<Spawner>().SetCanSpawn(false);
@@ -55,10 +58,10 @@ public class MapLoader : Singleton<MapLoader>
 
 
 
-            Vector3 offset = new Vector3(4, 1, 4);
+            Vector3 offset = new Vector3(4, 0.05f, 4);
             portal.transform.position = Player.transform.position + offset;
             portal.SetActive(true);
-            Debug.Log("Changin era");
+            //Debug.Log("Changin era");
         }
     }
 
@@ -67,7 +70,7 @@ public class MapLoader : Singleton<MapLoader>
         for (int i = 0; i < spawnerList.Count; i++)
         {
             spawnerList[i].GetComponent<Spawner>().SetCanSpawn(true);
-            Debug.Log(spawnerList[i] + "Settato  a  true");
+            
         }
         spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(true);
 
@@ -85,10 +88,50 @@ public class MapLoader : Singleton<MapLoader>
 
     }
 
+    public void ChangeScene2()
+    {
+        SceneManager.LoadSceneAsync("Map_03", LoadSceneMode.Additive).completed += OnSceneLoadComplete2;
+
+    }
+
+    private void OnSceneLoadComplete2(AsyncOperation asyncOp)
+    {
+        SceneManager.UnloadSceneAsync("Map_02");
+
+    }
+
+
     public void ResetPlayerPos()
     {
         Player.transform.position = startPlayerPos;
         destroyEnemy = true;
     }
 
+
+    public void EraSelector(int Era)
+    {
+        switch (Era)
+        {
+
+            case 1:
+                for (int i = 0; i < spawnerList.Count; i++)
+                {
+                    spawnerList[i].GetComponent<Spawner>().EraStart = 2;
+                    spawnerList[i].GetComponent<Spawner>().EraEnd = 4;
+                    spawnerList[i].GetComponent<Spawner>().SetSpawnRate(4);
+                }
+                
+                Debug.Log("Era 2");
+                break;
+            case 2:
+                for (int i = 0; i < spawnerList.Count; i++)
+                {
+                    spawnerList[i].GetComponent<Spawner>().EraStart = 4;
+                    spawnerList[i].GetComponent<Spawner>().EraEnd = 6;
+                    spawnerList[i].GetComponent<Spawner>().SetSpawnRate(3);
+                }
+                Debug.Log("Era 3");
+                break;
+        }
+    }
 }

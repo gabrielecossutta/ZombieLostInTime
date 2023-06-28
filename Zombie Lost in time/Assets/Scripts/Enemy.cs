@@ -80,7 +80,7 @@ public class Enemy : MonoBehaviour
     {
         if (TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
         {
-            Instantiate(drop[6], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
+            Instantiate(drop[0], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
         }
         else if (!TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
         {

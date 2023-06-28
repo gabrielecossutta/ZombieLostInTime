@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -10,17 +8,13 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
     public GameObject UpgradePlayerStatsMenu;
     public GameObject UpgradeWeaponsStatsMenu;
     public TMP_Text pointOwnedText;
-    public EventSystem _eventSystem;
-    public GameObject newFirstSelectedGameObject;
-    private GameObject _firstSelectedGameObject;
 
-    [HideInInspector]public int pointToLvlUp = 1;
+    [HideInInspector] public int pointToLvlUp = 1;
     public int pointsOwned;
 
-    private void Start()
-    {
-        _firstSelectedGameObject = EventSystem.current.firstSelectedGameObject;
-    }
+    [Header("First Selected Options")]
+    [SerializeField] private GameObject _playerMenuFirst;
+    [SerializeField] private GameObject _weaponMenuFirst;
 
     // Update is called once per frame
     void Update()
@@ -31,11 +25,14 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
     public void OpenUpgradeMenu(int pointsOwned)
     {
         Pause();
+        UpgradeMenuPanel.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(_playerMenuFirst);
         this.pointsOwned += pointsOwned;
     }
 
     public void Resume()
     {
+        EventSystem.current.SetSelectedGameObject(null);
         UpgradeMenuPanel.SetActive(false);
         UpgradePlayerStatsMenu.SetActive(false);
         UpgradeWeaponsStatsMenu.SetActive(false);
@@ -44,7 +41,6 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
 
     void Pause()
     {
-        UpgradeMenuPanel.SetActive(true);
         Time.timeScale = 0f;
     }
 
@@ -58,10 +54,5 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
     {
         UpgradePlayerStatsMenu.SetActive(false);
         UpgradeWeaponsStatsMenu.SetActive(true);
-    }
-
-    public void SetFirstSelectedGameObj()
-    {
-        _eventSystem.currentSelectedGameObject = _firstSelectedGameObject;
     }
 }

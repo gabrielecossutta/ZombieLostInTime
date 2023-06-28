@@ -27,6 +27,7 @@ public class Status : Singleton<Status>
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
     public GameObject loadingPanel;
+    public int c;
 
     void Start()
     {
@@ -37,6 +38,7 @@ public class Status : Singleton<Status>
         expBar.SetExp(currentExp);
         currentHealth = maxHealth;
         currentHeathText.text = currentHealth.ToString();
+        c = 0;
     }
 
     void Update()
@@ -45,7 +47,6 @@ public class Status : Singleton<Status>
         {
             gameObject.SetActive(false);
             HUD.SetActive(false);
-            TimerController.Instance.PlayerDeath();
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -87,7 +88,7 @@ public class Status : Singleton<Status>
             
 
             StartCoroutine(ActivateLoadingPanelAfterDelay(2f));
-
+            c++;
         }
     }
 
@@ -106,7 +107,6 @@ public class Status : Singleton<Status>
     public void LevelUp()                               //Funzione per il nuovo livello raggiunto
     {
         UpgradeMenu.Instance.OpenUpgradeMenu(1);
-        UpgradeMenu.Instance._eventSystem.currentSelectedGameObject = UpgradeMenu.Instance.newFirstSelectedGameObject;
         currentLevel++;
         int excessExp = currentExp - expToLvlUp;
         currentExp = excessExp;
@@ -135,8 +135,19 @@ public class Status : Singleton<Status>
 
     private IEnumerator ActivateLoadingPanelAfterDelay(float delay)
     {
+        
         loadingPanel.SetActive(true); // Disattiva il loadingPanel
-        MapLoader.Instance.ChangeScene();
+        if (c == 0)
+        {
+            MapLoader.Instance.ChangeScene();
+            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
+            
+        }
+        if (c == 1)
+        {
+            MapLoader.Instance.ChangeScene2();
+            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
+        }
 
 
         yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
