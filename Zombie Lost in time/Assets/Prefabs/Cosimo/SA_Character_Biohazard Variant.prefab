@@ -1,5 +1,71 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2154002854364164692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2902525259710146324}
+    m_Modifications:
+    - target: {fileID: 470909001054154802, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_Name
+      value: MinMapEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+--- !u!4 &4040736609538353498 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+  m_PrefabInstance: {fileID: 2154002854364164692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2902525259709702276
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -375,6 +441,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 477072, guid: 970bf01606e0c194281edb901a23dd06, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4040736609538353498}
     - targetCorrespondingSourceObject: {fileID: 407552, guid: 970bf01606e0c194281edb901a23dd06, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6582873858167449880}
@@ -419,9 +488,11 @@ MonoBehaviour:
   Damage: 2
   Enemycontainer: {fileID: 0}
   animator: {fileID: 2902525259700334962}
+  SpeedA: 10
   Speed: 0
   player: {fileID: 0}
   velocitaSguardo: 0
+  enemyRB: {fileID: 0}
   drop:
   - {fileID: 601830525838980291, guid: a2ea614c65433714481858d1d767d52f, type: 3}
   - {fileID: 6728101040444387211, guid: b3b13d488e357494ca946ee528aa7595, type: 3}
@@ -485,8 +556,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2902525259709794466}
   serializedVersion: 4
-  m_Mass: 1000
-  m_Drag: 0
+  m_Mass: 5
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -499,14 +570,19 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
+  m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!4 &2902525259710093444 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 407552, guid: 970bf01606e0c194281edb901a23dd06, type: 3}
+  m_PrefabInstance: {fileID: 2902525259709702276}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2902525259710146324 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 477072, guid: 970bf01606e0c194281edb901a23dd06, type: 3}
   m_PrefabInstance: {fileID: 2902525259709702276}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6582873858167088438

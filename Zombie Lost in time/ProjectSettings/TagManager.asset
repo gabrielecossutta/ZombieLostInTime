@@ -20,6 +20,7 @@ TagManager:
   - Obstacles
   - EnemyBoss
   - Portal
+  - PowerUp
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - UI
   - Terrain
   - Obstacles
-  - 
+  - MiniMap
   - 
   - 
   - 
