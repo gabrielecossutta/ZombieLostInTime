@@ -34,10 +34,16 @@ public class Bullet : MonoBehaviour
        }
        else if (collision.collider.tag == "EnemyBig")
        {
-            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
+            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBig);
 
             Destroy(gameObject);
        }
+        else if (collision.collider.tag == "EnemyBoss")
+        {
+            collision.collider.gameObject.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
+
+            Destroy(gameObject);
+        }
     }
 
     

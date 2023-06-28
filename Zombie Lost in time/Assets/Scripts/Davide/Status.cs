@@ -22,9 +22,12 @@ public class Status : Singleton<Status>
     [SerializeField] private TMP_Text currentHeathText;
     public float damageBase;
     public float damageBoss;
+    public float damageBig;
     public float fireRate;
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
+    public GameObject loadingPanel;
+    public int c;
 
     void Start()
     {
@@ -35,6 +38,7 @@ public class Status : Singleton<Status>
         expBar.SetExp(currentExp);
         currentHealth = maxHealth;
         currentHeathText.text = currentHealth.ToString();
+        c = 0;
     }
 
     void Update()
@@ -73,6 +77,18 @@ public class Status : Singleton<Status>
         {
             ExpGained(baseExpGain);
             Destroy(other.gameObject);
+        }
+        else if (other.CompareTag("Portal"))
+        {
+
+
+            TimerController.Instance.changingEra = false;
+
+            MapLoader.Instance.portal.SetActive(false);
+            
+
+            StartCoroutine(ActivateLoadingPanelAfterDelay(2f));
+            c++;
         }
     }
 
@@ -115,5 +131,28 @@ public class Status : Singleton<Status>
             healthBar.SetHealth(currentHealth);
 
         }
+    }
+
+    private IEnumerator ActivateLoadingPanelAfterDelay(float delay)
+    {
+        
+        loadingPanel.SetActive(true); // Disattiva il loadingPanel
+        if (c == 0)
+        {
+            MapLoader.Instance.ChangeScene();
+            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
+            
+        }
+        if (c == 1)
+        {
+            MapLoader.Instance.ChangeScene2();
+            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
+        }
+
+
+        yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
+
+
+        loadingPanel.SetActive(false); // Attiva nuovamente il loadingPanel
     }
 }
