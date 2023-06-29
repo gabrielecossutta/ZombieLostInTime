@@ -31,7 +31,8 @@ public class PowerUp : MonoBehaviour
             if (!powerUpType.ContainsKey(powerUp) && powerUpList.Contains(powerUp))
             {
                 powerUpType.Add(powerUp, 0);
-                //PowerUpData pUpData = Instantiate(pwrUpDatas);
+                powerUpType[powerUp]++;
+                UpgradePowerUp(powerUp, powerUpType[powerUp]);
                 ToolManager.Instance.AddInvP(pwrUpDatas);
                 Debug.Log("Preso power up");
             }
@@ -41,7 +42,6 @@ public class PowerUp : MonoBehaviour
                 {
                     powerUpType[powerUp]++;
                     UpgradePowerUp(powerUp, powerUpType[powerUp]);
-                    //PowerUpData pUpData = Instantiate(pwrUpDatas);
                     ToolManager.Instance.AddInvP(pwrUpDatas);
                     Debug.Log(powerUp + "Livello:" + powerUpType[powerUp]);
                 }
