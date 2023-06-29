@@ -119,7 +119,7 @@ public class Movement : MonoBehaviour
             Quaternion toRotate = Quaternion.LookRotation(direction);
             transform.rotation = toRotate;
 
-            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue) * Time.deltaTime;
+            Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
             animator.SetFloat("Speed_f", 1);
             SetAnimatorParameter();
 

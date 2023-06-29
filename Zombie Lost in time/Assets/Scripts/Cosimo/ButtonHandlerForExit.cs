@@ -16,7 +16,6 @@ public class ButtonHandlerForExit : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1.0f;
-
     }
 
     private void Update()
