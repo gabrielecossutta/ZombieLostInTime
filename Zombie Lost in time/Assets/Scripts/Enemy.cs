@@ -17,7 +17,7 @@ public class Enemy : MonoBehaviour
     public Rigidbody enemyRB;
     [SerializeField] private GameObject[] drop;
 
-    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
 
     void Start()
@@ -34,17 +34,17 @@ public class Enemy : MonoBehaviour
     {
         // Calcola la distanza tra il nemico e il giocatore
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
             transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
+
         }
         else
         {
-            animator.SetInteger("WeaponType_int", 0);
+            //animator.SetInteger("WeaponType_int", 0);
             animator.SetFloat("Speed_f", 1);
 
             if (TimerController.Instance.IsNight)
@@ -63,7 +63,7 @@ public class Enemy : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
-                Vector3 movement = direction * SpeedA ;
+                Vector3 movement = direction * SpeedA;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
 
             }
