@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            //animator.SetInteger("WeaponType_int", 0);
+            animator.SetInteger("WeaponType_int", 0);
             animator.SetFloat("Speed_f", 1);
 
             if (TimerController.Instance.IsNight)
