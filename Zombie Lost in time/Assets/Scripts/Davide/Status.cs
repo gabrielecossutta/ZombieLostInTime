@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public class Status : Singleton<Status>
 {
@@ -19,14 +20,15 @@ public class Status : Singleton<Status>
     [SerializeField] private GameObject HUD;
     [SerializeField] private TMP_Text enemyKilledText;
     [SerializeField] private TMP_Text currentHeathText;
-    public GameObject loadingPanel;
     public float damageBase;
-    public float damageBig;
     public float damageBoss;
+    public float damageBig;
     public float fireRate;
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
-    private int c = 0;
+    public GameObject loadingPanel;
+    public int c;
+
     void Start()
     {
         //Set della barra vita ed esperienza
@@ -36,6 +38,7 @@ public class Status : Singleton<Status>
         expBar.SetExp(currentExp);
         currentHealth = maxHealth;
         currentHeathText.text = currentHealth.ToString();
+        c = 0;
     }
 
     void Update()
@@ -44,7 +47,6 @@ public class Status : Singleton<Status>
         {
             gameObject.SetActive(false);
             HUD.SetActive(false);
-            TimerController.Instance.PlayerDeath();
         }
     }
     public void OnTriggerEnter(Collider other)
@@ -84,9 +86,9 @@ public class Status : Singleton<Status>
 
             MapLoader.Instance.portal.SetActive(false);
             
-            
+
             StartCoroutine(ActivateLoadingPanelAfterDelay(2f));
-            
+            c++;
         }
     }
 
@@ -133,10 +135,23 @@ public class Status : Singleton<Status>
 
     private IEnumerator ActivateLoadingPanelAfterDelay(float delay)
     {
+        
         loadingPanel.SetActive(true); // Disattiva il loadingPanel
-        MapLoader.Instance.ChangeScene();
-        //MapLoader.Instance.ResetPlayerPos();
+        if (c == 0)
+        {
+            MapLoader.Instance.ChangeScene();
+            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
+            
+        }
+        if (c == 1)
+        {
+            MapLoader.Instance.ChangeScene2();
+            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
+        }
+
+
         yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
+
 
         loadingPanel.SetActive(false); // Attiva nuovamente il loadingPanel
     }

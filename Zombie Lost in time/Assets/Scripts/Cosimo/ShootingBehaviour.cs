@@ -122,7 +122,6 @@ public class ShootingBehaviour : MonoBehaviour
         if (shootRoutine)
         {
             ShootingRoutine();
-            
         }
 
         // Controlla le collisioni dei proiettili attivi
@@ -182,25 +181,25 @@ public class ShootingBehaviour : MonoBehaviour
 
     void SelectWeaponByInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1) && weapons.Count >= 1)
+        if ((Input.GetKeyDown(KeyCode.Alpha1) || Input.GetButton("YButton")) && weapons.Count >= 1 && currentWeaponIndex != 0)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[0]);
             currentWeaponIndex = 0;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.akOwned)
+        else if ((Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButton("BButton")) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.akOwned && currentWeaponIndex != 1)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[1]);
             currentWeaponIndex = 1;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.shotgunDBOwned)
+        else if ((Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButton("AButton")) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.shotgunDBOwned && currentWeaponIndex != 2)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[2]);
             currentWeaponIndex = 2;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned)
+        else if ((Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButton("XButton")) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned && currentWeaponIndex != 3)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[3]);
@@ -242,7 +241,7 @@ public class ShootingBehaviour : MonoBehaviour
                         }
                         else if (hit.collider.CompareTag("EnemyBig"))
                         {
-                            enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBig);
+                            enemy.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
                             Instantiate(hitFx, hit.point, Quaternion.LookRotation(hit.normal));
                         }
                         else if (hit.collider.CompareTag("EnemyBoss"))
@@ -320,6 +319,7 @@ public class ShootingBehaviour : MonoBehaviour
         bullet.SetActive(false);
         BulletPool.Enqueue(bullet);
     }
+
 }
 
 

@@ -11,18 +11,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform Enemycontainer;
     [SerializeField] private Animator animator;
 
-    [SerializeField] private float Speed; // velocita di allontanamento
+    [SerializeField] public float SpeedA ; // velocita di allontanamento
     [SerializeField] private Transform player; // transform del player
     [SerializeField] private float velocitaSguardo; // quanto veloce si girano
-
+    public Rigidbody enemyRB;
     [SerializeField] private GameObject[] drop;
 
-    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
 
     void Start()
     {
-        Speed = 2.5f;
+        enemyRB = GetComponent<Rigidbody>();
+        SpeedA = 3f;
         velocitaSguardo = 7.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
@@ -33,33 +34,38 @@ public class Enemy : MonoBehaviour
     {
         // Calcola la distanza tra il nemico e il giocatore
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
+            transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
+
         }
         else
         {
-            animator.SetInteger("WeaponType_int", 0);
+            //animator.SetInteger("WeaponType_int", 0);
             animator.SetFloat("Speed_f", 1);
 
             if (TimerController.Instance.IsNight)
             {
                 // VANNO VIA DAL PLAYER
-                Vector3 direction = transform.position - player.position; // direzione di dove devono scappare (in contrario di dove arriva il player)
-                float currentDistance = direction.magnitude; //calcola quanto � distante dal player
-                Vector3 targetPosition = transform.position + direction.normalized;
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, Speed * Time.deltaTime);
+                Vector3 direction = enemyRB.transform.position - player.transform.position;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
-
+                direction.Normalize();
+                Vector3 movement = direction * SpeedA;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
             else
-            {   //VANNO VERSO IL PLAYER
-                transform.LookAt(player); // i nemici guardano il player
-                transform.position = Vector3.MoveTowards(transform.position, player.position, Speed * Time.deltaTime); // i nemici vanno verso il player
+            {
+                Vector3 direction = player.position - transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                direction.Normalize();
+                Vector3 movement = direction * SpeedA;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+
             }
         }
     }
@@ -77,21 +83,18 @@ public class Enemy : MonoBehaviour
 
     public void SpawnExp()
     {
-        
         if (TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
         {
-            Instantiate(drop[6], transform.position, Quaternion.identity);
-            //Debug.Log("Notte");
+            Instantiate(drop[0], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
         }
         else if (!TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
         {
             int rand = Random.Range(0, drop.Length);
-            Instantiate(drop[rand], transform.position + new Vector3(0, 0, 0), Quaternion.identity);
-            //Debug.Log("Giorno");
+            Instantiate(drop[rand], transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
         }
         else if (CompareTag("EnemyBoss"))
         {
-            Instantiate(bossDrop, transform.position, Quaternion.identity);
+            Instantiate(bossDrop, transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
         }
     }
 
@@ -105,3 +108,4 @@ public class Enemy : MonoBehaviour
         TimerController.Instance.IsNight = false;
     }
 }
+

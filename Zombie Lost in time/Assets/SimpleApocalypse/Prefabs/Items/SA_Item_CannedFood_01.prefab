@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 64704257115828770}
   m_Layer: 0
   m_Name: SA_Item_CannedFood_01
-  m_TagString: Health
+  m_TagString: ExpBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -6,12 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Cosimo/TestAnimation.unity
-    guid: 75e9e9d7ee78a7b48a6507be13d680bf
+    path: Assets/Scenes/Gabriele/Menu.unity
+    guid: 1c1d3458993bccb419ed6edc33758fb7
+  - enabled: 1
+    path: Assets/Scenes/Cosimo/DefaultMap.unity
+    guid: 1240a91491cda1f4c9bf27b16e1ca8c3
   - enabled: 1
     path: Assets/Scenes/Map_01.unity
-    guid: 44afe86f9eba114419b5056ceafa73ea
+    guid: 03631b505f792294a8e987076ab625d3
   - enabled: 1
-    path: Assets/Scenes/Map_02.unity
-    guid: 9adb9cb7090ace146ad0634251485582
-  m_configObjects: {}
+    path: Assets/Scenes/Lorenzo/Map_02.unity
+    guid: a7a1910f7759b8f46a6aca843ca0dc66
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: 00c2b588ef4474f498941368cc522de2, type: 2}

@@ -4,74 +4,61 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-
     [SerializeField] private float spawnRate = 1f;
-
     [SerializeField] private float bossSpawnRate = 10f;
-
     [SerializeField] private GameObject[] enemyPrefabs;
-
     [SerializeField] private List<GameObject> bossPrefab;
-
-
     [SerializeField] public bool canSpawn = true;
     [SerializeField] private bool bossCanSpawn = true;
-
-    
-    //[SerializeField] private float nightTimer = 10f;
     public Transform EnemyContainer;
-
-    public bool oneTimeStop;
-    public bool oneTimeStart;
-
-
     public bool isNight;
-    private int howManyBoss;
+    public int howManyBoss;
     public int bossNumber;
-
     private Coroutine spawningCoroutine;
     private Coroutine bossSpawningCoroutine;
-
+    public int EraStart;
+    public int EraEnd;
+    
 
 
     private void Start()
     {
-        oneTimeStop = false;
-        oneTimeStart = false;
         howManyBoss = 0;
         bossNumber = 2;
-        //StartCoroutine(StopSpawning(nightTimer));
+        EraStart = 0;
+        EraEnd = 2;
+        StartSpawning();
+        
     }
+
     private void OnEnable()
     {
-
-        //StartCoroutine(Spawning());
-
-        //StartCoroutine(BossSpawning());
         StartSpawning();
-
+        StartBossSpawning();
     }
+
     private void OnDisable()
     {
         StopSpawning();
+        StopBossSpawning();
     }
 
     public void StartSpawning()
     {
         if (spawningCoroutine == null)
         {
-
             spawningCoroutine = StartCoroutine(Spawning());
         }
     }
+
     public void StartBossSpawning()
     {
         if (bossSpawningCoroutine == null)
         {
             bossSpawningCoroutine = StartCoroutine(BossSpawning());
-
         }
     }
+
     public void StopSpawning()
     {
         if (spawningCoroutine != null)
@@ -80,6 +67,7 @@ public class Spawner : MonoBehaviour
             spawningCoroutine = null;
         }
     }
+
     public void StopBossSpawning()
     {
         if (bossSpawningCoroutine != null)
@@ -88,6 +76,7 @@ public class Spawner : MonoBehaviour
             bossSpawningCoroutine = null;
         }
     }
+
     public void SetCanSpawn(bool spawn)
     {
         canSpawn = spawn;
@@ -97,6 +86,7 @@ public class Spawner : MonoBehaviour
             StartSpawning();
         }
     }
+
     public void SetBossCanSpawn(bool spawn)
     {
         bossCanSpawn = spawn;
@@ -106,6 +96,7 @@ public class Spawner : MonoBehaviour
             StartBossSpawning();
         }
     }
+
     public void Update()
     {
         if (!canSpawn && spawningCoroutine != null)
@@ -117,6 +108,7 @@ public class Spawner : MonoBehaviour
         {
             StartSpawning();
         }
+
         if (!bossCanSpawn && bossSpawningCoroutine != null)
         {
             StopBossSpawning();
@@ -132,28 +124,25 @@ public class Spawner : MonoBehaviour
             SetBossCanSpawn(false);
         }
     }
+
     private IEnumerator Spawning()
     {
-        WaitForSeconds wait = new WaitForSeconds(spawnRate);
+        WaitForSeconds wait = new WaitForSeconds(spawnRate );
 
         while (true)
         {
             if (canSpawn)
             {
-                int rand = Random.Range(0, enemyPrefabs.Length);
+                int rand = Random.Range(EraStart, EraEnd);
                 GameObject enemyToSpawn = enemyPrefabs[rand];
                 Instantiate(enemyToSpawn, transform.position, Quaternion.identity, EnemyContainer);
                 yield return wait;
-
             }
             else
             {
                 yield return new WaitForSeconds(0.1f);
             }
-
-
         }
-
     }
 
     private IEnumerator BossSpawning()
@@ -165,28 +154,22 @@ public class Spawner : MonoBehaviour
             if (bossCanSpawn)
             {
                 yield return waitBoss;
-                int rand = Random.Range(0, bossPrefab.Count);
-                Instantiate(bossPrefab[rand], transform.position, Quaternion.identity, EnemyContainer);
-                bossPrefab.RemoveAt(rand);
+                //int rand = Random.Range(EraStart, EraEnd);
+                Instantiate(bossPrefab[howManyBoss], transform.position, Quaternion.identity, EnemyContainer);
+                bossPrefab.RemoveAt(howManyBoss);
                 Debug.Log(bossPrefab.Count);
-                howManyBoss++;
+                //howManyBoss++;
             }
             else
             {
                 yield return new WaitForSeconds(0.1f);
             }
-
-
-            //if (howManyBoss == bossNumber || TimerController.Instance.changingEra)
-            //{
-            //    bossCanSpawn = false;
-
-            //}
-
         }
-
     }
 
-
-
+    public void SetSpawnRate(int value)
+    {
+        spawnRate = value;
+    }
 }
+

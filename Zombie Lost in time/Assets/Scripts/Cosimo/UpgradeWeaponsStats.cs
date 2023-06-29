@@ -24,7 +24,6 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
 
     public void UpgradeFireRate()
     {
-
         if (cont < maxFireRateUpgrade)
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
