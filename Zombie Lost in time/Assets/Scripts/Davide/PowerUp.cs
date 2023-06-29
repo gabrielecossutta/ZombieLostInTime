@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +6,6 @@ public class PowerUp : MonoBehaviour
     public List<PowerUpType> powerUpList = new List<PowerUpType>();
     private Dictionary<PowerUpType, int> powerUpType = new Dictionary<PowerUpType, int>();
     public int MaxLevel = 6;
-
     private void Start()
     {
         foreach (PowerUpType powerUp in System.Enum.GetValues(typeof(PowerUpType)))
@@ -15,7 +13,6 @@ public class PowerUp : MonoBehaviour
             powerUpList.Add(powerUp);
         }
     }
-
     public void OnDestroy()
     {
         foreach (var PowerUpList in powerUpList)
@@ -25,23 +22,27 @@ public class PowerUp : MonoBehaviour
         powerUpType.Clear();
         powerUpList.Clear();
     }
-
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("PowerUp"))
         {
-            PowerUpType powerUp = collider.gameObject.GetComponent<PowerUpEnums>().powerUpType;
+            PowerUpData pwrUpDatas = collider.gameObject.GetComponent<PowerUpEnums>().powerUpData;
+            PowerUpType powerUp = pwrUpDatas.powerUpType;
             if (!powerUpType.ContainsKey(powerUp) && powerUpList.Contains(powerUp))
             {
                 powerUpType.Add(powerUp, 0);
+                //PowerUpData pUpData = Instantiate(pwrUpDatas);
+                ToolManager.Instance.AddInvP(pwrUpDatas);
                 Debug.Log("Preso power up");
             }
-            if (powerUpType.ContainsKey(powerUp))
+            else if (powerUpType.ContainsKey(powerUp))
             {
                 if (powerUpType[powerUp] < MaxLevel)
                 {
                     powerUpType[powerUp]++;
                     UpgradePowerUp(powerUp, powerUpType[powerUp]);
+                    //PowerUpData pUpData = Instantiate(pwrUpDatas);
+                    ToolManager.Instance.AddInvP(pwrUpDatas);
                     Debug.Log(powerUp + "Livello:" + powerUpType[powerUp]);
                 }
                 else if (powerUpType[powerUp] == MaxLevel)
@@ -101,7 +102,7 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 4:
-                        this.GetComponent<DamageZone>().timeSpawn -= 1; 
+                        this.GetComponent<DamageZone>().timeSpawn -= 1;
                         break;
 
                     case 5:
