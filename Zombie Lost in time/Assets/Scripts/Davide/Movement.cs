@@ -10,15 +10,14 @@ public class Movement : MonoBehaviour
     private Rigidbody Rb;
     private Animator animator;
     private ShootingBehaviour currentWeapon;
-    private string currentWeaponName;
-
+    private int currentWeaponIndex;
     private void Start()
     {
         animator = GetComponent<Status>().animator;
-        animator.SetInteger("WeaponType_int", 1);
+        animator.SetInteger("WeaponType_int", 11);
         Rb = GetComponent<Rigidbody>();
         currentWeapon = GetComponent<ShootingBehaviour>();
-        currentWeaponName = currentWeapon.GetCurrentWeaponName();
+        currentWeaponIndex = currentWeapon.currentWeaponIndex;
     }
 
     private void Update()
@@ -33,7 +32,21 @@ public class Movement : MonoBehaviour
 
     void SetAnimatorParameter()
     {
-        if (currentWeapon.GetCurrentWeaponName() == "Revolver")
+        if (currentWeapon.GetCurrentWeaponName() == "Bow")
+        {
+            if (animator.GetFloat("Speed_f") == 1)
+            {
+                animator.SetFloat("Body_Vertical_f", 0.3f);
+                animator.SetFloat("Body_Horizontal_f", 0.6f);
+            }
+            else
+            {
+                animator.SetFloat("Body_Vertical_f", 0f);
+                animator.SetFloat("Body_Horizontal_f", 0.6f);
+                animator.SetFloat("Head_Horizontal_f", -0.6f);
+            }
+        }
+        else if (currentWeapon.GetCurrentWeaponName() == "Revolver")
         {
             if (animator.GetFloat("Speed_f") == 1)
             {
@@ -199,21 +212,30 @@ public class Movement : MonoBehaviour
 
     void SetAnimatorWeaponParameter()
     {
-        if (currentWeapon.GetCurrentWeaponName() == "Revolver")
+
+        if (currentWeaponIndex != currentWeapon.currentWeaponIndex)
         {
-            animator.SetInteger("WeaponType_int", 1);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "Ak-47")
-        {
-            animator.SetInteger("WeaponType_int", 2);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "ShotgunDB")
-        {
-            animator.SetInteger("WeaponType_int", 4);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "Minigun")
-        {
-            animator.SetInteger("WeaponType_int", 9);
+            currentWeaponIndex = currentWeapon.currentWeaponIndex;
+            if (currentWeapon.GetCurrentWeaponName() == "Bow")
+            {
+                animator.SetInteger("WeaponType_int", 11);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "Revolver")
+            {
+                animator.SetInteger("WeaponType_int", 1);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "Ak-47")
+            {
+                animator.SetInteger("WeaponType_int", 2);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "ShotgunDB")
+            {
+                animator.SetInteger("WeaponType_int", 4);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "Minigun")
+            {
+                animator.SetInteger("WeaponType_int", 9);
+            } 
         }
     }
 }

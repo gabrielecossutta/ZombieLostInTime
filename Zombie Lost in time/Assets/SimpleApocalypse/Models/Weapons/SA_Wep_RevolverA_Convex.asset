@@ -22,8 +22,8 @@ MonoBehaviour:
   burstSize: 0
   burstTimer: 0
   bulletSpeed: 40
-  WeaponType_int: 0
   WeaponName: Revolver
+  bulletPrefab: {fileID: 8256920878712546853, guid: d05392cc1c89dd846a80fc8a1ef78766, type: 3}
 --- !u!43 &43106304497549146
 Mesh:
   m_ObjectHideFlags: 0

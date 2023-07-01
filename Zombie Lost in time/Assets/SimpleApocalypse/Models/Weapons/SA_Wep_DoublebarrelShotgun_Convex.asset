@@ -23,6 +23,7 @@ MonoBehaviour:
   burstTimer: 0.1
   bulletSpeed: 40
   WeaponName: ShotgunDB
+  bulletPrefab: {fileID: 8256920878712546853, guid: d05392cc1c89dd846a80fc8a1ef78766, type: 3}
 --- !u!43 &43262564775038432
 Mesh:
   m_ObjectHideFlags: 0
