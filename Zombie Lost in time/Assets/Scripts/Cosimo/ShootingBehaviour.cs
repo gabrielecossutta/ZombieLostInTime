@@ -245,8 +245,6 @@ public class ShootingBehaviour : MonoBehaviour
         {
             if (bullet.activeInHierarchy)
             {
-                
-                BulletCollision.Instance.OnTriggerEnter(bullet.GetComponent<CapsuleCollider>());
                 RaycastHit hit;
                 if (Physics.Raycast(bullet.transform.position, bullet.transform.forward, out hit, raycastRange, collisionLayers))
                 {
@@ -280,8 +278,6 @@ public class ShootingBehaviour : MonoBehaviour
         {
             if (arrow.activeInHierarchy)
             {
-
-                BulletCollision.Instance.OnTriggerEnter(arrow.GetComponent<CapsuleCollider>());
                 RaycastHit hit;
                 if (Physics.Raycast(arrow.transform.position, arrow.transform.forward, out hit, raycastRange, collisionLayers))
                 {
@@ -311,6 +307,7 @@ public class ShootingBehaviour : MonoBehaviour
                 }
             }
         }
+
     }
 
     void ShootingRoutine()
