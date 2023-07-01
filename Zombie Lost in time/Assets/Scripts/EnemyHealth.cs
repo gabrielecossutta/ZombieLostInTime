@@ -6,7 +6,7 @@ public class EnemyHealth : MonoBehaviour
 {
     public float MaxHealth;
     [SerializeField] private float currentHealth;
-
+    public float DamageFlameTrowher = 10;
 
     void Start()
     {
@@ -19,11 +19,14 @@ public class EnemyHealth : MonoBehaviour
         currentHealth -= Damage;
         if (currentHealth <= 0)
         {
-            //Debug.Log("Enemy dead");
-            //currentHealth = MaxHealth;
+            EnemyKilledCounter.Instance.EnemyKilled();
             Destroy(gameObject);
             gameObject.GetComponent<Enemy>().SpawnExp();
-
         }
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        TakeDamage(DamageFlameTrowher);
     }
 }

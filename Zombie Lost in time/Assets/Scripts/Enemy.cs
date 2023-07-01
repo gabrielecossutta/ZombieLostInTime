@@ -4,116 +4,106 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float MaxSpeed;
-    private float speed;
+    [SerializeField] private float SightRange;
+    [SerializeField] private float DetectionRange;
 
-    private Collider[] hitCollider;
-    private RaycastHit Hit;
+    [SerializeField] private int Damage;
+    [SerializeField] private Transform Enemycontainer;
+    [SerializeField] private Animator animator;
 
-    public float SightRange;
-    public float DetectionRange;
+    [SerializeField] public float Speed = 3f; // velocita dell'enemy
+    [SerializeField] private Transform player; // transform del player
+    [SerializeField] private float velocitaSguardo; // quanto veloce si girano
+    public Rigidbody enemyRB;
+    [SerializeField] private GameObject[] drop;
 
-    public Rigidbody Rb;
-    public GameObject Target;
-    public GameObject[] drop;
-
-    private bool seePlayer;
-
-    public int Damage;
-    public float KOTime;
-
-    public bool CanAttack = true;
-    public bool Notte ;
-
-    
-    //vita enemy
-
+    [SerializeField] private float attackRange = 3f;
+    public GameObject bossDrop;
 
     void Start()
     {
-        speed = MaxSpeed;
-        Notte = false;
-}
+        enemyRB = GetComponent<Rigidbody>();
+        velocitaSguardo = 7.5f;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        animator.SetFloat("Speed_f", 1);
+        animator.SetInteger("WeaponType_int", 0);
+    }
 
-    
     void Update()
     {
-        //cerca player nel range 
-        
-        if (!seePlayer)
+        // Calcola la distanza tra il nemico e il giocatore
+        float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        // Controlla se il giocatore è nel range di attacco
+        if (distanceToPlayer <= attackRange)
         {
-            hitCollider = Physics.OverlapSphere(transform.position, DetectionRange);
-            foreach (var HitCollider in hitCollider)
-            {
-                if (HitCollider.tag == "Player")
-                {
-                    Target = HitCollider.gameObject;
-                    seePlayer = true;
-                }
-            }
-        }
-        else if (Notte)
-        {
-            var Heading = Target.transform.position - transform.position;
-            var Distance = Heading.magnitude;
-            var Direction = Heading / Distance;
+            transform.LookAt(player); // i nemici guardano il player
+            animator.SetInteger("WeaponType_int", 12);
+            animator.SetFloat("Speed_f", 0f);
 
-            // muove verso il player
-            Vector3 Move = new Vector3(-Direction.x * speed, 0, -Direction.z * speed);
-            Rb.velocity = Move;
-            transform.forward = -Move;
         }
         else
         {
-            if (Physics.Raycast(transform.position, (Target.transform.position - transform.position), out Hit, SightRange))
-            {
-                if (Hit.collider.tag != "Player")
-                {
-                    seePlayer = false;
-                }
-                else
-                {
-                    //calcolo della direzione 
-                    var Heading = Target.transform.position - transform.position;
-                    var Distance = Heading.magnitude;
-                    var Direction = Heading / Distance;
+            animator.SetInteger("WeaponType_int", 0);
+            animator.SetFloat("Speed_f", 1);
 
-                    // muove verso il player
-                    Vector3 Move = new Vector3(Direction.x * speed, 0, Direction.z * speed);
-                    Rb.velocity = Move;
-                    transform.forward = Move;
-                }
+            if (TimerController.Instance.IsNight)
+            {
+                // VANNO VIA DAL PLAYER
+                Vector3 direction = enemyRB.transform.position - player.transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                direction.Normalize();
+                Vector3 movement = direction * Speed;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+            }
+            else
+            {
+                Vector3 direction = player.position - transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                direction.Normalize();
+                Vector3 movement = direction * Speed;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
         }
-
-        
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnAnimationComplete()
     {
-        if (collision.collider.tag == "Player")
-        {
-            collision.collider.gameObject.GetComponent<Status>().TakeDamage(Damage);
-            StartCoroutine(AttackDelay(KOTime));
-        }
-
-        
+        AttackPlayer();
     }
 
-    IEnumerator AttackDelay(float Delay)
+    private void AttackPlayer()
     {
-        speed = 0.2f;
-        CanAttack = false;
-        yield return new WaitForSeconds(Delay);
-        speed = MaxSpeed;
-        CanAttack = true;
+        // Applica danni al giocatore
+        Status.Instance.TakeDamage(Damage);
     }
 
     public void SpawnExp()
     {
-        int rand = Random.Range(0,drop.Length);
-        Instantiate(drop[rand], transform.position, Quaternion.identity);
-        
+        if (TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
+        {
+            Instantiate(drop[0], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
+        }
+        else if (!TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
+        {
+            int rand = Random.Range(0, drop.Length);
+            Instantiate(drop[rand], transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
+        }
+        else if (CompareTag("EnemyBoss"))
+        {
+            Instantiate(bossDrop, transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
+        }
     }
-   
+
+    public void setNotteTrue()
+    {
+        TimerController.Instance.IsNight = true;
+    }
+
+    public void setNotteFalse()
+    {
+        TimerController.Instance.IsNight = false;
+    }
 }
+

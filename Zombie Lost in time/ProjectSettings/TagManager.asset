@@ -12,16 +12,25 @@ TagManager:
   - ExpBoss
   - DamageBase
   - EmptyDrop
+  - EnemyBig
+  - Barrel
+  - Ak-47
+  - ShotgunDB
+  - Minigun
+  - Obstacles
+  - EnemyBoss
+  - Portal
+  - PowerUp
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
+  - Terrain
   - 
-  - 
-  - 
+  - MiniMap
   - 
   - 
   - 
