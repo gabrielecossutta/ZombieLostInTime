@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479332, guid: f80f8dcaabb29ce42b92ee3abd4fb18c, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 479332, guid: f80f8dcaabb29ce42b92ee3abd4fb18c, type: 3}
       propertyPath: m_LocalScale.x
@@ -458,7 +458,6 @@ MonoBehaviour:
   Enemycontainer: {fileID: 0}
   animator: {fileID: 7492278545581476322}
   SpeedA: 0
-  Speed: 0
   player: {fileID: 0}
   velocitaSguardo: 0
   enemyRB: {fileID: 0}
@@ -487,6 +486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 50
   currentHealth: 0
+  DamageFlameTrowher: 10
 --- !u!95 &7492278545581476322 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9536900, guid: f80f8dcaabb29ce42b92ee3abd4fb18c, type: 3}

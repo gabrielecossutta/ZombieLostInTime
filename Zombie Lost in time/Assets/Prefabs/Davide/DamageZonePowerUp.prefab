@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2919054266019181695}
   - component: {fileID: 3837969364276189623}
   - component: {fileID: 1941000845063270845}
-  - component: {fileID: 1149121495634347386}
+  - component: {fileID: 156651341446888646}
   m_Layer: 0
   m_Name: DamageZonePowerUp
   m_TagString: PowerUp
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1149121495634347386
+--- !u!114 &156651341446888646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,3 +119,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerUpType: 0
+  powerUpData: {fileID: 11400000, guid: ab046edf2f909b64c9360be9c43d135d, type: 2}

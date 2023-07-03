@@ -11,21 +11,18 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform Enemycontainer;
     [SerializeField] private Animator animator;
 
-    [SerializeField] public float SpeedA ; // velocita di allontanamento
-    [SerializeField] private float Speed; // velocita di allontanamento
+    [SerializeField] public float Speed = 3f; // velocita dell'enemy
     [SerializeField] private Transform player; // transform del player
     [SerializeField] private float velocitaSguardo; // quanto veloce si girano
     public Rigidbody enemyRB;
     [SerializeField] private GameObject[] drop;
 
-    [SerializeField] private float attackRange = 5f;
+    [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
 
     void Start()
     {
         enemyRB = GetComponent<Rigidbody>();
-           Speed =2.5f;
-        SpeedA = 3f;
         velocitaSguardo = 7.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
@@ -36,13 +33,13 @@ public class Enemy : MonoBehaviour
     {
         // Calcola la distanza tra il nemico e il giocatore
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
             transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
+
         }
         else
         {
@@ -56,7 +53,7 @@ public class Enemy : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
-                Vector3 movement = direction * SpeedA;
+                Vector3 movement = direction * Speed;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
             else
@@ -65,9 +62,8 @@ public class Enemy : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
-                Vector3 movement = direction * SpeedA ;
+                Vector3 movement = direction * Speed;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
-
             }
         }
     }

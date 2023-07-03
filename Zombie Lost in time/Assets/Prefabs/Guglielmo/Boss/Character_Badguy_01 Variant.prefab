@@ -254,15 +254,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4517892917420314, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_LocalScale.x
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4517892917420314, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_LocalScale.y
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4517892917420314, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_LocalScale.z
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4517892917420314, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_LocalPosition.x
@@ -355,9 +355,10 @@ MonoBehaviour:
   Damage: 50
   Enemycontainer: {fileID: 0}
   animator: {fileID: 6584519293503221577}
-  Speed: 0
+  SpeedA: 0
   player: {fileID: 0}
   velocitaSguardo: 0
+  enemyRB: {fileID: 0}
   drop:
   - {fileID: 2236345481691610676, guid: c5faa5fdd9caa184f91fa7fc921136ec, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
@@ -383,6 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MaxHealth: 200
   currentHealth: 0
+  DamageFlameTrowher: 10
 --- !u!136 &6987750775806643375
 CapsuleCollider:
   m_ObjectHideFlags: 0

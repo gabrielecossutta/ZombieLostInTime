@@ -14,6 +14,7 @@ public class MapLoader : Singleton<MapLoader>
     public Vector3 startPlayerPos;
     public bool destroyEnemy;
     public int Era;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -21,6 +22,7 @@ public class MapLoader : Singleton<MapLoader>
         startPlayerPos = Player.transform.position;
         destroyEnemy = false;
     }
+
     private void Update()
     {
         if (!isChanging)
@@ -42,7 +44,6 @@ public class MapLoader : Singleton<MapLoader>
 
     }
 
-
     public void ChangingEra()
     {
         if (TimerController.Instance.changingEra)
@@ -55,8 +56,6 @@ public class MapLoader : Singleton<MapLoader>
                 spawnerList[i].GetComponent<Spawner>().SetCanSpawn(false);
             }
             spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(false);
-
-
 
             Vector3 offset = new Vector3(4, 0.05f, 4);
             portal.transform.position = Player.transform.position + offset;
@@ -74,8 +73,8 @@ public class MapLoader : Singleton<MapLoader>
         }
         spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(true);
 
-
     }
+
     public void ChangeScene()
     {
         SceneManager.LoadSceneAsync("Map_02", LoadSceneMode.Additive).completed += OnSceneLoadComplete;
@@ -91,22 +90,18 @@ public class MapLoader : Singleton<MapLoader>
     public void ChangeScene2()
     {
         SceneManager.LoadSceneAsync("Map_03", LoadSceneMode.Additive).completed += OnSceneLoadComplete2;
-
     }
 
     private void OnSceneLoadComplete2(AsyncOperation asyncOp)
     {
         SceneManager.UnloadSceneAsync("Map_02");
-
     }
-
 
     public void ResetPlayerPos()
     {
         Player.transform.position = startPlayerPos;
         destroyEnemy = true;
     }
-
 
     public void EraSelector(int Era)
     {

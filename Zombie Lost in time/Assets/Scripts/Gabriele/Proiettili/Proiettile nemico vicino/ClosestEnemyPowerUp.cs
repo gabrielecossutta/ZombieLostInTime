@@ -7,7 +7,11 @@ public class ClosestEnemyPowerUp : MonoBehaviour
     public GameObject bullet;  //riferimento proiettile
     public bool PowerUpTaken = false;
     private bool Executed = false;
-    public float Time = 2.5f;
+    public float Time;
+    private void Start()
+    {
+        Time = 3f;
+    }
     void Update()
     {
         if (PowerUpTaken)
@@ -28,9 +32,9 @@ public class ClosestEnemyPowerUp : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (NemicoPiùVicino.Instance.closestEnemy != null)
         {
-        Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
+            Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
         }
-            StartCoroutine(SpawnBullet(Time));
-        
+        StartCoroutine(SpawnBullet(Time));
+
     }
 }

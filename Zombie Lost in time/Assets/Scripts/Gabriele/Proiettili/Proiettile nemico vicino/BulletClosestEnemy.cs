@@ -7,14 +7,15 @@ public class BulletClosestEnemy : Singleton<BulletClosestEnemy>
     public float Damage = 5; //danno proiettile
     //public GameObject Bullet; //riferimento al proiettile
     public Transform ClosestEnemy; //Posizione Nemico Più Vicino
-    public float speed = 0.01f;
+    public float speed;
     private bool Executed = false;
     public Vector3 movement;
     public Rigidbody _rb;
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
-    }
+        speed = 0.1f;
+     }
     void Update()
     {
         if (!Executed) // booleana per eseguire il codice solo una volta
