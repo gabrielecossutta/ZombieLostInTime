@@ -23,7 +23,6 @@ public class DamageZone : MonoBehaviour
     {
         if (DmgZonePicked)
         {
-            Debug.Log("Start Damage Zone");
             if (timer >= timeSpawn)
             {
                 CreateDamageZone();

@@ -23,6 +23,7 @@ MonoBehaviour:
   burstTimer: 0.1
   bulletSpeed: 40
   WeaponName: Minigun
+  bulletPrefab: {fileID: 8256920878712546853, guid: d05392cc1c89dd846a80fc8a1ef78766, type: 3}
 --- !u!43 &43904610818277024
 Mesh:
   m_ObjectHideFlags: 0
