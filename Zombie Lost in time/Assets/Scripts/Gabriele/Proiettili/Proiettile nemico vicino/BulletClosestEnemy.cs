@@ -21,7 +21,7 @@ public class BulletClosestEnemy : Singleton<BulletClosestEnemy>
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBig"))
+        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBoss"))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(Damage);//Applica Danno
             Destroy(gameObject);

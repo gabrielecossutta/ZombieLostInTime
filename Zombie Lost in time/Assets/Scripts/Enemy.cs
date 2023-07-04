@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Transform Enemycontainer;
     [SerializeField] private Animator animator;
 
-    [SerializeField] public float SpeedA ; // velocita di allontanamento
+    [SerializeField] public float Speed = 3f; // velocita dell'enemy
     [SerializeField] private Transform player; // transform del player
     [SerializeField] private float velocitaSguardo; // quanto veloce si girano
     public Rigidbody enemyRB;
@@ -23,7 +23,6 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         enemyRB = GetComponent<Rigidbody>();
-        SpeedA = 3f;
         velocitaSguardo = 7.5f;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
@@ -54,7 +53,7 @@ public class Enemy : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
-                Vector3 movement = direction * SpeedA;
+                Vector3 movement = direction * Speed;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
             else
@@ -63,9 +62,8 @@ public class Enemy : MonoBehaviour
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
-                Vector3 movement = direction * SpeedA;
+                Vector3 movement = direction * Speed;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
-
             }
         }
     }

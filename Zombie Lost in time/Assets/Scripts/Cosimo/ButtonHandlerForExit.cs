@@ -16,7 +16,6 @@ public class ButtonHandlerForExit : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1.0f;
-
     }
 
     private void Update()
@@ -32,6 +31,7 @@ public class ButtonHandlerForExit : MonoBehaviour
     {
         deathMenu.SetActive(false);
         SceneManager.LoadScene("DefaultMap");
+        SceneManager.LoadSceneAsync("Map_01", LoadSceneMode.Additive);
     }
 
     public void QuitGame()

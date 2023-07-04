@@ -21,6 +21,7 @@ TagManager:
   - EnemyBoss
   - Portal
   - PowerUp
+  - Revolver
   layers:
   - Default
   - TransparentFX

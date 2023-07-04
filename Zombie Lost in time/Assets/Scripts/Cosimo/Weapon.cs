@@ -16,4 +16,5 @@ public class Weapon : ScriptableObject
     public float burstTimer;
     public float bulletSpeed;
     public string WeaponName;
+    public GameObject bulletPrefab;
 }
