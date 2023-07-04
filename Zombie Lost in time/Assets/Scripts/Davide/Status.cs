@@ -80,13 +80,10 @@ public class Status : Singleton<Status>
         }
         else if (other.CompareTag("Portal"))
         {
-
-
             TimerController.Instance.changingEra = false;
 
             MapLoader.Instance.portal.SetActive(false);
             
-
             StartCoroutine(ActivateLoadingPanelAfterDelay(2f));
             c++;
         }
@@ -95,7 +92,6 @@ public class Status : Singleton<Status>
     public void ExpGained(int exp)                      //Funzione per l'esperienza acquisita
     {
         currentExp += exp;
-        Debug.Log("Esperienza totale: " + currentExp);
 
         if (currentExp >= expToLvlUp)
         {
@@ -112,9 +108,6 @@ public class Status : Singleton<Status>
         currentExp = excessExp;
         expToLvlUp += 3;
         expBar.SetMaxExp(expToLvlUp);
-        Debug.Log("Livello " + currentLevel);
-        Debug.Log("Esperienza in eccesso:" + currentExp);
-
     }
 
     public void TakeDamage(int Damage)
@@ -126,33 +119,24 @@ public class Status : Singleton<Status>
         {
             enemyKilledCounter = EnemyKilledCounter.Instance.enemyKilled;
             enemyKilledText.text = "Enemy Killed: " + enemyKilledCounter.ToString();
-            Debug.Log("The player is dead Status");
-            //currentHealth = maxHealth;
             healthBar.SetHealth(currentHealth);
-
         }
     }
 
     private IEnumerator ActivateLoadingPanelAfterDelay(float delay)
-    {
-        
-        loadingPanel.SetActive(true); // Disattiva il loadingPanel
+    {      
+        loadingPanel.SetActive(true);
         if (c == 0)
         {
             MapLoader.Instance.ChangeScene();
-            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
-            
         }
         if (c == 1)
         {
             MapLoader.Instance.ChangeScene2();
-            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
         }
-
 
         yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
 
-
-        loadingPanel.SetActive(false); // Attiva nuovamente il loadingPanel
+        loadingPanel.SetActive(false);
     }
 }

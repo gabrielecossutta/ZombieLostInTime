@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
         animator.SetInteger("WeaponType_int", 0);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Calcola la distanza tra il nemico e il giocatore
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -55,6 +55,7 @@ public class Enemy : MonoBehaviour
                 direction.Normalize();
                 Vector3 movement = direction * Speed;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+
             }
             else
             {
@@ -63,7 +64,7 @@ public class Enemy : MonoBehaviour
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
                 Vector3 movement = direction * Speed;
-                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+                enemyRB.velocity = movement;
             }
         }
     }

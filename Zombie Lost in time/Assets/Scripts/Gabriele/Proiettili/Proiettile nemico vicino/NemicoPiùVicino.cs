@@ -17,7 +17,7 @@ public class NemicoPiùVicino : Singleton<NemicoPiùVicino>
     {
         float closestDistance = 1000000f; //distanza da nemico a player
         EnemyContainer = GameObject.FindGameObjectsWithTag("Enemy");
-        BigEnemyContainer = GameObject.FindGameObjectsWithTag("EnemyBig");
+        BigEnemyContainer = GameObject.FindGameObjectsWithTag("EnemyBoss");
         MergedContainer = EnemyContainer.Concat(BigEnemyContainer).ToArray(); //unisce tutti i nemici in 1 contenitore
         foreach (GameObject enemy in MergedContainer) //per ogni nemico controlla qual è il più vicino
         {

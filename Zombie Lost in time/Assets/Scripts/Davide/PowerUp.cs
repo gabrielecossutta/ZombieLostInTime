@@ -34,7 +34,6 @@ public class PowerUp : MonoBehaviour
                 powerUpType[powerUp]++;
                 UpgradePowerUp(powerUp, powerUpType[powerUp]);
                 ToolManager.Instance.AddInvP(pwrUpDatas);
-                Debug.Log("Preso power up");
             }
             else if (powerUpType.ContainsKey(powerUp))
             {
@@ -43,7 +42,6 @@ public class PowerUp : MonoBehaviour
                     powerUpType[powerUp]++;
                     UpgradePowerUp(powerUp, powerUpType[powerUp]);
                     ToolManager.Instance.AddInvP(pwrUpDatas);
-                    Debug.Log(powerUp + "Livello:" + powerUpType[powerUp]);
                 }
                 else if (powerUpType[powerUp] == MaxLevel)
                 {

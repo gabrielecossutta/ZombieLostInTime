@@ -311,7 +311,11 @@ PrefabInstance:
     - target: {fileID: 95918252503098470, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: afec2cc25e3439e4bb1b43e7c09f6503, type: 2}
+      objectReference: {fileID: 9100000, guid: d090fc49b9ee0d44c835a8956731ce24, type: 2}
+    - target: {fileID: 95918252503098470, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 95918252503098470, guid: 085e53ee40ad24b40a83bd90705ad460, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -355,7 +359,7 @@ MonoBehaviour:
   Damage: 50
   Enemycontainer: {fileID: 0}
   animator: {fileID: 6584519293503221577}
-  SpeedA: 0
+  Speed: 3
   player: {fileID: 0}
   velocitaSguardo: 0
   enemyRB: {fileID: 0}
