@@ -134,6 +134,11 @@ public class Status : Singleton<Status>
         {
             MapLoader.Instance.ChangeScene2();
         }
+        if (c == 2)
+        {
+            MapLoader.Instance.ChangeScene3();
+            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
+        }
 
         yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
 

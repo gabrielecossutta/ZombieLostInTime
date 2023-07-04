@@ -85,6 +85,16 @@ public class MapLoader : Singleton<MapLoader>
         SceneManager.UnloadSceneAsync("Map_02");
     }
 
+    public void ChangeScene3()
+    {
+        SceneManager.LoadSceneAsync("Map_04", LoadSceneMode.Additive).completed += OnSceneLoadComplete3;
+    }
+
+    private void OnSceneLoadComplete3(AsyncOperation asyncOp)
+    {
+        SceneManager.UnloadSceneAsync("Map_03");
+    }
+
     public void ResetPlayerPos()
     {
         Player.transform.position = startPlayerPos;
@@ -111,6 +121,15 @@ public class MapLoader : Singleton<MapLoader>
                     spawnerList[i].GetComponent<Spawner>().EraEnd = 6;
                     spawnerList[i].GetComponent<Spawner>().SetSpawnRate(3);
                 }
+                break;
+            case 3:
+                for (int i = 0; i < spawnerList.Count; i++)
+                {
+                    spawnerList[i].GetComponent<Spawner>().EraStart = 6;
+                    spawnerList[i].GetComponent<Spawner>().EraEnd = 8;
+                    spawnerList[i].GetComponent<Spawner>().SetSpawnRate(2);
+                }
+                Debug.Log("Era 3");
                 break;
         }
     }

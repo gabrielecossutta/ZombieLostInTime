@@ -31,6 +31,7 @@ public class ButtonHandlerForExit : MonoBehaviour
     {
         deathMenu.SetActive(false);
         SceneManager.LoadScene("DefaultMap");
+        SceneManager.LoadSceneAsync("Map_01", LoadSceneMode.Additive);
     }
 
     public void QuitGame()
