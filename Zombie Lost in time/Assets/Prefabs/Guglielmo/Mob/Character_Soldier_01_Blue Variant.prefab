@@ -294,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483780, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27.49
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 483780, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -302,7 +302,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 483780, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -266.38626
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 483780, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -333,9 +333,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9587140, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: d288a0e4a2d923b46898986e979da643, type: 3}
+    - target: {fileID: 9587140, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: afec2cc25e3439e4bb1b43e7c09f6503, type: 2}
+      objectReference: {fileID: 9100000, guid: d090fc49b9ee0d44c835a8956731ce24, type: 2}
+    - target: {fileID: 9587140, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -383,22 +391,13 @@ MonoBehaviour:
   velocitaSguardo: 0
   enemyRB: {fileID: 0}
   drop:
-  - {fileID: 601830525838980291, guid: a2ea614c65433714481858d1d767d52f, type: 3}
-  - {fileID: 6728101040444387211, guid: b3b13d488e357494ca946ee528aa7595, type: 3}
-  - {fileID: 1567856447458724856, guid: 0f4fcfdccba541d4eab52477211e2b6b, type: 3}
-  - {fileID: 7082311609165040521, guid: d228e664f0f4133419892922142e8fbe, type: 3}
+  - {fileID: 537260373037575102, guid: 27a261dbb707da24ba4c086edcb10126, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 2236345481691610676, guid: c5faa5fdd9caa184f91fa7fc921136ec, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 1683275412945906739, guid: 309128a120dd2664b91716065411d118, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   attackRange: 3
   bossDrop: {fileID: 3933273421510428731, guid: 9b71095c04dc1c14eb1bcd74c1aa4d43, type: 3}
 --- !u!114 &1567589027130378109
@@ -463,7 +462,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!4 &2250524725412344410 stripped
@@ -546,6 +545,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594105761744113596, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

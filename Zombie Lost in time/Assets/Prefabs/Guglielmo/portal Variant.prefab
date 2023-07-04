@@ -130,6 +130,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
       propertyPath: m_Name
       value: portal Variant
@@ -139,6 +143,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
       propertyPath: m_TagString
       value: Portal
       objectReference: {fileID: 0}

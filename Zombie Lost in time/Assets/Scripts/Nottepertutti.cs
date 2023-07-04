@@ -7,9 +7,10 @@ public class Nottepertutti : Singleton<Nottepertutti>
     public GameObject enemyContainer;
     public List<Enemy> allchildren = new List<Enemy>();
     public List<Spawner> allSpawner = new List<Spawner>();
-        public GameObject[] players; // Lista dei nemici
+    public GameObject[] enemies; // Lista dei nemici
     private Transform player;
     public GameObject[] boss;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +21,11 @@ public class Nottepertutti : Singleton<Nottepertutti>
 
     // Update is called once per frame
     void Update()
-    {// cancella i cubi se troppo lontani dal player per non averne troppi
-    players = GameObject.FindGameObjectsWithTag("Enemy");
-    boss = GameObject.FindGameObjectsWithTag("EnemyBoss");
-        foreach (GameObject enemy in players)
+    {   
+        // distrugge gli enemy se troppo lontani dal player per non averne troppi
+        enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        boss = GameObject.FindGameObjectsWithTag("EnemyBoss");
+        foreach (GameObject enemy in enemies)
         {
             Vector3 direction = enemy.transform.position - player.position;
             float currentDistance = direction.magnitude;
@@ -45,6 +47,7 @@ public class Nottepertutti : Singleton<Nottepertutti>
             }
         }
     }
+
     public void SetNotteToAllEnemy()
     {
         //grazia al fatto che tutti i nemici sono stati spawnati dentro un gameobject, li posso mette tutti dentro una lista prendendoli come figli
@@ -63,9 +66,9 @@ public class Nottepertutti : Singleton<Nottepertutti>
         foreach(Spawner spawner in allSpawner)
         {
             spawner.gameObject.SetActive(false); //disattivo gli spawner
-            //spawner.SetActive(false);
         }
     }
+
     public void SetGiornoToAllEnemy()
     {
         foreach(Enemy child in allchildren)
@@ -81,7 +84,7 @@ public class Nottepertutti : Singleton<Nottepertutti>
 
     public void ClearAll()
     {
-        foreach (GameObject enemy in players)
+        foreach (GameObject enemy in enemies)
         {
             Destroy(enemy);
         }

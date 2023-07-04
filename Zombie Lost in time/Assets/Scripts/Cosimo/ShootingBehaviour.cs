@@ -83,13 +83,7 @@ public class ShootingBehaviour : MonoBehaviour
     {
         SelectWeaponByInput();
 
-        if (weaponSwitched)
-        {
-            timer_elapsed = -0.2f;
-            weaponSwitched = false;
-        }
-
-        if (currentMag > 0)
+        if (currentMag > 0 && !weaponSwitched)
         {
             if (timer_elapsed >= timer)
             {
@@ -118,6 +112,11 @@ public class ShootingBehaviour : MonoBehaviour
         }
         else
         {
+            if (weaponSwitched)
+            {
+                StartCoroutine(ShootingDelayAfterSwitch(0.4f));
+            }
+
             if (reloadTimer_elapsed >= reloadTimer)
             {
                 reloadTimer_elapsed = 0f;
@@ -389,6 +388,15 @@ public class ShootingBehaviour : MonoBehaviour
         // Disabilita il proiettile e lo rimette nella pool
         bullet.SetActive(false);
         pool.Enqueue(bullet);
+    }
+
+    IEnumerator ShootingDelayAfterSwitch(float delay)
+    {
+        shootRoutine = false;
+        animator.SetBool("Shoot_b", false);
+        animator.SetBool("Reload_b", false);
+        yield return new WaitForSeconds(delay);
+        weaponSwitched = false;
     }
 
     private void OnAnimationBowShootComplete()

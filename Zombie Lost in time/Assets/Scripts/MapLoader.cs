@@ -6,21 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class MapLoader : Singleton<MapLoader>
 {
-
     public GameObject portal;
-    public bool isChanging = false;
     public GameObject Player;
     public List<Spawner> spawnerList;
     public Vector3 startPlayerPos;
-    public bool destroyEnemy;
+    public bool isChanging = false;
+    public bool destroyEnemy = false;
     public int Era;
 
     // Start is called before the first frame update
     private void Start()
     {
-        //Player = GameObject.FindGameObjectWithTag("Player");
         startPlayerPos = Player.transform.position;
-        destroyEnemy = false;
     }
 
     private void Update()
@@ -28,20 +25,16 @@ public class MapLoader : Singleton<MapLoader>
         if (!isChanging)
         {
             ChangingEra();
-
         }
 
         if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn)
         {
-
             ResetPlayerPos();
             EraSelector(Era);
             RestartSpawn();
             Nottepertutti.Instance.ClearAll();
             isChanging = false;
         }
-
-
     }
 
     public void ChangingEra()
@@ -50,7 +43,6 @@ public class MapLoader : Singleton<MapLoader>
         {
             isChanging = true;
             Era++;
-            Debug.Log(Era);
             for (int i = 0; i < spawnerList.Count; i++)
             {
                 spawnerList[i].GetComponent<Spawner>().SetCanSpawn(false);
@@ -60,7 +52,6 @@ public class MapLoader : Singleton<MapLoader>
             Vector3 offset = new Vector3(4, 0.05f, 4);
             portal.transform.position = Player.transform.position + offset;
             portal.SetActive(true);
-            //Debug.Log("Changin era");
         }
     }
 
@@ -69,10 +60,8 @@ public class MapLoader : Singleton<MapLoader>
         for (int i = 0; i < spawnerList.Count; i++)
         {
             spawnerList[i].GetComponent<Spawner>().SetCanSpawn(true);
-            
         }
         spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(true);
-
     }
 
     public void ChangeScene()
@@ -84,7 +73,6 @@ public class MapLoader : Singleton<MapLoader>
     private void OnSceneLoadComplete(AsyncOperation asyncOp)
     {
         SceneManager.UnloadSceneAsync("Map_01");
-
     }
 
     public void ChangeScene2()
@@ -125,8 +113,6 @@ public class MapLoader : Singleton<MapLoader>
                     spawnerList[i].GetComponent<Spawner>().EraEnd = 4;
                     spawnerList[i].GetComponent<Spawner>().SetSpawnRate(4);
                 }
-                
-                Debug.Log("Era 2");
                 break;
             case 2:
                 for (int i = 0; i < spawnerList.Count; i++)
@@ -135,7 +121,6 @@ public class MapLoader : Singleton<MapLoader>
                     spawnerList[i].GetComponent<Spawner>().EraEnd = 6;
                     spawnerList[i].GetComponent<Spawner>().SetSpawnRate(3);
                 }
-                Debug.Log("Era 3");
                 break;
             case 3:
                 for (int i = 0; i < spawnerList.Count; i++)

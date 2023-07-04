@@ -10,8 +10,8 @@ public class BulletRotatingPowerUp : Singleton<BulletRotatingPowerUp>
     public float rotationSpeed = -1f;
     void Update()
     {
-        transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(Mathf.Sin(Time.time*Speed)*Range, 0, Mathf.Cos(Time.time*Speed)*Range);
-        transform.Rotate(Vector3.forward * rotationSpeed);
+        transform.position = GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(Mathf.Sin(Time.time*Speed)*Range, 1.5f, Mathf.Cos(Time.time*Speed)*Range);
+        transform.Rotate(Vector3.right * rotationSpeed);
     }
     private void OnTriggerEnter(Collider other)
     {

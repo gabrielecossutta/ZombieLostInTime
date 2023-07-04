@@ -266,15 +266,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4670764120559952, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.521002
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4670764120559952, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.29
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4670764120559952, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -269.97687
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4670764120559952, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
       propertyPath: m_LocalRotation.w
@@ -311,7 +311,11 @@ PrefabInstance:
     - target: {fileID: 95217205003396926, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: afec2cc25e3439e4bb1b43e7c09f6503, type: 2}
+      objectReference: {fileID: 9100000, guid: d090fc49b9ee0d44c835a8956731ce24, type: 2}
+    - target: {fileID: 95217205003396926, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 95217205003396926, guid: e169e4d9dbd157b498e582065a5f9302, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 0
@@ -361,7 +365,7 @@ MonoBehaviour:
   Damage: 2
   Enemycontainer: {fileID: 0}
   animator: {fileID: 375528772785610109}
-  SpeedA: 0
+  Speed: 5
   player: {fileID: 0}
   velocitaSguardo: 0
   enemyRB: {fileID: 0}
@@ -438,7 +442,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!4 &320928879189892797 stripped
@@ -522,6 +526,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2735684601635576590, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594105761744113596, guid: 1b1bece84c4e47c41bd98556df517b82, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
