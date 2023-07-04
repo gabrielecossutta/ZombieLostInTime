@@ -7,15 +7,21 @@ public class ClosestEnemyPowerUp : MonoBehaviour
     public GameObject bullet;  //riferimento proiettile
     public bool PowerUpTaken = false;
     private bool Executed = false;
-    public float Time = 2.5f;
-
+    public float Time;
+    private void Start()
+    {
+        Time = 3.5f;
+    }
     void Update()
     {
         if (PowerUpTaken)
         {
             if (!Executed)// booleana per spawnare solo 1 proiettile
             {
-                Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+                if (NemicoPiùVicino.Instance.closestEnemy != null)
+                {
+                    Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
+                }
                 Executed = true;
                 StartCoroutine(SpawnBullet(Time)); //cooroutine che spawna un proiettile ogni "Time"
             }
@@ -24,7 +30,11 @@ public class ClosestEnemyPowerUp : MonoBehaviour
     private IEnumerator SpawnBullet(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
+        if (NemicoPiùVicino.Instance.closestEnemy != null)
+        {
+            Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
+        }
         StartCoroutine(SpawnBullet(Time));
+
     }
 }

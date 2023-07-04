@@ -22,6 +22,7 @@ public class ButtonHandlerForExit : MonoBehaviour
     {
         if (Status.Instance.currentHealth <= 0)
         {
+            
             Time.timeScale = 0f;
             deathMenu.SetActive(true);
         }
@@ -32,6 +33,7 @@ public class ButtonHandlerForExit : MonoBehaviour
         deathMenu.SetActive(false);
         SceneManager.LoadScene("DefaultMap");
         SceneManager.LoadSceneAsync("Map_01", LoadSceneMode.Additive);
+        TimerController.Instance.survivedTime = 0;
     }
 
     public void QuitGame()
