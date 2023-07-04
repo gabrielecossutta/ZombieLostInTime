@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ParticleCollider : MonoBehaviour
 {
-    public ParticleSystem FlameThrower;
-
+    //public ParticleSystem FlameThrower;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,7 @@ public class ParticleCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FlameThrower.Play();
+            Status.Instance.FlameTrowher.Play();
             Destroy(gameObject);
         }
     }

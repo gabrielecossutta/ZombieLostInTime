@@ -27,6 +27,7 @@ public class Status : Singleton<Status>
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
     public GameObject loadingPanel;
+    public ParticleSystem FlameTrowher;
     public int c;
 
     void Start()
