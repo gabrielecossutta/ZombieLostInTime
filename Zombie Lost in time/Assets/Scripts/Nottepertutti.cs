@@ -35,7 +35,7 @@ public class Nottepertutti : Singleton<Nottepertutti>
             }
             if (enemy.transform.position.y > 1)
             {
-                Destroy(enemy);
+                enemy.transform.position = new Vector3(enemy.transform.position.x, 0, enemy.transform.position.z);
             }
 
         }
@@ -43,7 +43,7 @@ public class Nottepertutti : Singleton<Nottepertutti>
         {
             if (boss.transform.position.y > 1)
             {
-                Destroy(boss);
+                boss.transform.position = new Vector3(boss.transform.position.x, 0, boss.transform.position.z);
             }
         }
     }

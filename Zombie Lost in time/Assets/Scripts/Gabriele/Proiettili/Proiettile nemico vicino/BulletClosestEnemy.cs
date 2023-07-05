@@ -5,17 +5,16 @@ using UnityEngine;
 public class BulletClosestEnemy : Singleton<BulletClosestEnemy>
 {
     public float Damage = 5; //danno proiettile
-    //public GameObject Bullet; //riferimento al proiettile
     public Transform ClosestEnemy; //Posizione Nemico Più Vicino
-    public float speed ;
+    public float speed;
     private bool Executed = false;
     public Vector3 movement;
-    public Rigidbody _rb;
+
     private void Start()
     {
-        _rb = GetComponent<Rigidbody>();
         speed = 0.05f;
     }
+
     void Update()
     {
         if (!Executed) // booleana per eseguire il codice solo una volta
@@ -31,7 +30,7 @@ public class BulletClosestEnemy : Singleton<BulletClosestEnemy>
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBig"))
+        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBoss"))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(Damage);//Applica Danno
             Destroy(gameObject);

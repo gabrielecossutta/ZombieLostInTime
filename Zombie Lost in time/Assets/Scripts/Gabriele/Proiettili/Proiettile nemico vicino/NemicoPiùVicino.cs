@@ -34,7 +34,6 @@ public class NemicoPiùVicino : Singleton<NemicoPiùVicino>
         if (MergedContainer.Length == 0)
         {
             closestEnemy = null;
-            Debug.Log(closestEnemy);
         }
     }
 }

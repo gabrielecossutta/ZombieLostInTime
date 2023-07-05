@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ParticleCollider : MonoBehaviour
 {
-    //public ParticleSystem FlameThrower;
-    
     // Start is called before the first frame update
     void Start()
     {

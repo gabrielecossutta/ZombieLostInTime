@@ -33,13 +33,13 @@ public class Enemy : MonoBehaviour
     {
         // Calcola la distanza tra il nemico e il giocatore
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
-            transform.LookAt(player); // i nemici guardano il player
+            //transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
-
         }
         else
         {
@@ -61,12 +61,10 @@ public class Enemy : MonoBehaviour
             {
                 Vector3 direction = player.position - transform.position;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
                 Vector3 movement = direction * Speed;
-                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
-
-                
+                //enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
         }
     }
@@ -78,8 +76,11 @@ public class Enemy : MonoBehaviour
 
     private void AttackPlayer()
     {
-        // Applica danni al giocatore
-        Status.Instance.TakeDamage(Damage);
+        if(Vector3.Distance(transform.position, player.position) <= attackRange)
+        {
+            // Applica danni al giocatore
+            Status.Instance.TakeDamage(Damage);
+        }
     }
 
     public void SpawnExp()

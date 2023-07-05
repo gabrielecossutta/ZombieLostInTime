@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomBullet : Singleton<RandomBullet>
 {
-    public float speed = 5f;
+    public float speed = 10f;
     public float Damage = 5f;
     public GameObject Spawner1;
     public GameObject Spawner2;
@@ -27,7 +27,7 @@ public class RandomBullet : Singleton<RandomBullet>
     private void OnTriggerEnter(Collider other)
     {
         // SALVARE IL NEMICO COLPITO PER CONTROLLARLO NELL'ALTRO PROIETTILE
-        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBig"))
+        if (other.CompareTag("Enemy") || other.CompareTag("EnemyBoss"))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(Damage);//Applica Danno
             

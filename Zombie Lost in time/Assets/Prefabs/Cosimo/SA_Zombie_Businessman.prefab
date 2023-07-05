@@ -7077,7 +7077,7 @@ Transform:
   - {fileID: 6791843555320267245}
   - {fileID: 5877310531931299962}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9073554589996210898
 Animator:
@@ -7145,6 +7145,7 @@ MonoBehaviour:
   speedUpgradedValue: 0
   animator: {fileID: 9073554589996210898}
   loadingPanel: {fileID: 0}
+  FlameTrowher: {fileID: 0}
   c: 0
 --- !u!114 &4822114842404039993
 MonoBehaviour:
@@ -7367,6 +7368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   closestEnemy: {fileID: 0}
+  NoEnemy: {fileID: 0}
   MergedContainer: []
 --- !u!1 &9073554589986764540
 GameObject:

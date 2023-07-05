@@ -316,40 +316,34 @@ public class ShootingBehaviour : MonoBehaviour
             burstTimer_elapsed = 0f;
             currentBurst--;
 
-            if (roundsPerShot == 1)
+            if (currentWeaponIndex == 0)
             {
-                if (currentWeaponIndex == 0)
-                {
-                    GameObject arrow = ArrowPool.Dequeue();
-                    arrow.transform.position = GameObject.FindGameObjectWithTag("Barrel").transform.position;
-                    arrow.transform.rotation = transform.rotation * Quaternion.AngleAxis(Random.Range(-randomSpread, randomSpread), transform.up);
-                    arrow.SetActive(true);
-                    ArrowPool.Enqueue(arrow);
+                GameObject arrow = ArrowPool.Dequeue();
+                arrow.transform.position = GameObject.FindGameObjectWithTag("Barrel").transform.position;
+                arrow.transform.rotation = transform.rotation * Quaternion.AngleAxis(Random.Range(-randomSpread, randomSpread), transform.up);
+                arrow.SetActive(true);
+                ArrowPool.Enqueue(arrow);
 
-                    Rigidbody arrowRigidbody = arrow.GetComponent<Rigidbody>();
+                Rigidbody arrowRigidbody = arrow.GetComponent<Rigidbody>();
 
-                    // Assegna la velocità al proiettile
-                    arrowRigidbody.velocity = arrow.transform.forward * bulletSpeed;
+                // Assegna la velocità al proiettile
+                arrowRigidbody.velocity = arrow.transform.forward * bulletSpeed;
 
-                    // Avvia la coroutine per reinserire il proiettile nella coda dopo un certo periodo di tempo
-                    StartCoroutine(ResetBulletAfterDelay(arrow, bulletLifeTime, ArrowPool));
-                }
-                else
-                {
-                    GameObject bullet = BulletPool.Dequeue();
-                    bullet.transform.position = GameObject.FindGameObjectWithTag("Barrel").transform.position;
-                    bullet.transform.rotation = transform.rotation * Quaternion.AngleAxis(Random.Range(-randomSpread, randomSpread), transform.up);
-                    bullet.SetActive(true);
-                    BulletPool.Enqueue(bullet);
-
-                    Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
-
-                    // Assegna la velocità al proiettile
-                    bulletRigidbody.velocity = bullet.transform.forward * bulletSpeed;
-
-                    // Avvia la coroutine per reinserire il proiettile nella coda dopo un certo periodo di tempo
-                    StartCoroutine(ResetBulletAfterDelay(bullet, bulletLifeTime, BulletPool));
-                }
+                // Avvia la coroutine per reinserire il proiettile nella coda dopo un certo periodo di tempo
+                StartCoroutine(ResetBulletAfterDelay(arrow, bulletLifeTime, ArrowPool));
+            }
+            else if (roundsPerShot == 1)
+            { 
+                GameObject bullet = BulletPool.Dequeue();
+                bullet.transform.position = GameObject.FindGameObjectWithTag("Barrel").transform.position;
+                bullet.transform.rotation = transform.rotation * Quaternion.AngleAxis(Random.Range(-randomSpread, randomSpread), transform.up);
+                bullet.SetActive(true);
+                BulletPool.Enqueue(bullet);
+                Rigidbody bulletRigidbody = bullet.GetComponent<Rigidbody>();
+                // Assegna la velocità al proiettile
+                bulletRigidbody.velocity = bullet.transform.forward * bulletSpeed;
+                // Avvia la coroutine per reinserire il proiettile nella coda dopo un certo periodo di tempo
+                StartCoroutine(ResetBulletAfterDelay(bullet, bulletLifeTime, BulletPool));
             }
             else
             {

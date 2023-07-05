@@ -8,10 +8,12 @@ public class ClosestEnemyPowerUp : MonoBehaviour
     public bool PowerUpTaken = false;
     private bool Executed = false;
     public float Time;
+
     private void Start()
     {
         Time = 3.5f;
     }
+
     void Update()
     {
         if (PowerUpTaken)

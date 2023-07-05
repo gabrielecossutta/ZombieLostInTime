@@ -557,7 +557,7 @@ MonoBehaviour:
   Damage: 2
   Enemycontainer: {fileID: 0}
   animator: {fileID: 8014306119357396406}
-  Speed: 5
+  Speed: 3
   player: {fileID: 0}
   velocitaSguardo: 0
   enemyRB: {fileID: 0}

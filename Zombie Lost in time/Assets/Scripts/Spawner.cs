@@ -18,8 +18,6 @@ public class Spawner : MonoBehaviour
     private Coroutine bossSpawningCoroutine;
     public int EraStart;
     public int EraEnd;
-    
-
 
     private void Start()
     {
