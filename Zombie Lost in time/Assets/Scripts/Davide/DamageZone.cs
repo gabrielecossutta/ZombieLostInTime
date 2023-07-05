@@ -19,7 +19,7 @@ public class DamageZone : MonoBehaviour
     }
 
 // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (DmgZonePicked)
         {

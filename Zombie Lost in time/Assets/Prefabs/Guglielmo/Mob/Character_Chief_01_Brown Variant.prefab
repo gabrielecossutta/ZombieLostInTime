@@ -372,23 +372,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 152104, guid: 12ca67ad4d842c44398557f35a3cd3b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1901992776967200779}
+      addedObject: {fileID: 2688}
     - targetCorrespondingSourceObject: {fileID: 152104, guid: 12ca67ad4d842c44398557f35a3cd3b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5946865877621221205}
+      addedObject: {fileID: 2711}
     - targetCorrespondingSourceObject: {fileID: 152104, guid: 12ca67ad4d842c44398557f35a3cd3b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7737719278337893666}
+      addedObject: {fileID: 2573}
     - targetCorrespondingSourceObject: {fileID: 152104, guid: 12ca67ad4d842c44398557f35a3cd3b4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4492553324683961807}
+      addedObject: {fileID: 2500}
   m_SourcePrefab: {fileID: 100100000, guid: 12ca67ad4d842c44398557f35a3cd3b4, type: 3}
 --- !u!1 &3890955208659034114 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 152104, guid: 12ca67ad4d842c44398557f35a3cd3b4, type: 3}
   m_PrefabInstance: {fileID: 3890955208658891306}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1901992776967200779
+--- !u!114 &2688
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -428,7 +428,7 @@ MonoBehaviour:
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   attackRange: 3
   bossDrop: {fileID: 3933273421510428731, guid: 9b71095c04dc1c14eb1bcd74c1aa4d43, type: 3}
---- !u!114 &5946865877621221205
+--- !u!114 &2711
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -443,7 +443,7 @@ MonoBehaviour:
   MaxHealth: 30
   currentHealth: 0
   DamageFlameTrowher: 10
---- !u!136 &7737719278337893666
+--- !u!136 &2573
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,7 +466,7 @@ CapsuleCollider:
   m_Height: 1.85
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &4492553324683961807
+--- !u!54 &2500
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
