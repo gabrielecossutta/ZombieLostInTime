@@ -302,7 +302,7 @@ public class ShootingBehaviour : MonoBehaviour
                     }
                     // Disabilita il proiettile e lo rimette nella pool
                     arrow.SetActive(false);
-                    BulletPool.Enqueue(arrow);
+                    ArrowPool.Enqueue(arrow);
                 }
             }
         }

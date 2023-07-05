@@ -131,7 +131,7 @@ public class Spawner : MonoBehaviour
 
         while (true)
         {
-            if (canSpawn /*&& InBound()*/)
+            if (canSpawn && InBound())
             {
                 int rand = Random.Range(EraStart, EraEnd);
                 GameObject enemyToSpawn = enemyPrefabs[rand];
@@ -151,7 +151,7 @@ public class Spawner : MonoBehaviour
 
         while (true)
         {
-            if (bossCanSpawn /*&& InBound()*/)
+            if (bossCanSpawn && InBound())
             {
                 yield return waitBoss;
                 //int rand = Random.Range(EraStart, EraEnd);

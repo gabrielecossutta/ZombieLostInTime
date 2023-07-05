@@ -13,12 +13,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3674130307110795382, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674130307110795382, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674130307110795382, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3674130307110795382, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3727583616097640925, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3727583616097640925, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
       propertyPath: m_LocalPosition.x
@@ -62,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4103017992107899751, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
       propertyPath: m_Name
-      value: Bone Variant
+      value: Split
       objectReference: {fileID: 0}
     - target: {fileID: 4103017992107899751, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
       propertyPath: m_TagString
@@ -76,7 +88,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1265883499361422429}
   m_SourcePrefab: {fileID: 100100000, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
---- !u!1 &2981817767031207738 stripped
+--- !u!1 &5998212706929340147 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4103017992107899751, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
   m_PrefabInstance: {fileID: 7767926012446332308}
@@ -87,11 +99,11 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2981817767031207738}
+  m_GameObject: {fileID: 5998212706929340147}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09ada63365e1fa64ca10a5099572a9bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpType: 4
+  powerUpType: 3
   powerUpData: {fileID: 11400000, guid: cede7c18ff70aa74591ebd329f11905d, type: 2}

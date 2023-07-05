@@ -61,10 +61,10 @@ public class Enemy : MonoBehaviour
             {
                 Vector3 direction = player.position - transform.position;
                 Quaternion targetRotation = Quaternion.LookRotation(direction);
-                //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
                 direction.Normalize();
                 Vector3 movement = direction * Speed;
-                //enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
         }
     }

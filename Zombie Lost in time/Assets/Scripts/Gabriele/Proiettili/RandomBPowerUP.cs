@@ -8,7 +8,8 @@ public class RandomBPowerUP : MonoBehaviour
     public bool PowerUpTaken = false;
     private bool Executed = false;
     public float Time = 1.5f;
-    void Update()
+
+    void FixedUpdate()
     {
         if (PowerUpTaken)
         {
@@ -20,6 +21,7 @@ public class RandomBPowerUP : MonoBehaviour
             }
         }
     }
+
     private IEnumerator SpawnBullet(float delay)
     {
         yield return new WaitForSeconds(delay);
