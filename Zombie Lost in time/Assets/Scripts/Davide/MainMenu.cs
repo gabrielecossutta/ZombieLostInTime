@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene("DefaultMap");
+        SceneManager.LoadScene("Map_01", LoadSceneMode.Additive);
         FindObjectOfType<AudioManager>().Play("MedievalStage");
     }
     public void QuitGame()

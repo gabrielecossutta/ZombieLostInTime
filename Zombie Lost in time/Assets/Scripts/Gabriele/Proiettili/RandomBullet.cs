@@ -12,9 +12,8 @@ public class RandomBullet : Singleton<RandomBullet>
     public GameObject Spawner4;
     public GameObject Spawner5;
     public GameObject Bullet;
-    public bool UpgradeSpwn3 = false;
-    public bool UpgradeSpwn5 = false;
-
+    public bool UpgradeSpwn3;
+    public bool UpgradeSpwn5;
     void Update()
     {
         // Calcolare lo spostamento in base alla direzione forward e alla velocità

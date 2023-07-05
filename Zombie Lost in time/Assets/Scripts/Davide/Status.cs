@@ -27,6 +27,7 @@ public class Status : Singleton<Status>
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
     public GameObject loadingPanel;
+    public ParticleSystem FlameThrower;
     public int c;
 
     void Start()
@@ -144,14 +145,15 @@ public class Status : Singleton<Status>
         loadingPanel.SetActive(true); // Disattiva il loadingPanel
         if (c == 0)
         {
-            MapLoader.Instance.ChangeScene();
-            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
-            
+            MapLoader.Instance.ChangeScene(); 
         }
         if (c == 1)
         {
             MapLoader.Instance.ChangeScene2();
-            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
+        }
+        if (c == 2)
+        {
+            MapLoader.Instance.ChangeScene3();
         }
 
 
