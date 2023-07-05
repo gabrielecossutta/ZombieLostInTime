@@ -89,30 +89,32 @@ public class Spawner : MonoBehaviour
     {
         bossCanSpawn = spawn;
 
-        if (bossCanSpawn && bossSpawningCoroutine == null)
+        if (bossCanSpawn && bossSpawningCoroutine == null )
         {
             StartBossSpawning();
         }
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
-        if (!canSpawn && spawningCoroutine != null)
+        if (!canSpawn && spawningCoroutine != null )
         {
             StopSpawning();
             spawningCoroutine = null;
+            
         }
-        else if (canSpawn && spawningCoroutine == null)
+        else if (canSpawn && spawningCoroutine == null  )
         {
             StartSpawning();
+           
         }
 
-        if (!bossCanSpawn && bossSpawningCoroutine != null)
+        if (!bossCanSpawn && bossSpawningCoroutine != null )
         {
             StopBossSpawning();
             bossSpawningCoroutine = null;
         }
-        else if (bossCanSpawn && bossSpawningCoroutine == null)
+        else if (bossCanSpawn && bossSpawningCoroutine == null )
         {
             StartBossSpawning();
         }
@@ -129,7 +131,7 @@ public class Spawner : MonoBehaviour
 
         while (true)
         {
-            if (canSpawn)
+            if (canSpawn /*&& InBound()*/)
             {
                 int rand = Random.Range(EraStart, EraEnd);
                 GameObject enemyToSpawn = enemyPrefabs[rand];
@@ -149,13 +151,13 @@ public class Spawner : MonoBehaviour
 
         while (true)
         {
-            if (bossCanSpawn)
+            if (bossCanSpawn /*&& InBound()*/)
             {
                 yield return waitBoss;
                 //int rand = Random.Range(EraStart, EraEnd);
                 Instantiate(bossPrefab[howManyBoss], transform.position, Quaternion.identity, EnemyContainer);
                 bossPrefab.RemoveAt(howManyBoss);
-                Debug.Log(bossPrefab.Count);
+                
                 //howManyBoss++;
             }
             else
@@ -168,6 +170,16 @@ public class Spawner : MonoBehaviour
     public void SetSpawnRate(int value)
     {
         spawnRate = value;
+    }
+
+    public bool InBound()
+    {
+        if ((transform.position.x < 110f && transform.position.x > -106f) && (transform.position.z < -166f && transform.position.z > -383f))
+        {
+            return true;
+        }
+        
+            return false;
     }
 }
 

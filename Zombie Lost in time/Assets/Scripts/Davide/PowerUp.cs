@@ -67,9 +67,9 @@ public class PowerUp : MonoBehaviour
                     this.GetComponent<ClosestEnemyPowerUp>().PowerUpTaken = true;
                     break;
 
-                case PowerUpType.Flamethrower:
-                    //this.GetComponent<Flamethrower>().PowerUpTaken = true;
-                    break;
+                //case PowerUpType.Flamethrower:
+                //    //this.GetComponent<Flamethrower>().PowerUpTaken = true;
+                //    break;
 
                 case PowerUpType.SplitBullet:
                     this.GetComponent<RandomBPowerUP>().PowerUpTaken = true;
@@ -179,38 +179,38 @@ public class PowerUp : MonoBehaviour
                 }
             break;
 
-            case PowerUpType.Flamethrower:
+            //case PowerUpType.Flamethrower:
 
-                switch (currentlevel)
-                {
-                    case 0:
-                        break;
+            //    switch (currentlevel)
+            //    {
+            //        case 0:
+            //            break;
 
-                    case 1:
-                        AddPowerUp(Type);
-                        break;
+            //        case 1:
+            //            AddPowerUp(Type);
+            //            break;
 
-                    case 2:
-                        //player.GetComponent<Flamethrower>().PlusSize(2);
-                        break;
+            //        case 2:
+            //            //player.GetComponent<Flamethrower>().PlusSize(2);
+            //            break;
 
-                    case 3:
-                        //player.GetComponent<Flamethrower>().DualFlameSkill = true;
-                        break;
+            //        case 3:
+            //            //player.GetComponent<Flamethrower>().DualFlameSkill = true;
+            //            break;
 
-                    case 4:
-                        //player.GetComponent<Flamethrower>().duration += 3;
-                        break;
+            //        case 4:
+            //            //player.GetComponent<Flamethrower>().duration += 3;
+            //            break;
 
-                    case 5:
-                        //player.GetComponent<Flamethrower>().PlusSize(2);
-                        break;
+            //        case 5:
+            //            //player.GetComponent<Flamethrower>().PlusSize(2);
+            //            break;
 
-                    case 6:
-                        //player.GetComponent<Flamethrower>().QuadraFlameSkill = true;
-                        break;
-                }
-                break;
+            //        case 6:
+            //            //player.GetComponent<Flamethrower>().QuadraFlameSkill = true;
+            //            break;
+            //    }
+            //    break;
 
             case PowerUpType.SplitBullet:
 

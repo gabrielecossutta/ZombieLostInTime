@@ -409,7 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SightRange: 20
   DetectionRange: 20
-  Damage: 50
+  Damage: 14
   Enemycontainer: {fileID: 0}
   animator: {fileID: 416277589549065390}
   Speed: 3

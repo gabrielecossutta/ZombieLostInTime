@@ -37,7 +37,7 @@ public class DamageZone : MonoBehaviour
     public void CreateDamageZone()
     {
         Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        Vector3 spawnOffset = new Vector3(Random.Range(-15f, 15f), 1f, Random.Range(-15f, 15f));
+        Vector3 spawnOffset = new Vector3(Random.Range(-15f, 15f), 0, Random.Range(-15f, 15f));
         Vector3 spawnPoint = playerPos + spawnOffset;
 
         damageZone = Instantiate(damageZonePrefab, spawnPoint, Quaternion.identity);
