@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3405917136208209040}
   m_Layer: 0
   m_Name: Flametrowher
-  m_TagString: PowerUp
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,4 +120,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a21a3005eb7ca04a87c0e1c908ccd26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FlameThrower: {fileID: 19801364, guid: 5cd5599e01f32bd418f20a3b9eac1c57, type: 3}

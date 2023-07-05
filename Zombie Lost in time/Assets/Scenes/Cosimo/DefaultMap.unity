@@ -392,6 +392,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlot
       objectReference: {fileID: 0}
+    - target: {fileID: 4981670036786339719, guid: 0a54b2ff58d1ef84c8a7c79e6504fbc5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fb2cd8cd90c98cc43b611be405100838, type: 2}
+    - target: {fileID: 4981670036786339719, guid: 0a54b2ff58d1ef84c8a7c79e6504fbc5, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4981670036786339719, guid: 0a54b2ff58d1ef84c8a7c79e6504fbc5, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3311980528154760923, guid: fb2cd8cd90c98cc43b611be405100838, type: 2}
+    - target: {fileID: 4981670036786339719, guid: 0a54b2ff58d1ef84c8a7c79e6504fbc5, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7501100822176190727, guid: 0a54b2ff58d1ef84c8a7c79e6504fbc5, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
