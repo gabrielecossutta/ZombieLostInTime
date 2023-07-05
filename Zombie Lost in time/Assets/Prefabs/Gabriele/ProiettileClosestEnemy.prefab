@@ -115,7 +115,6 @@ MonoBehaviour:
   ClosestEnemy: {fileID: 0}
   speed: 0
   movement: {x: 0, y: 0, z: 0}
-  _rb: {fileID: -6342790351226310396}
 --- !u!54 &-6342790351226310396
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -244,7 +243,6 @@ MonoBehaviour:
   ClosestEnemy: {fileID: 0}
   speed: 0
   movement: {x: 0, y: 0, z: 0}
-  _rb: {fileID: 0}
 --- !u!114 &6406431068806660806
 MonoBehaviour:
   m_ObjectHideFlags: 0

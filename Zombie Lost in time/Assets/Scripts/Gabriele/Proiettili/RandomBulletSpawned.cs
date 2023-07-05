@@ -19,6 +19,7 @@ public class RandomBulletSpawned : MonoBehaviour
     {
         Vector3 movement = transform.forward * speed * Time.deltaTime;
         transform.Translate(movement);
+        Destroy(gameObject, 7.5f);
     }
     private void OnTriggerEnter(Collider other)
     {

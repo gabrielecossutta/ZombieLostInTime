@@ -21,7 +21,7 @@ public class RandomBullet : Singleton<RandomBullet>
         Vector3 movement = transform.forward * speed * Time.deltaTime;
         transform.Translate(movement);
         //colpisce
-
+        Destroy(gameObject, 7.5f);
         //si divide in 2 
     }
     private void OnTriggerEnter(Collider other)
