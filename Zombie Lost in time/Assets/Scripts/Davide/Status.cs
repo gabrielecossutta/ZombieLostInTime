@@ -27,7 +27,6 @@ public class Status : Singleton<Status>
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
     public GameObject loadingPanel;
-    public ParticleSystem FlameTrowher;
     public int c;
 
     void Start()
@@ -66,24 +65,30 @@ public class Status : Singleton<Status>
                 currentHealth = totalHealth;
             }
             healthBar.SetHealth(currentHealth);         //set vita aggiornato
+            Debug.Log(currentHealth);
             other.gameObject.SetActive(false);
         }
         else if (other.CompareTag("ExpBoss"))           //Esperienza Boss
         {
             ExpGained(baseExpGain);
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().Play("CrystalPickup");
         }
         else if (other.CompareTag("ExpBase"))           //Esperienza Base
         {
             ExpGained(baseExpGain);
+            FindObjectOfType<AudioManager>().Play("CrystalPickup");
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("Portal"))
         {
+
+
             TimerController.Instance.changingEra = false;
 
             MapLoader.Instance.portal.SetActive(false);
             
+
             StartCoroutine(ActivateLoadingPanelAfterDelay(2f));
             c++;
         }
@@ -92,6 +97,7 @@ public class Status : Singleton<Status>
     public void ExpGained(int exp)                      //Funzione per l'esperienza acquisita
     {
         currentExp += exp;
+        Debug.Log("Esperienza totale: " + currentExp);
 
         if (currentExp >= expToLvlUp)
         {
@@ -102,12 +108,16 @@ public class Status : Singleton<Status>
 
     public void LevelUp()                               //Funzione per il nuovo livello raggiunto
     {
+        FindObjectOfType<AudioManager>().Play("LevelUp");
         UpgradeMenu.Instance.OpenUpgradeMenu(1);
         currentLevel++;
         int excessExp = currentExp - expToLvlUp;
         currentExp = excessExp;
         expToLvlUp += 3;
         expBar.SetMaxExp(expToLvlUp);
+        Debug.Log("Livello " + currentLevel);
+        Debug.Log("Esperienza in eccesso:" + currentExp);
+
     }
 
     public void TakeDamage(int Damage)
@@ -119,29 +129,35 @@ public class Status : Singleton<Status>
         {
             enemyKilledCounter = EnemyKilledCounter.Instance.enemyKilled;
             enemyKilledText.text = "Enemy Killed: " + enemyKilledCounter.ToString();
+            Debug.Log("The player is dead Status");
+            //currentHealth = maxHealth;
             healthBar.SetHealth(currentHealth);
+            FindObjectOfType<AudioManager>().StopAll();
+            FindObjectOfType<AudioManager>().Play("GameOver");
+
         }
     }
 
     private IEnumerator ActivateLoadingPanelAfterDelay(float delay)
-    {      
-        loadingPanel.SetActive(true);
+    {
+        
+        loadingPanel.SetActive(true); // Disattiva il loadingPanel
         if (c == 0)
         {
             MapLoader.Instance.ChangeScene();
+            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
+            
         }
         if (c == 1)
         {
             MapLoader.Instance.ChangeScene2();
-        }
-        if (c == 2)
-        {
-            MapLoader.Instance.ChangeScene3();
             Debug.Log("Nell' IF " + MapLoader.Instance.Era);
         }
 
+
         yield return new WaitForSeconds(delay); // Attendi il numero di secondi specificato
 
-        loadingPanel.SetActive(false);
+
+        loadingPanel.SetActive(false); // Attiva nuovamente il loadingPanel
     }
 }

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1981061709807972210
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5789718624413908000}
+  - component: {fileID: 6377960233876186284}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5789718624413908000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981061709807972210}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 32
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6377960233876186284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981061709807972210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17bd50abaf21d2842a66c8c66414626d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: CrystalPickup
+    clip: {fileID: 8300000, guid: c1d682370e77c524dbf248bf57f10a8d, type: 3}
+    volume: 0.385
+    pitch: 2.004
+    loop: 0
+    source: {fileID: 0}
+  - name: LevelUp
+    clip: {fileID: 8300000, guid: 5bfe6d6efbc444c4e9537474638e96cd, type: 3}
+    volume: 0.701
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuSelect
+    clip: {fileID: 8300000, guid: d623c6bed86eb0f41b3eacc04772295a, type: 3}
+    volume: 0.437
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MenuSound
+    clip: {fileID: 8300000, guid: 8b8eca6b3dffd1847a78c45767e531c5, type: 3}
+    volume: 0.437
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: f4f9c8b224bee51428b23c2dbd2c1e74, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MedievalStage
+    clip: {fileID: 8300000, guid: ee399a2eea9022c4ba550c5050a41285, type: 3}
+    volume: 0.104
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: VikingStage
+    clip: {fileID: 8300000, guid: 0553dc48f7261ab4f92dca875ba9be16, type: 3}
+    volume: 0.104
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WesternStage
+    clip: {fileID: 8300000, guid: e302347edccebc2418aa785133094b59, type: 3}
+    volume: 0.104
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SamuraiStage
+    clip: {fileID: 8300000, guid: 35d43608d582e594bbd65f218329b132, type: 3}
+    volume: 0.104
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ModernStage
+    clip: {fileID: 8300000, guid: 7b5e6da751bcd0d48aa2c0d6a506f95e, type: 3}
+    volume: 0.104
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
