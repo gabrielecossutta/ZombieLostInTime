@@ -9,12 +9,14 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject _settingsMenuCanvasGO;
     [SerializeField] private GameObject _keyboardCanvasGO;
     [SerializeField] private GameObject _gamepadCanvasGO;
+    [SerializeField] private GameObject _gameCanvasGO;
 
     [Header("First Selected Options")]
     [SerializeField] private GameObject _mainMenuFirst;
     [SerializeField] private GameObject _settingsMenuFirst;
     [SerializeField] private GameObject _keyboardFirst;
     [SerializeField] private GameObject _gamepadFirst;
+    [SerializeField] private GameObject _gameFirst;
 
     // Start is called before the first frame update
     void Start()
@@ -67,5 +69,10 @@ public class MainMenuManager : MonoBehaviour
     public void OnGamepadControlsPress()
     {
         EventSystem.current.SetSelectedGameObject(_gamepadFirst);
+    }
+
+    public void OnGameControlsPress()
+    {
+        EventSystem.current.SetSelectedGameObject(_gameFirst);
     }
 }

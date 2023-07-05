@@ -3846,6 +3846,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: FlameThrower
+      value: 
+      objectReference: {fileID: 980426579}
+    - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: FlameTrowher
       value: 
       objectReference: {fileID: 980426579}

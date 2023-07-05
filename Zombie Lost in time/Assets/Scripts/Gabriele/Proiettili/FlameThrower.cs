@@ -19,7 +19,7 @@ public class ParticleCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Status.Instance.FlameTrowher.Play();
+            Status.Instance.FlameThrower.Play();
             Destroy(gameObject);
         }
     }
