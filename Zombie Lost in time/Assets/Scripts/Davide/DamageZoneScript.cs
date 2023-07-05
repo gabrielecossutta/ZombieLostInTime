@@ -8,9 +8,9 @@ public class DamageZoneScript : MonoBehaviour
     public float damageAmount = 10f; 
     private void OnTriggerStay(Collider collision)
     {
-        if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyBig"))
+        if(collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemyBoss"))
         {
-            Debug.Log("Damaged");
+            
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damageAmount * Time.deltaTime);
         }
     }

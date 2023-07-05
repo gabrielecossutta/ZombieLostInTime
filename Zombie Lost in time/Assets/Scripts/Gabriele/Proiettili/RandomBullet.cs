@@ -30,20 +30,25 @@ public class RandomBullet : Singleton<RandomBullet>
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyBig"))
         {
             other.GetComponent<EnemyHealth>().TakeDamage(Damage);//Applica Danno
-
+            
             if (UpgradeSpwn5)
             {
-                Instantiate(Bullet, Spawner4.transform.position, Spawner4.transform.rotation);
-                Instantiate(Bullet, Spawner5.transform.position, Spawner5.transform.rotation);
+                RandomBulletSpawned Bullet4 = Instantiate(Bullet, Spawner4.transform.position, Spawner4.transform.rotation).GetComponent<RandomBulletSpawned>(); // spawn il proiettile con le coordinate dello spawner 1
+                Bullet4.enemyHit = other; // passo il collider del nemico, cosi da non far distruggere i proiettili creati contro lo stesso nemico
+                RandomBulletSpawned Bullet5 = Instantiate(Bullet, Spawner5.transform.position, Spawner5.transform.rotation).GetComponent<RandomBulletSpawned>();// spawn il proiettile con le coordinate dello spawner 2
+                Bullet5.enemyHit = other;// passo il collider del nemico, cosi da non far distruggere i proiettili creati contro lo stesso nemico
             }
             if (UpgradeSpwn3)
             {
-                Instantiate(Bullet, Spawner3.transform.position, Spawner3.transform.rotation);
+                RandomBulletSpawned Bullet3 = Instantiate(Bullet, Spawner3.transform.position, Spawner3.transform.rotation).GetComponent<RandomBulletSpawned>(); // spawn il proiettile con le coordinate dello spawner 1
+                Bullet3.enemyHit = other; // passo il collider del nemico, cosi da non far distruggere i proiettili creati contro lo stesso nemico
 
             }
-            Instantiate(Bullet, Spawner1.transform.position, Spawner1.transform.rotation);
-            Instantiate(Bullet, Spawner2.transform.position, Spawner2.transform.rotation);
-            Destroy(gameObject);
+            RandomBulletSpawned Bullet1 = Instantiate(Bullet, Spawner1.transform.position, Spawner1.transform.rotation).GetComponent<RandomBulletSpawned>(); // spawn il proiettile con le coordinate dello spawner 1
+            Bullet1.enemyHit = other; // passo il collider del nemico, cosi da non far distruggere i proiettili creati contro lo stesso nemico
+            RandomBulletSpawned Bullet2 = Instantiate(Bullet, Spawner2.transform.position, Spawner2.transform.rotation).GetComponent<RandomBulletSpawned>();// spawn il proiettile con le coordinate dello spawner 2
+            Bullet2.enemyHit = other;// passo il collider del nemico, cosi da non far distruggere i proiettili creati contro lo stesso nemico
+            Destroy(gameObject); // distruggo il proiettile
         }
     }
 }

@@ -7,7 +7,7 @@ public enum PowerUpType
     DamageZone,
     RotatingBullet,
     AIMBullet,
-    Flamethrower,
+    //Flamethrower,
     SplitBullet
 };
 public class PowerUpEnums : MonoBehaviour

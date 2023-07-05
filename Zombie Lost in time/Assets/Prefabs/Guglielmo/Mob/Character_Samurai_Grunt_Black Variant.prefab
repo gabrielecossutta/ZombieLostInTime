@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SightRange: 20
   DetectionRange: 20
-  Damage: 2
+  Damage: 15
   Enemycontainer: {fileID: 0}
   animator: {fileID: 2688513203942339723}
   Speed: 3
@@ -140,14 +140,14 @@ MonoBehaviour:
   velocitaSguardo: 0
   enemyRB: {fileID: 0}
   drop:
-  - {fileID: 601830525838980291, guid: a2ea614c65433714481858d1d767d52f, type: 3}
-  - {fileID: 6728101040444387211, guid: b3b13d488e357494ca946ee528aa7595, type: 3}
-  - {fileID: 1567856447458724856, guid: 0f4fcfdccba541d4eab52477211e2b6b, type: 3}
-  - {fileID: 7082311609165040521, guid: d228e664f0f4133419892922142e8fbe, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 5267032816261055682, guid: 5381eb3bb40ec32428e329055bebce22, type: 3}
+  - {fileID: 951408125886594574, guid: a192d45515659ac48b81663459493119, type: 3}
+  - {fileID: 2981817767031207738, guid: 02ce2327c6c775c40ab7bfdc0614bc25, type: 3}
+  - {fileID: 82143882328492046, guid: 7b35dbd5770d2824fa53257acf9bf59c, type: 3}
+  - {fileID: 3790626040167159002, guid: 21b526459730c75489ba4657d683547e, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 1683275412945906739, guid: 309128a120dd2664b91716065411d118, type: 3}
-  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 537260373037575102, guid: 27a261dbb707da24ba4c086edcb10126, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae908bea4ab7d6409060647b01c39cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 120
   currentHealth: 0
   DamageFlameTrowher: 10
 --- !u!136 &8227172748435411968
@@ -195,7 +195,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.85
   m_Direction: 1
-  m_Center: {x: 0, y: 0.9, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &6033398360106876895
 Rigidbody:
   m_ObjectHideFlags: 0
