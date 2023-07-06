@@ -18,6 +18,7 @@ public class Spawner : MonoBehaviour
     private Coroutine bossSpawningCoroutine;
     public int EraStart;
     public int EraEnd;
+    [SerializeField] private float obstacleCheckRadius = 1f;
 
     private void Start()
     {
@@ -26,7 +27,6 @@ public class Spawner : MonoBehaviour
         EraStart = 0;
         EraEnd = 2;
         StartSpawning();
-        
     }
 
     private void OnEnable()
@@ -89,7 +89,7 @@ public class Spawner : MonoBehaviour
     {
         bossCanSpawn = spawn;
 
-        if (bossCanSpawn && bossSpawningCoroutine == null )
+        if (bossCanSpawn && bossSpawningCoroutine == null)
         {
             StartBossSpawning();
         }
@@ -97,24 +97,22 @@ public class Spawner : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (!canSpawn && spawningCoroutine != null )
+        if (!canSpawn && spawningCoroutine != null)
         {
             StopSpawning();
             spawningCoroutine = null;
-            
         }
-        else if (canSpawn && spawningCoroutine == null  )
+        else if (canSpawn && spawningCoroutine == null)
         {
             StartSpawning();
-           
         }
 
-        if (!bossCanSpawn && bossSpawningCoroutine != null )
+        if (!bossCanSpawn && bossSpawningCoroutine != null)
         {
             StopBossSpawning();
             bossSpawningCoroutine = null;
         }
-        else if (bossCanSpawn && bossSpawningCoroutine == null )
+        else if (bossCanSpawn && bossSpawningCoroutine == null)
         {
             StartBossSpawning();
         }
@@ -127,11 +125,11 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator Spawning()
     {
-        WaitForSeconds wait = new WaitForSeconds(spawnRate );
+        WaitForSeconds wait = new WaitForSeconds(spawnRate);
 
         while (true)
         {
-            if (canSpawn && InBound())
+            if (canSpawn  && !HasObstacleInContact() && InBound())
             {
                 int rand = Random.Range(EraStart, EraEnd);
                 GameObject enemyToSpawn = enemyPrefabs[rand];
@@ -151,14 +149,12 @@ public class Spawner : MonoBehaviour
 
         while (true)
         {
-            if (bossCanSpawn && InBound())
-            {
                 yield return waitBoss;
-                //int rand = Random.Range(EraStart, EraEnd);
+            if (bossCanSpawn && !HasObstacleInContact() && InBound())
+            {
                 Instantiate(bossPrefab[howManyBoss], transform.position, Quaternion.identity, EnemyContainer);
                 bossPrefab.RemoveAt(howManyBoss);
-                
-                //howManyBoss++;
+                Debug.Log("Boss spawned");
             }
             else
             {
@@ -167,7 +163,7 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    public void SetSpawnRate(int value)
+    public void SetSpawnRate(float value)
     {
         spawnRate = value;
     }
@@ -178,8 +174,31 @@ public class Spawner : MonoBehaviour
         {
             return true;
         }
-        
-            return false;
+
+        return false;
+    }
+
+    private bool HasObstacleInContact()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, obstacleCheckRadius);
+
+        foreach (Collider collider in colliders)
+        {
+            if (collider.CompareTag("Obstacles"))
+            {
+                 if (Physics.CheckSphere(transform.position, obstacleCheckRadius, 1 << collider.gameObject.layer))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, obstacleCheckRadius);
     }
 }
-

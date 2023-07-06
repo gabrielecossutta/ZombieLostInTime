@@ -29,6 +29,7 @@ public class Nottepertutti : Singleton<Nottepertutti>
         {
             Vector3 direction = enemy.transform.position - player.position;
             float currentDistance = direction.magnitude;
+            //enemy.layer = 3;
             if (currentDistance>70)
             {
                 Destroy(enemy);
