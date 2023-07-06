@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SplitBullet
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: c29ab7fc5be168241807853739c2e476, type: 3}
-  powerUpType: 4
+  powerUpType: 3
   level: 0

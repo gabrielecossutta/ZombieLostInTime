@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_Item_CannedFood_03 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 163440, guid: 2e7dcc1260150b046adc09a1938cda6b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 405416, guid: 2e7dcc1260150b046adc09a1938cda6b, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -76,7 +80,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2236345481691480132}
   m_SourcePrefab: {fileID: 100100000, guid: 2e7dcc1260150b046adc09a1938cda6b, type: 3}
---- !u!1 &2236345481691610676 stripped
+--- !u!1 &500256716001358287 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 163440, guid: 2e7dcc1260150b046adc09a1938cda6b, type: 3}
   m_PrefabInstance: {fileID: 500256716001234879}
@@ -87,7 +91,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2236345481691610676}
+  m_GameObject: {fileID: 500256716001358287}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b392845d82e3de4ea8b5bb4b7b7c281, type: 3}

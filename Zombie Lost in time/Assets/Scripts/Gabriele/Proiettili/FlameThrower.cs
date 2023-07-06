@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ParticleCollider : MonoBehaviour
 {
-    public ParticleSystem FlameThrower;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +19,8 @@ public class ParticleCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            FlameThrower.Play();
+            FindObjectOfType<AudioManager>().Play("FlameThrower");
+            Status.Instance.FlameThrower.Play();
             Destroy(gameObject);
         }
     }

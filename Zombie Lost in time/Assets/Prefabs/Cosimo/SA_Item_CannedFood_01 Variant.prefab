@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SA_Item_CannedFood_01 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 131798, guid: 4337e5c6c04789145949a42687bcde59, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 496226, guid: 4337e5c6c04789145949a42687bcde59, type: 3}
       propertyPath: m_RootOrder
       value: 8

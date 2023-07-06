@@ -12,7 +12,7 @@ public class TimerController : Singleton<TimerController>
     public float dayTimer;
     public float nightDuration;
     public float nightTimer;
-    private float survivedTime;
+    public float survivedTime;
     public bool changingEra;
 
     private void Start()
@@ -20,6 +20,7 @@ public class TimerController : Singleton<TimerController>
         ResetDayTimer();
         ResetNightTimer();
         changingEra = false;
+
     }
 
     private void ResetDayTimer()
@@ -58,7 +59,7 @@ public class TimerController : Singleton<TimerController>
                 }
             }
 
-        survivedTime = Time.time;
+        survivedTime += Time.deltaTime;
         // Aggiorna il testo del timer
         survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + "s";
         }

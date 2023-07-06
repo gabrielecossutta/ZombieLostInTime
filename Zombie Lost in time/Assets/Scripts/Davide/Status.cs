@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class Status : Singleton<Status>
 {
     [SerializeField] private int baseExpGain;
+    [SerializeField] private int bigExpGain;
     public int maxHealth;
     public int currentExp;
     public int currentHealth;
@@ -27,6 +28,7 @@ public class Status : Singleton<Status>
     [HideInInspector] public float speedUpgradedValue;
     public Animator animator;
     public GameObject loadingPanel;
+    public ParticleSystem FlameThrower;
     public int c;
 
     void Start()
@@ -65,17 +67,19 @@ public class Status : Singleton<Status>
                 currentHealth = totalHealth;
             }
             healthBar.SetHealth(currentHealth);         //set vita aggiornato
-            Debug.Log(currentHealth);
+            FindObjectOfType<AudioManager>().Play("HealthPickup");
             other.gameObject.SetActive(false);
         }
         else if (other.CompareTag("ExpBoss"))           //Esperienza Boss
         {
-            ExpGained(baseExpGain);
+            ExpGained(bigExpGain);
             Destroy(other.gameObject);
+            FindObjectOfType<AudioManager>().Play("CrystalPickup");
         }
         else if (other.CompareTag("ExpBase"))           //Esperienza Base
         {
             ExpGained(baseExpGain);
+            FindObjectOfType<AudioManager>().Play("CrystalPickup");
             Destroy(other.gameObject);
         }
         else if (other.CompareTag("Portal"))
@@ -102,15 +106,21 @@ public class Status : Singleton<Status>
             LevelUp();
         }
         expBar.SetExp(currentExp);
+        
     }
 
     public void LevelUp()                               //Funzione per il nuovo livello raggiunto
     {
+        FindObjectOfType<AudioManager>().Play("LevelUp");
         UpgradeMenu.Instance.OpenUpgradeMenu(1);
         currentLevel++;
         int excessExp = currentExp - expToLvlUp;
         currentExp = excessExp;
         expToLvlUp += 3;
+        if (excessExp >= expToLvlUp)
+        {
+            LevelUp();
+        }
         expBar.SetMaxExp(expToLvlUp);
         Debug.Log("Livello " + currentLevel);
         Debug.Log("Esperienza in eccesso:" + currentExp);
@@ -129,6 +139,8 @@ public class Status : Singleton<Status>
             Debug.Log("The player is dead Status");
             //currentHealth = maxHealth;
             healthBar.SetHealth(currentHealth);
+            FindObjectOfType<AudioManager>().StopAll();
+            FindObjectOfType<AudioManager>().Play("GameOver");
 
         }
     }
@@ -139,14 +151,19 @@ public class Status : Singleton<Status>
         loadingPanel.SetActive(true); // Disattiva il loadingPanel
         if (c == 0)
         {
-            MapLoader.Instance.ChangeScene();
-            Debug.Log("Nell' IF "+ MapLoader.Instance.Era);
-            
+            MapLoader.Instance.ChangeScene(); 
         }
         if (c == 1)
         {
             MapLoader.Instance.ChangeScene2();
-            Debug.Log("Nell' IF " + MapLoader.Instance.Era);
+        }
+        if (c == 2)
+        {
+            MapLoader.Instance.ChangeScene3();
+        }
+        if (c == 3)
+        {
+            MapLoader.Instance.ChangeScene4();
         }
 
 

@@ -1,5 +1,83 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2211313680896439706
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7276940910753836329}
+    m_Modifications:
+    - target: {fileID: 3629002113000326299, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_Name
+      value: MiniMapPortal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+--- !u!4 &4960611884645570066 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6514325098376881032, guid: 3b486e3471e83fe478a5208347df519c, type: 3}
+  m_PrefabInstance: {fileID: 2211313680896439706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7167015128368417474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52,6 +130,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7029948723529949830, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
       propertyPath: m_Name
       value: portal Variant
@@ -64,41 +146,35 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 5148817236446094103, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6507901977716847365, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3352155079083799246}
+      addedObject: {fileID: 4960611884645570066}
+    m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6764528921337378710}
   m_SourcePrefab: {fileID: 100100000, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+--- !u!4 &7276940910753836329 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
+  m_PrefabInstance: {fileID: 7167015128368417474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8049959589263521683 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a9eb3f37f34740644a8a1090e9bec400, type: 3}
   m_PrefabInstance: {fileID: 7167015128368417474}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3352155079083799246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8049959589263521683}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f3065388631c34fab4da3c2ca6de6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  portal: {fileID: 8049959589263521683}
-  isChanging: 0
-  Player: {fileID: 0}
-  spawnerList: []
-  startPlayerPos: {x: 0, y: 0, z: 0}
-  destroyEnemy: 0
-  Era: 0
 --- !u!136 &6764528921337378710
 CapsuleCollider:
   m_ObjectHideFlags: 0
