@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class MainMenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject _mainMenuCanvasGO;
+    [SerializeField] private GameObject _creditsCanvasGO;
     [SerializeField] private GameObject _settingsMenuCanvasGO;
     [SerializeField] private GameObject _keyboardCanvasGO;
     [SerializeField] private GameObject _gamepadCanvasGO;
@@ -13,6 +14,7 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("First Selected Options")]
     [SerializeField] private GameObject _mainMenuFirst;
+    [SerializeField] private GameObject _creditsFirst;
     [SerializeField] private GameObject _settingsMenuFirst;
     [SerializeField] private GameObject _keyboardFirst;
     [SerializeField] private GameObject _gamepadFirst;
@@ -74,5 +76,9 @@ public class MainMenuManager : MonoBehaviour
     public void OnGameControlsPress()
     {
         EventSystem.current.SetSelectedGameObject(_gameFirst);
+    }
+    public void OnCreditsPress()
+    {
+        EventSystem.current.SetSelectedGameObject(_creditsFirst);
     }
 }
