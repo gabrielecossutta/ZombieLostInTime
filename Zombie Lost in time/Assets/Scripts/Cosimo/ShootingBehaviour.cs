@@ -89,7 +89,6 @@ public class ShootingBehaviour : MonoBehaviour
             {
                 timer_elapsed = 0f;
                 shootRoutine = true;
-
                 animator.SetBool("Shoot_b", true);
 
                 if (bulletsPerSecond > 2)
@@ -133,6 +132,7 @@ public class ShootingBehaviour : MonoBehaviour
         {
             animator.SetBool("Reload_b", false);
             ShootingRoutine();
+            WeaponSound(currentWeaponIndex);
         }
 
         // Controlla le collisioni dei proiettili attivi
@@ -374,7 +374,27 @@ public class ShootingBehaviour : MonoBehaviour
             currentBurst = burstSize;
         }
     }
-
+    void WeaponSound(int currWeaponIndex)
+    {
+        switch (currWeaponIndex)
+        {
+            case 0:
+                FindObjectOfType<AudioManager>().Play("BowShot");
+                break;
+            case 1:
+                FindObjectOfType<AudioManager>().Play("PistolShot");
+                break;
+            case 2:
+                FindObjectOfType<AudioManager>().Play("AkShot");
+                break;
+                case 3:
+                FindObjectOfType<AudioManager>().PlayOneShot("ShotgunShot");
+                break;
+                case 4:
+                FindObjectOfType<AudioManager>().PlayOneShot("MinigunShot");
+                break;
+        }
+    }
     IEnumerator ResetBulletAfterDelay(GameObject bullet, float delay, Queue<GameObject> pool)
     {
         yield return new WaitForSeconds(delay);
@@ -399,6 +419,7 @@ public class ShootingBehaviour : MonoBehaviour
         {
             animator.SetBool("Reload_b", true);
             ShootingRoutine();
+            WeaponSound(currentWeaponIndex);
         }
 
     }
