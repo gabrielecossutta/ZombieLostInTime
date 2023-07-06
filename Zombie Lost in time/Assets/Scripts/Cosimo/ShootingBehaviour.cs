@@ -143,6 +143,29 @@ public class ShootingBehaviour : MonoBehaviour
             WeaponSound(currentWeaponIndex);
         }
 
+        if (currentWeaponIndex == 3 && !FindObjectOfType<MenuManager>().isPaused)
+        {
+            if (!FindObjectOfType<UpgradeMenu>().isPaused)
+            {
+                if (!FindObjectOfType<ButtonHandlerForExit>().deathMenu.activeInHierarchy)
+                {
+                    FindObjectOfType<AudioManager>().PlayOneShot("MinigunShot");
+                }
+                else
+                {
+                    FindObjectOfType<AudioManager>().Stop("MinigunShot");
+                }
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Stop("MinigunShot");
+            }
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Stop("MinigunShot");
+        }
+
         // Controlla le collisioni dei proiettili attivi
         //CheckBulletCollisions();
     }
@@ -207,29 +230,23 @@ public class ShootingBehaviour : MonoBehaviour
             SetWeaponValues(weapons[0]);
             currentWeaponIndex = 0;
         }
-        else if ((Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButton("BButton")) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.revolver && currentWeaponIndex != 1)
+        else if ((Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButton("BButton")) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.akOwned && currentWeaponIndex != 1)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[1]);
             currentWeaponIndex = 1;
         }
-        else if ((Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButton("AButton")) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.akOwned && currentWeaponIndex != 2)
+        else if ((Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButton("AButton")) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.shotgunDBOwned && currentWeaponIndex != 2)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[2]);
             currentWeaponIndex = 2;
         }
-        else if ((Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButton("XButton")) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.shotgunDBOwned && currentWeaponIndex != 3)
+        else if ((Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButton("XButton")) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned && currentWeaponIndex != 3)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[3]);
             currentWeaponIndex = 3;
-        }
-        else if ((Input.GetKeyDown(KeyCode.Alpha5) /*|| Input.GetButton("XButton")*/) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned && currentWeaponIndex != 4)
-        {
-            weaponSwitched = true;
-            SetWeaponValues(weapons[4]);
-            currentWeaponIndex = 4;
         }
     }
 
@@ -405,16 +422,13 @@ public class ShootingBehaviour : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("BowShot");
                 break;
             case 1:
-                FindObjectOfType<AudioManager>().Play("PistolShot");
-                break;
-            case 2:
                 FindObjectOfType<AudioManager>().Play("AkShot");
                 break;
-                case 3:
+            case 2:
                 FindObjectOfType<AudioManager>().PlayOneShot("ShotgunShot");
                 break;
-                case 4:
-                FindObjectOfType<AudioManager>().PlayOneShot("MinigunShot");
+            case 3:
+                //FindObjectOfType<AudioManager>().PlayOneShot("MinigunShot");
                 break;
         }
     }
