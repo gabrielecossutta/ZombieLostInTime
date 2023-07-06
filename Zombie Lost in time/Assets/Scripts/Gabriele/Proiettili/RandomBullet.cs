@@ -12,16 +12,21 @@ public class RandomBullet : Singleton<RandomBullet>
     public GameObject Spawner4;
     public GameObject Spawner5;
     public GameObject Bullet;
-    public bool UpgradeSpwn3 = false;
-    public bool UpgradeSpwn5 = false;
+    public bool UpgradeSpwn3;
+    public bool UpgradeSpwn5;
 
+    void Start()
+    {
+        UpgradeSpwn3 = false;
+        UpgradeSpwn5 = false;
+    }
     void Update()
     {
         // Calcolare lo spostamento in base alla direzione forward e alla velocità
         Vector3 movement = transform.forward * speed * Time.deltaTime;
         transform.Translate(movement);
         //colpisce
-
+        Destroy(gameObject, 7.5f);
         //si divide in 2 
     }
     private void OnTriggerEnter(Collider other)

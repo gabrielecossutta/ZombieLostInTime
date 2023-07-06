@@ -67,32 +67,38 @@ public class MapLoader : Singleton<MapLoader>
     public void ChangeScene()
     {
         SceneManager.LoadSceneAsync("Map_02", LoadSceneMode.Additive).completed += OnSceneLoadComplete;
-        
+        FindObjectOfType<AudioManager>().Play("VikingStage");
+
     }
 
     private void OnSceneLoadComplete(AsyncOperation asyncOp)
     {
         SceneManager.UnloadSceneAsync("Map_01");
+        FindObjectOfType<AudioManager>().Stop("MedievalStage");
     }
 
     public void ChangeScene2()
     {
         SceneManager.LoadSceneAsync("Map_03", LoadSceneMode.Additive).completed += OnSceneLoadComplete2;
+        FindObjectOfType<AudioManager>().Play("WesternStage");
     }
 
     private void OnSceneLoadComplete2(AsyncOperation asyncOp)
     {
         SceneManager.UnloadSceneAsync("Map_02");
+        FindObjectOfType<AudioManager>().Stop("VikingStage");
     }
 
     public void ChangeScene3()
     {
         SceneManager.LoadSceneAsync("Map_04", LoadSceneMode.Additive).completed += OnSceneLoadComplete3;
+        FindObjectOfType<AudioManager>().Play("SamuraiStage");
     }
 
     private void OnSceneLoadComplete3(AsyncOperation asyncOp)
     {
         SceneManager.UnloadSceneAsync("Map_03");
+        FindObjectOfType<AudioManager>().Stop("WesternStage");
     }
 
     public void ResetPlayerPos()

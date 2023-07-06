@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
-            transform.LookAt(player); // i nemici guardano il player
+            //transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
         }

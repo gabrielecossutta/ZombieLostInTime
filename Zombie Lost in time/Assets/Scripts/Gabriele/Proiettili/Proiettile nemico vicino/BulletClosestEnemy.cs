@@ -21,11 +21,12 @@ public class BulletClosestEnemy : Singleton<BulletClosestEnemy>
         {
             ClosestEnemy = NemicoPiùVicino.Instance.closestEnemy.transform;
             Executed = true;
-            Vector3 direction = ClosestEnemy.position - transform.position;
+            Vector3 direction = new Vector3 (ClosestEnemy.position.x, ClosestEnemy.position.y+0.5f, ClosestEnemy.position.z) - transform.position;
             direction.Normalize();
             movement = direction * speed;
         }
         transform.position += movement;
+        Destroy(gameObject,7.5f);
     }
 
     private void OnTriggerEnter(Collider other)
