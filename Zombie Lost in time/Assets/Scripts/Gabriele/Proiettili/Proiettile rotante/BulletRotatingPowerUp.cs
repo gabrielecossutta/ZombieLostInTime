@@ -24,6 +24,7 @@ public class BulletRotatingPowerUp : Singleton<BulletRotatingPowerUp>
     {
         if (other.CompareTag("Enemy") || other.CompareTag("EnemyBig"))
         {
+            FindObjectOfType<AudioManager>().Play("ShieldHit");
             other.GetComponent<EnemyHealth>().TakeDamage(Damage); //Applica Danno
         }
     }

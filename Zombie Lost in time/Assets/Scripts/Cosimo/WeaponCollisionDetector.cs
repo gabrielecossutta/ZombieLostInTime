@@ -14,21 +14,25 @@ public class WeaponCollisionDetector : Singleton<WeaponCollisionDetector>
         {
             revolver = true;
             other.gameObject.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("WeaponPickup");
         }
         else if (other.CompareTag(weaponTags[1]))
         {
             akOwned = true;
             other.gameObject.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("WeaponPickup");
         }
         else if (other.CompareTag(weaponTags[2]))
         {
             shotgunDBOwned = true;
             other.gameObject.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("WeaponPickup");
         }
         else if(other.CompareTag(weaponTags[3]))
         {
             MinigunOwned = true;
             other.gameObject.SetActive(false);
+            FindObjectOfType<AudioManager>().Play("WeaponPickup");
         }
     }
 }

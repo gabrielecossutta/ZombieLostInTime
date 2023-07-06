@@ -67,7 +67,7 @@ public class Status : Singleton<Status>
                 currentHealth = totalHealth;
             }
             healthBar.SetHealth(currentHealth);         //set vita aggiornato
-            Debug.Log(currentHealth);
+            FindObjectOfType<AudioManager>().Play("HealthPickup");
             other.gameObject.SetActive(false);
         }
         else if (other.CompareTag("ExpBoss"))           //Esperienza Boss

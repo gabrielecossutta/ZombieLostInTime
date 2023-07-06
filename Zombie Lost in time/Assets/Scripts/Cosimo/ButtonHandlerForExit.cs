@@ -33,6 +33,7 @@ public class ButtonHandlerForExit : MonoBehaviour
         deathMenu.SetActive(false);
         SceneManager.LoadScene("DefaultMap");
         SceneManager.LoadSceneAsync("Map_01", LoadSceneMode.Additive);
+        FindObjectOfType<AudioManager>().Play("MedievalStage");
         TimerController.Instance.survivedTime = 0;
     }
 

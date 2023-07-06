@@ -51,6 +51,7 @@ public class PowerUp : MonoBehaviour
                     Debug.Log(powerUp + "Level Max");
                 }
             }
+            FindObjectOfType<AudioManager>().Play("PickupPowerUp");
             Destroy(collider.gameObject);
         }
     }
