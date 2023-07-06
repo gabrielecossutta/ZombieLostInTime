@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2024335860202894985}
   - component: {fileID: 2419871948594335121}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Brain_Model Variant
   m_TagString: Health
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4373269925508513435}
   - component: {fileID: 978763203745307151}
   - component: {fileID: 3180473020314454734}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: default
   m_TagString: Health
   m_Icon: {fileID: 0}

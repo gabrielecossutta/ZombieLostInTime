@@ -36,6 +36,7 @@ public class ShootingBehaviour : MonoBehaviour
     private float bulletsPerSecondAtStart;
     private int currentBurst;
     private int currentMag;
+    private int fireRateLvlUpgrade;
     private bool shootRoutine;
 
     private Animator animator;
@@ -170,9 +171,9 @@ public class ShootingBehaviour : MonoBehaviour
         }
     }
 
-    void SetWeaponValues(Weapon weapon)
+    public void SetWeaponValues(Weapon weapon)
     {
-        bulletsPerSecond = weapon.bulletsPerSecond;
+        bulletsPerSecond = weapon.bulletsPerSecond + (fireRateLvlUpgrade * UpgradeWeaponsStats.Instance.fireRateUpgrade);
         bulletLifeTime = weapon.bulletLifeTime;
         magSize = weapon.magSize;
         reloadTimer = weapon.reloadTimer;
@@ -451,6 +452,34 @@ public class ShootingBehaviour : MonoBehaviour
             animator.SetBool("Reload_b", false);
             animator.SetBool("Shoot_b", true);
         }
+    }
+
+    public void SetUpgradeFireRate(float addValue)
+    {
+        weapons[currentWeaponIndex].fireRateLvlUpgrade += 1;
+
+        if (currentWeaponIndex == 0)
+        {
+            animator.SetFloat("Multiplier", animator.GetFloat("Multiplier") + addValue);
+        }
+    }
+
+    void ResetWeaponsUpgradeLvl()
+    {
+        foreach (Weapon weapon in weapons)
+        {
+            weapon.fireRateLvlUpgrade = 0;
+        }
+    }
+    public Weapon GetCurrentWeapon()
+    {
+        if (currentWeaponIndex >= 0 && currentWeaponIndex < weapons.Count)
+        {
+            Weapon currentWeapon = weapons[currentWeaponIndex];
+            return currentWeapon;
+        }
+
+        return null;
     }
 }
 
