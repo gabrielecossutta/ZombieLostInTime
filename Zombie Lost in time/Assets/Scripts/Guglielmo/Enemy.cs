@@ -19,8 +19,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
-    private bool Bounded;
-    private bool WallTouched;
+    
 
     void Start()
     {
@@ -29,8 +28,6 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
         animator.SetInteger("WeaponType_int", 0);
-        Bounded = false;
-        WallTouched = false;
     }
 
     void FixedUpdate()
@@ -50,7 +47,7 @@ public class Enemy : MonoBehaviour
             animator.SetInteger("WeaponType_int", 0);
             animator.SetFloat("Speed_f", 1);
 
-            if (TimerController.Instance.IsNight && WallTouched == false)
+            if (TimerController.Instance.IsNight)
             {
                 // VANNO VIA DAL PLAYER
                 Vector3 direction = enemyRB.transform.position - player.transform.position;
@@ -59,7 +56,6 @@ public class Enemy : MonoBehaviour
                 direction.Normalize();
                 Vector3 movement = direction * Speed;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
-                Debug.Log("sacppo");
             }
             else
             {
@@ -112,16 +108,8 @@ public class Enemy : MonoBehaviour
     public void setNotteFalse()
     {
         TimerController.Instance.IsNight = false;
-        WallTouched = false;
     }
+    
 
-   
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.CompareTag("Obstacles"))
-        {
-            WallTouched = true;
-        }
-    }
 }
 

@@ -27,14 +27,18 @@ public class MapLoader : Singleton<MapLoader>
             ChangingEra();
         }
 
-        if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn)
+        if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn && (Era != 4))
         {
             ResetPlayerPos(startPlayerPos);
             EraSelector(Era);
             RestartSpawn();
             Nottepertutti.Instance.ClearAll();
             isChanging = false;
-            Debug.Log("New Era");
+        }
+        if(Era == 4)
+        {
+            EraSelector(Era);
+            RestartSpawn();
         }
     }
 
@@ -105,19 +109,18 @@ public class MapLoader : Singleton<MapLoader>
     public void ChangeScene4()
     {
         SceneManager.LoadSceneAsync("Map_05", LoadSceneMode.Additive).completed += OnSceneLoadComplete4;
-        FindObjectOfType<AudioManager>().Play("SamuraiStage");
+        FindObjectOfType<AudioManager>().Play("ModernStage");
     }
 
     private void OnSceneLoadComplete4(AsyncOperation asyncOp)
     {
         SceneManager.UnloadSceneAsync("Map_04");
-        FindObjectOfType<AudioManager>().Stop("WesternStage");
+        FindObjectOfType<AudioManager>().Stop("SamuraiStage");
     }
 
     public void ResetPlayerPos(Vector3 startPlayerPos)
     {
         Player.transform.position = startPlayerPos;
-        Debug.Log("Position changed");
         destroyEnemy = true;
     }
 
