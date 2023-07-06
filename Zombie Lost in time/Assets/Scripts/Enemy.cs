@@ -51,13 +51,12 @@ public class Enemy : MonoBehaviour
             if (TimerController.Instance.IsNight)
             {
                 // VANNO VIA DAL PLAYER
-                
-                    Vector3 direction = enemyRB.transform.position - player.transform.position;
-                    Quaternion targetRotation = Quaternion.LookRotation(direction);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
-                    direction.Normalize();
-                    Vector3 movement = direction * Speed;
-                    enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
+                Vector3 direction = enemyRB.transform.position - player.transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                direction.Normalize();
+                Vector3 movement = direction * Speed;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
             else
             {

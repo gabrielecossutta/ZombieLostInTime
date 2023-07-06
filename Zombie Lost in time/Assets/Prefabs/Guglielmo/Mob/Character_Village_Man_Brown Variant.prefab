@@ -532,7 +532,7 @@ MonoBehaviour:
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   attackRange: 3
-  bossDrop: {fileID: 3933273421510428731, guid: 9b71095c04dc1c14eb1bcd74c1aa4d43, type: 3}
+  bossDrop: {fileID: 0}
 --- !u!114 &892458658518775279
 MonoBehaviour:
   m_ObjectHideFlags: 0

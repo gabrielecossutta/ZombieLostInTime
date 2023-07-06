@@ -22,7 +22,12 @@ public class ClosestEnemyPowerUp : MonoBehaviour
             {
                 if (NemicoPiùVicino.Instance.closestEnemy != null)
                 {
-                    Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
+                    Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+                    Vector3 enemyPosition = NemicoPiùVicino.Instance.closestEnemy.transform.position;
+                    Vector3 direction = enemyPosition - playerPosition;
+                    Quaternion rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90,0,0);
+                    Instantiate(bullet, playerPosition + (Vector3.up * 2), rotation);
+
                 }
                 Executed = true;
                 FindObjectOfType<AudioManager>().Play("AIMShot");
@@ -35,7 +40,12 @@ public class ClosestEnemyPowerUp : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (NemicoPiùVicino.Instance.closestEnemy != null)
         {
-            Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
+            Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            Vector3 enemyPosition = NemicoPiùVicino.Instance.closestEnemy.transform.position;
+            Vector3 direction = enemyPosition - playerPosition;
+            Quaternion rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90, 0, 0);
+
+            Instantiate(bullet, playerPosition + (Vector3.up * 2), rotation);
         }
         FindObjectOfType<AudioManager>().Play("AIMShot");
         StartCoroutine(SpawnBullet(Time));
