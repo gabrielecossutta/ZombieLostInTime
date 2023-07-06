@@ -164,7 +164,7 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 3:
-                        valoreClosestBullet.Instance.speed += 0.1f;
+                        valoreClosestBullet.Instance.speed += 0.025f;
                         break;
 
                     case 4:
@@ -176,7 +176,7 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 6:
-                        valoreClosestBullet.Instance.speed += 0.2f;
+                        valoreClosestBullet.Instance.speed += 0.025f;
                         break;
                 }
             break;

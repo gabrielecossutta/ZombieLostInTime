@@ -19,8 +19,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
-    
-
+    private bool Bounded;
 
     void Start()
     {
@@ -29,12 +28,11 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
         animator.SetInteger("WeaponType_int", 0);
-        
+        Bounded = false;
     }
 
     void FixedUpdate()
     {
-        // Calcola la distanza tra il nemico e il giocatore
         // Calcola la distanza tra il nemico e il giocatore
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -52,15 +50,13 @@ public class Enemy : MonoBehaviour
 
             if (TimerController.Instance.IsNight)
             {
-                
-                    // TORNANO A RINCORRERTI
-                    Vector3 direction = player.position - transform.position;
-                    Quaternion targetRotation = Quaternion.LookRotation(direction);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
-                    direction.Normalize();
-                    Vector3 movement = direction * Speed;
-                    enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
-                
+                // VANNO VIA DAL PLAYER
+                Vector3 direction = enemyRB.transform.position - player.transform.position;
+                Quaternion targetRotation = Quaternion.LookRotation(direction);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                direction.Normalize();
+                Vector3 movement = direction * Speed;
+                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
             else
             {
@@ -70,7 +66,6 @@ public class Enemy : MonoBehaviour
                 direction.Normalize();
                 Vector3 movement = direction * Speed;
                 enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
-                
             }
         }
     }
@@ -98,7 +93,7 @@ public class Enemy : MonoBehaviour
         else if (!TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
         {
             int rand = Random.Range(0, drop.Length);
-            Instantiate(drop[rand], transform.position + Vector3.up, Quaternion.identity);
+            Instantiate(drop[rand], transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
         }
         else if (CompareTag("EnemyBoss"))
         {
@@ -115,17 +110,7 @@ public class Enemy : MonoBehaviour
     {
         TimerController.Instance.IsNight = false;
     }
+    
 
-    public bool InBound()
-    {
-        if (transform.position.x > -106f && transform.position.x < 110f &&
-            transform.position.z > -383f && transform.position.z < -166f)
-        {
-            return true; // Gli enemy sono all'interno dei limiti della mappa
-        }
-
-        return false; // Gli enemy sono fuori dai limiti della mappa
-    }
 }
-
 
