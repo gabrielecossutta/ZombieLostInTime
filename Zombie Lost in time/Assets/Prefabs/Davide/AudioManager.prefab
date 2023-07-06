@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6377960233876186284
 MonoBehaviour:
@@ -102,6 +102,36 @@ MonoBehaviour:
   - name: ModernStage
     clip: {fileID: 8300000, guid: 7b5e6da751bcd0d48aa2c0d6a506f95e, type: 3}
     volume: 0.104
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BowShot
+    clip: {fileID: 8300000, guid: 8866a641e87c6954cbbcefd5d64868ce, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PistolShot
+    clip: {fileID: 8300000, guid: 8665153e8bfc93442b13912dc8adbb5b, type: 3}
+    volume: 0.149
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AkShot
+    clip: {fileID: 8300000, guid: 76eb8d2439b4cbb4dad724d2f4dcb64a, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShotgunShot
+    clip: {fileID: 8300000, guid: 668a67e49128aa64f865afa33618e8d5, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MinigunShot
+    clip: {fileID: 8300000, guid: d8a3f20fa23785c4bb6931ba160794b9, type: 3}
+    volume: 0.15
     pitch: 1
     loop: 0
     source: {fileID: 0}
