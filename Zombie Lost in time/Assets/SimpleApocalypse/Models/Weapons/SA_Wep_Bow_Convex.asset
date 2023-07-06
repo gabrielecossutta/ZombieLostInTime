@@ -24,6 +24,7 @@ MonoBehaviour:
   bulletSpeed: 40
   WeaponName: Bow
   bulletPrefab: {fileID: 1959737844756117622, guid: 2dd5eeaf4f821714a90a4e5a4980831f, type: 3}
+  fireRateLvlUpgrade: 0
 --- !u!43 &43418771914473344
 Mesh:
   m_ObjectHideFlags: 0
