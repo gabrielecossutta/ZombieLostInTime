@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RandomBullet : Singleton<RandomBullet>
 {
-    public float speed = 10f;
-    public float Damage = 5f;
+    public float speed;
+    public float Damage;
     public GameObject Spawner1;
     public GameObject Spawner2;
     public GameObject Spawner3;
@@ -17,8 +17,10 @@ public class RandomBullet : Singleton<RandomBullet>
 
     void Start()
     {
-        UpgradeSpwn3 = false;
-        UpgradeSpwn5 = false;
+        speed = valoreRandomBullet.Instance.speed;
+        Damage = valoreRandomBullet.Instance.Damage;
+        UpgradeSpwn3 = valoreRandomBullet.Instance.UpgradeSpwn3;
+        UpgradeSpwn5 = valoreRandomBullet.Instance.UpgradeSpwn5;
     }
     void Update()
     {

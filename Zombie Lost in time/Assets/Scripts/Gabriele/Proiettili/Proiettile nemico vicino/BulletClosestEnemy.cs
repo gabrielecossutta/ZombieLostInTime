@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BulletClosestEnemy : Singleton<BulletClosestEnemy>
 {
-    public float Damage = 5; //danno proiettile
+    public float Damage; //danno proiettile
     public Transform ClosestEnemy; //Posizione Nemico Più Vicino
     public float speed;
     private bool Executed = false;
@@ -12,11 +12,13 @@ public class BulletClosestEnemy : Singleton<BulletClosestEnemy>
 
     private void Start()
     {
-        speed = 0.05f;
+        
     }
 
     void Update()
     {
+        Damage = valoreClosestBullet.Instance.Damage;
+        speed = valoreClosestBullet.Instance.speed;
         if (!Executed) // booleana per eseguire il codice solo una volta
         {
             ClosestEnemy = NemicoPiùVicino.Instance.closestEnemy.transform;
