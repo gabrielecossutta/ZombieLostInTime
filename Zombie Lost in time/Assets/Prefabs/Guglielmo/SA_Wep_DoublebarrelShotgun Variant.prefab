@@ -8,13 +8,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 112392, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 127546, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 145700, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
       propertyPath: m_Name
       value: SA_Wep_DoublebarrelShotgun Variant
       objectReference: {fileID: 0}
     - target: {fileID: 145700, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 145700, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
       propertyPath: m_TagString
       value: ShotgunDB
+      objectReference: {fileID: 0}
+    - target: {fileID: 149306, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 153460, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 451666, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
       propertyPath: m_RootOrder

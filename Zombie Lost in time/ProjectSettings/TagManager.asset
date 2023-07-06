@@ -33,7 +33,7 @@ TagManager:
   - AvoidCamera
   - MiniMap
   - Player
-  - 
+  - AvoidBullet
   - 
   - 
   - 

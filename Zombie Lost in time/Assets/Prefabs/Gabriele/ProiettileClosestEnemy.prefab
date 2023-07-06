@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5095446569399442591}
   - component: {fileID: 2109049017013350984}
   - component: {fileID: -6342790351226310396}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProiettileClosestEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 8381777724738289781}
   - component: {fileID: 4248331522409707841}
   - component: {fileID: 6406431068806660806}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProiettileClosestEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}

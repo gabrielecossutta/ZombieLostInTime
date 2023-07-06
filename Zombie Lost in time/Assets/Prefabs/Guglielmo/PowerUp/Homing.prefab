@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6262986123301899059, guid: 8e26553eb7bc8f84e87ad5cbe258d7a2, type: 3}
       propertyPath: m_Name
-      value: Wand_Basic Variant
+      value: Homing
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262986123301899059, guid: 8e26553eb7bc8f84e87ad5cbe258d7a2, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6262986123301899059, guid: 8e26553eb7bc8f84e87ad5cbe258d7a2, type: 3}
       propertyPath: m_TagString

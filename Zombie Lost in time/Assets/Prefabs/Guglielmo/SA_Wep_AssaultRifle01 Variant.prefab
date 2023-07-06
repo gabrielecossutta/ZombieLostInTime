@@ -8,13 +8,37 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 138070, guid: 65389442798920a489c4dd8f72671788, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 171328, guid: 65389442798920a489c4dd8f72671788, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 174560, guid: 65389442798920a489c4dd8f72671788, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 179986, guid: 65389442798920a489c4dd8f72671788, type: 3}
       propertyPath: m_Name
       value: SA_Wep_AssaultRifle01 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 179986, guid: 65389442798920a489c4dd8f72671788, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 179986, guid: 65389442798920a489c4dd8f72671788, type: 3}
       propertyPath: m_TagString
       value: Ak-47
+      objectReference: {fileID: 0}
+    - target: {fileID: 180380, guid: 65389442798920a489c4dd8f72671788, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 189072, guid: 65389442798920a489c4dd8f72671788, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 456384, guid: 65389442798920a489c4dd8f72671788, type: 3}
       propertyPath: m_RootOrder

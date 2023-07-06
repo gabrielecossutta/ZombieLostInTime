@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9136053261532859835}
   - component: {fileID: 5574900970288548345}
   - component: {fileID: 5593760183938347823}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RandomBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436610806364540548}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8133922630907142656}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawn5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6326682930494629408}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2588260634904452832}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   - component: {fileID: 9192106188496259148}
   - component: {fileID: 4697087529004823429}
   - component: {fileID: 12250513317610299}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RandomBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -390,7 +390,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3614873269298799737}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spawn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
