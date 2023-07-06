@@ -27,7 +27,7 @@ public class MapLoader : Singleton<MapLoader>
             ChangingEra();
         }
 
-        if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn)
+        if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn && (Era != 4))
         {
             ResetPlayerPos(startPlayerPos);
             EraSelector(Era);
@@ -35,6 +35,11 @@ public class MapLoader : Singleton<MapLoader>
             Nottepertutti.Instance.ClearAll();
             isChanging = false;
             Debug.Log("New Era");
+        }
+        if(Era == 4)
+        {
+            EraSelector(Era);
+            RestartSpawn();
         }
     }
 

@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
-    private bool Bounded;
+    
 
     void Start()
     {
@@ -28,7 +28,6 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
         animator.SetInteger("WeaponType_int", 0);
-        Bounded = false;
     }
 
     void FixedUpdate()
