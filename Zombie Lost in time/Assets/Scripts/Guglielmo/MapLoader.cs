@@ -22,11 +22,11 @@ public class MapLoader : Singleton<MapLoader>
 
     private void Update()
     {
-        if (!isChanging)
+        if (!isChanging )
         {
             ChangingEra();
         }
-
+        
         if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn && (Era != 4))
         {
             ResetPlayerPos(startPlayerPos);
@@ -36,16 +36,19 @@ public class MapLoader : Singleton<MapLoader>
             isChanging = false;
             Debug.Log("New Era");
         }
-        if(Era == 4)
+        if(TimerController.instance.latestEra)
         {
+            ResetPlayerPos(startPlayerPos);
             EraSelector(Era);
             RestartSpawn();
+            Nottepertutti.Instance.ClearAll();
+            TimerController.instance.latestEra = false;
         }
     }
 
     public void ChangingEra()
     {
-        if (TimerController.Instance.changingEra)
+        if (TimerController.Instance.changingEra )
         {
             isChanging = true;
             Era++;
@@ -53,7 +56,13 @@ public class MapLoader : Singleton<MapLoader>
             {
                 spawnerList[i].GetComponent<Spawner>().SetCanSpawn(false);
             }
-            spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(false);
+                spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(false);
+
+                
+            
+            
+            
+
 
             Vector3 offset = new Vector3(4, 0.05f, 4);
             portal.transform.position = Player.transform.position + offset;
