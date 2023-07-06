@@ -154,7 +154,6 @@ public class Spawner : MonoBehaviour
             {
                 Instantiate(bossPrefab[howManyBoss], transform.position, Quaternion.identity, EnemyContainer);
                 bossPrefab.RemoveAt(howManyBoss);
-                Debug.Log("Boss spawned");
             }
             else
             {

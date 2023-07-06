@@ -22,10 +22,6 @@ public class BulletCollision : Singleton<BulletCollision>
         }
         trail.Clear();
         gameObject.SetActive(false);
-        //else if (other.gameObject.CompareTag("Obstacles") || other.gameObject.CompareTag("Portal"))
-        //{
-        //    gameObject.SetActive(false);
-        //}
     }
 }
 

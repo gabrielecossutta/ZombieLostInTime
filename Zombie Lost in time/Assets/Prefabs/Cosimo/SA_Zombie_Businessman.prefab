@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7762453073011204005}
   - component: {fileID: 6106033774855008242}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner (7)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -47,12 +47,14 @@ MonoBehaviour:
   spawnRate: 5
   bossSpawnRate: 10
   enemyPrefabs:
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
+  - {fileID: 2382311845502267258, guid: d73c6d27dafb7694bbc8d3d87453b667, type: 3}
+  - {fileID: 2250524725411982516, guid: 86793f729daa5704b895e4932d62d59c, type: 3}
   - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
   - {fileID: 8014306119350129218, guid: 2e23166ef6d1cff43a51b0bf5ccbc809, type: 3}
   - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
   - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2688513203935003227, guid: eb7a4ac9f2ea69544879e3bbebca70d3, type: 3}
+  - {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
   bossPrefab: []
   canSpawn: 1
   bossCanSpawn: 0
@@ -62,6 +64,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 3
 --- !u!1 &491311883257494217
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 226630864027264202}
   - component: {fileID: 8956545192438615252}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner (5)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -109,12 +112,14 @@ MonoBehaviour:
   spawnRate: 5
   bossSpawnRate: 10
   enemyPrefabs:
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
+  - {fileID: 2382311845502267258, guid: d73c6d27dafb7694bbc8d3d87453b667, type: 3}
+  - {fileID: 2250524725411982516, guid: 86793f729daa5704b895e4932d62d59c, type: 3}
   - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
   - {fileID: 8014306119350129218, guid: 2e23166ef6d1cff43a51b0bf5ccbc809, type: 3}
   - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
   - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2688513203935003227, guid: eb7a4ac9f2ea69544879e3bbebca70d3, type: 3}
+  - {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
   bossPrefab: []
   canSpawn: 1
   bossCanSpawn: 0
@@ -124,6 +129,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 3
 --- !u!1 &1548652636728347319
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3444396298080289602}
   - component: {fileID: 7953987582872464665}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -169,16 +175,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 100
-  bossSpawnRate: 15
+  bossSpawnRate: 3
   enemyPrefabs:
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   bossPrefab:
-  - {fileID: 7492278545574089070, guid: 5ac8862d7d7111a4e9c0ec8bf3cd8a70, type: 3}
+  - {fileID: 3334304410208553711, guid: 6ec99570f60e7aa498fe06ec4cb9f169, type: 3}
   - {fileID: 416277589558315600, guid: 0f5f6c1846b0dd74ab7e0c2790dfe91b, type: 3}
   - {fileID: 6499480196587523217, guid: 1a031ec6a502e9d4d9e87486a4d3bc17, type: 3}
+  - {fileID: 7609368685490572665, guid: 3f39147efdf0b084982449b0fcf2ce16, type: 3}
   canSpawn: 0
   bossCanSpawn: 1
   EnemyContainer: {fileID: 0}
@@ -187,6 +198,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 2
 --- !u!1 &1891395781379763715
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4321826448260358664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Barrel
   m_Icon: {fileID: 0}
@@ -227,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5072332600339115937}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Barrel
   m_Icon: {fileID: 0}
@@ -242,7 +254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951492953115582662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1038, z: 2.1291}
+  m_LocalPosition: {x: 0, y: 0.104, z: 2.132}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -291,7 +303,7 @@ GameObject:
   - component: {fileID: 2830197247473541631}
   - component: {fileID: 2830197247470694681}
   - component: {fileID: 2830197247471731805}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_AssaultRifle01_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +386,7 @@ GameObject:
   - component: {fileID: 2830197247473546569}
   - component: {fileID: 2830197247470716711}
   - component: {fileID: 2830197247471722583}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_AssaultRifle01_Silencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -457,7 +469,7 @@ GameObject:
   - component: {fileID: 2830197247473595195}
   - component: {fileID: 2830197247470614719}
   - component: {fileID: 2830197247471757181}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_AssaultRifle01_Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,7 +552,7 @@ GameObject:
   - component: {fileID: 2830197247473510815}
   - component: {fileID: 2830197247470648469}
   - component: {fileID: 2830197247471278599}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_AssaultRifle01_Reddot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -623,7 +635,7 @@ GameObject:
   - component: {fileID: 2830197247473500021}
   - component: {fileID: 2830197247470693109}
   - component: {fileID: 2830197247471292373}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_AssaultRifle01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -712,7 +724,7 @@ GameObject:
   - component: {fileID: 2830197247473611927}
   - component: {fileID: 2830197247470699639}
   - component: {fileID: 2830197247471735907}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_AssaultRifle01_Acog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -793,7 +805,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 744087411668969683}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Barrel
   m_Icon: {fileID: 0}
@@ -825,7 +837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3815658570465436902}
   - component: {fileID: 275887764040490844}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner (6)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -862,12 +874,14 @@ MonoBehaviour:
   spawnRate: 5
   bossSpawnRate: 10
   enemyPrefabs:
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
+  - {fileID: 2382311845502267258, guid: d73c6d27dafb7694bbc8d3d87453b667, type: 3}
+  - {fileID: 2250524725411982516, guid: 86793f729daa5704b895e4932d62d59c, type: 3}
   - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
   - {fileID: 8014306119350129218, guid: 2e23166ef6d1cff43a51b0bf5ccbc809, type: 3}
   - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
   - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2688513203935003227, guid: eb7a4ac9f2ea69544879e3bbebca70d3, type: 3}
+  - {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
   bossPrefab: []
   canSpawn: 1
   bossCanSpawn: 0
@@ -877,6 +891,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 3
 --- !u!1 &4638388369864745983
 GameObject:
   m_ObjectHideFlags: 0
@@ -887,7 +902,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6009566962716522944}
   - component: {fileID: 3792452843760187956}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -924,12 +939,14 @@ MonoBehaviour:
   spawnRate: 5
   bossSpawnRate: 10
   enemyPrefabs:
-  - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
-  - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
+  - {fileID: 2382311845502267258, guid: d73c6d27dafb7694bbc8d3d87453b667, type: 3}
+  - {fileID: 2250524725411982516, guid: 86793f729daa5704b895e4932d62d59c, type: 3}
   - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
   - {fileID: 8014306119350129218, guid: 2e23166ef6d1cff43a51b0bf5ccbc809, type: 3}
   - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
   - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2688513203935003227, guid: eb7a4ac9f2ea69544879e3bbebca70d3, type: 3}
+  - {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
   bossPrefab: []
   canSpawn: 1
   bossCanSpawn: 0
@@ -939,6 +956,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 3
 --- !u!1 &4797292200689544317
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +967,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6789793114128191092}
   - component: {fileID: 6049870546604917490}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner (2)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -986,12 +1004,14 @@ MonoBehaviour:
   spawnRate: 5
   bossSpawnRate: 10
   enemyPrefabs:
-  - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
-  - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2382311845502267258, guid: d73c6d27dafb7694bbc8d3d87453b667, type: 3}
+  - {fileID: 2250524725411982516, guid: 86793f729daa5704b895e4932d62d59c, type: 3}
   - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
   - {fileID: 8014306119350129218, guid: 2e23166ef6d1cff43a51b0bf5ccbc809, type: 3}
   - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
   - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2688513203935003227, guid: eb7a4ac9f2ea69544879e3bbebca70d3, type: 3}
+  - {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
   bossPrefab: []
   canSpawn: 1
   bossCanSpawn: 0
@@ -1001,6 +1021,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 3
 --- !u!1 &4928001741241483342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1033,7 @@ GameObject:
   - component: {fileID: 4928001741241322686}
   - component: {fileID: 4928001741238457802}
   - component: {fileID: 4928001741239181492}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_DoublebarrelShotgun_Acog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1116,7 @@ GameObject:
   - component: {fileID: 4928001741241414606}
   - component: {fileID: 4928001741238437724}
   - component: {fileID: 4928001741239200386}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_DoublebarrelShotgun_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1178,7 +1199,7 @@ GameObject:
   - component: {fileID: 4928001741241438996}
   - component: {fileID: 4928001741238456944}
   - component: {fileID: 4928001741239169508}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_DoublebarrelShotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1266,7 +1287,7 @@ GameObject:
   - component: {fileID: 4928001741241448544}
   - component: {fileID: 4928001741238559186}
   - component: {fileID: 4928001741239525644}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_DoublebarrelShotgun_Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1349,7 +1370,7 @@ GameObject:
   - component: {fileID: 4928001741241389090}
   - component: {fileID: 4928001741238499590}
   - component: {fileID: 4928001741239162370}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_DoublebarrelShotgun_Reddot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1432,7 +1453,7 @@ GameObject:
   - component: {fileID: 5336537391638706277}
   - component: {fileID: 5336537391635273607}
   - component: {fileID: 5336537391636437325}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_RevolverA_Acog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1515,7 +1536,7 @@ GameObject:
   - component: {fileID: 5336537391638664551}
   - component: {fileID: 5336537391635353677}
   - component: {fileID: 5336537391636406587}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_RevolverA_Silencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1598,7 +1619,7 @@ GameObject:
   - component: {fileID: 5336537391638686211}
   - component: {fileID: 5336537391635308809}
   - component: {fileID: 5336537391636416475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_RevolverA_Reddot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1681,7 +1702,7 @@ GameObject:
   - component: {fileID: 5336537391638717657}
   - component: {fileID: 5336537391635278631}
   - component: {fileID: 5336537391636384089}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_RevolverA_Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1764,7 +1785,7 @@ GameObject:
   - component: {fileID: 5336537391638702499}
   - component: {fileID: 5336537391635349031}
   - component: {fileID: 5336537391636394577}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_RevolverA_Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1847,7 +1868,7 @@ GameObject:
   - component: {fileID: 5336537391638713385}
   - component: {fileID: 5336537391635276705}
   - component: {fileID: 5336537391636367899}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_RevolverA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1934,7 +1955,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2761049896469486541}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Barrel
   m_TagString: Barrel
   m_Icon: {fileID: 0}
@@ -1966,7 +1987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3171693926245131875}
   - component: {fileID: 4248959273636139159}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner (4)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -2003,12 +2024,14 @@ MonoBehaviour:
   spawnRate: 5
   bossSpawnRate: 10
   enemyPrefabs:
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
-  - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
+  - {fileID: 2382311845502267258, guid: d73c6d27dafb7694bbc8d3d87453b667, type: 3}
+  - {fileID: 2250524725411982516, guid: 86793f729daa5704b895e4932d62d59c, type: 3}
   - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
   - {fileID: 8014306119350129218, guid: 2e23166ef6d1cff43a51b0bf5ccbc809, type: 3}
   - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
   - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2688513203935003227, guid: eb7a4ac9f2ea69544879e3bbebca70d3, type: 3}
+  - {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
   bossPrefab: []
   canSpawn: 1
   bossCanSpawn: 0
@@ -2018,6 +2041,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 3
 --- !u!1 &7804573884321082315
 GameObject:
   m_ObjectHideFlags: 0
@@ -2028,7 +2052,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628957145124031575}
   - component: {fileID: 216014225100635564}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawner (3)
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -2065,12 +2089,14 @@ MonoBehaviour:
   spawnRate: 5
   bossSpawnRate: 10
   enemyPrefabs:
-  - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
-  - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2382311845502267258, guid: d73c6d27dafb7694bbc8d3d87453b667, type: 3}
+  - {fileID: 2250524725411982516, guid: 86793f729daa5704b895e4932d62d59c, type: 3}
   - {fileID: 3890955208659034114, guid: 4a3a0286b05bc9047b91d78dc4baf264, type: 3}
   - {fileID: 8014306119350129218, guid: 2e23166ef6d1cff43a51b0bf5ccbc809, type: 3}
   - {fileID: 315823218773797001, guid: 68191abae28a0874a971d6e4f2c1425c, type: 3}
   - {fileID: 4369055005442905001, guid: c5a7fbfae65b8fd49abf833a66d9c136, type: 3}
+  - {fileID: 2688513203935003227, guid: eb7a4ac9f2ea69544879e3bbebca70d3, type: 3}
+  - {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
   bossPrefab: []
   canSpawn: 1
   bossCanSpawn: 0
@@ -2080,6 +2106,7 @@ MonoBehaviour:
   bossNumber: 0
   EraStart: 0
   EraEnd: 0
+  obstacleCheckRadius: 3
 --- !u!1 &7927276283178991595
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,7 +2117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1655876987633192211}
   - component: {fileID: 2582538719544072894}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Spawners
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -2105,7 +2132,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7927276283178991595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2144,7 +2171,7 @@ GameObject:
   - component: {fileID: 8612644168360037991}
   - component: {fileID: 8612644168357128349}
   - component: {fileID: 8612644168358035631}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_Minigun_Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2227,7 +2254,7 @@ GameObject:
   - component: {fileID: 8612644168360028157}
   - component: {fileID: 8612644168357206007}
   - component: {fileID: 8612644168358041051}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Wep_Minigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2311,7 +2338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986560930}
   - component: {fileID: 9073554589991938774}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_FemaleTrenchcoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2417,7 +2444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986582136}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Forearm_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2449,7 +2476,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986502844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hips_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2484,7 +2511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986581570}
   - component: {fileID: 9073554589991932016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_InjuredMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2591,7 +2618,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986461582}
   - component: {fileID: 9073554589991898430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Santa
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2697,7 +2724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986466524}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hand_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2728,7 +2755,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986583024}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shoulder_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2760,7 +2787,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986471530}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpperLeg_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2792,7 +2819,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986477536}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2825,7 +2852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986582248}
   - component: {fileID: 9073554589991936558}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_OldMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2932,7 +2959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986560428}
   - component: {fileID: 9073554589991915908}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Prisoner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3038,7 +3065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986560382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Toe_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3069,7 +3096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986470936}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foot_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3102,7 +3129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986480018}
   - component: {fileID: 9073554589991938048}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3209,7 +3236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986579448}
   - component: {fileID: 9073554589991933252}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Streetman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3316,7 +3343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986497848}
   - component: {fileID: 9073554589991942170}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_FootballPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3422,7 +3449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986577876}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Forearm_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3455,7 +3482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986568320}
   - component: {fileID: 9073554589992021828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_AirportSecurity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3562,7 +3589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986563150}
   - component: {fileID: 9073554589991994458}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_RoadWorker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3669,7 +3696,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986581920}
   - component: {fileID: 9073554589992005034}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Runner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3775,7 +3802,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986549856}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Chest_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3810,7 +3837,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986486984}
   - component: {fileID: 9073554589991949878}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_MaleTrenchcoat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3916,7 +3943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986568056}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3948,7 +3975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986477940}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Shoulder_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3981,7 +4008,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986549762}
   - component: {fileID: 9073554589992025740}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Businessman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4087,7 +4114,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986509216}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Foot_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4120,7 +4147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986506382}
   - component: {fileID: 9073554589991948442}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Cheerleader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4227,7 +4254,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986486240}
   - component: {fileID: 9073554589991911116}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_FemalePyro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4333,7 +4360,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986506516}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4365,7 +4392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986574392}
   - component: {fileID: 9073554589991994584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Prisoner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4472,7 +4499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986556202}
   - component: {fileID: 9073554589991931544}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Male_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4579,7 +4606,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986579586}
   - component: {fileID: 9073554589992008044}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Bellhop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4685,7 +4712,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986490188}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine_jnt 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4718,7 +4745,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986509792}
   - component: {fileID: 9073554589991899984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_MaleHunter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4825,7 +4852,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986560414}
   - component: {fileID: 9073554589992021380}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Male_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4932,7 +4959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986566482}
   - component: {fileID: 9073554589992023800}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Male_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5039,7 +5066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986477186}
   - component: {fileID: 9073554589991935438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Robber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5146,7 +5173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986507742}
   - component: {fileID: 9073554589991908264}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Biohazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5253,7 +5280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986576208}
   - component: {fileID: 9073554589991910848}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Pimp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5360,7 +5387,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986519070}
   - component: {fileID: 9073554589991994038}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_FarmersDaughter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5467,7 +5494,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986579632}
   - component: {fileID: 9073554589992017310}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Hobo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5574,7 +5601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986552982}
   - component: {fileID: 9073554589991933592}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Businessman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5681,7 +5708,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986548074}
   - component: {fileID: 9073554589991956898}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Tourist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5788,7 +5815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986577590}
   - component: {fileID: 9073554589992002568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Farmer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5895,7 +5922,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986580026}
   - component: {fileID: 9073554589992018344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Prostitute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6002,7 +6029,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986567128}
   - component: {fileID: 9073554589991947116}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Roadworker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6109,7 +6136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986488554}
   - component: {fileID: 9073554589992019612}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Soldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6215,7 +6242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986465212}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hand_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6252,7 +6279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986474310}
   - component: {fileID: 9073554589991913000}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Mechanic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6359,7 +6386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986547082}
   - component: {fileID: 9073554589991954730}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Hazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6465,7 +6492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986485584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LowerLeg_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6497,7 +6524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986464148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Neck_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6530,7 +6557,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986473120}
   - component: {fileID: 9073554589992007986}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Pilot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6636,7 +6663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986500670}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Toe_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6668,7 +6695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986471428}
   - component: {fileID: 9073554589991918690}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Trucker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6775,7 +6802,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986556148}
   - component: {fileID: 9073554589991934016}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_FemaleHero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6882,7 +6909,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986568552}
   - component: {fileID: 9073554589991938328}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Sheriff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7003,7 +7030,10 @@ GameObject:
   - component: {fileID: 1290056363048164322}
   - component: {fileID: 6030460499154165503}
   - component: {fileID: 2616565314154029034}
-  m_Layer: 0
+  - component: {fileID: 8704606350092833105}
+  - component: {fileID: 4913253727170008759}
+  - component: {fileID: 2651536780368041334}
+  m_Layer: 10
   m_Name: SA_Zombie_Businessman
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -7077,7 +7107,7 @@ Transform:
   - {fileID: 6791843555320267245}
   - {fileID: 5877310531931299962}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9073554589996210898
 Animator:
@@ -7091,7 +7121,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: dbbc53a6bc8f5c64bb234194ce1380aa, type: 3}
   m_Controller: {fileID: 9100000, guid: afec2cc25e3439e4bb1b43e7c09f6503, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -7127,7 +7157,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseExpGain: 2
-  maxHealth: 20
+  bigExpGain: 100
+  maxHealth: 5000
   currentExp: 0
   currentHealth: 0
   expToLvlUp: 0
@@ -7145,7 +7176,7 @@ MonoBehaviour:
   speedUpgradedValue: 0
   animator: {fileID: 9073554589996210898}
   loadingPanel: {fileID: 0}
-  FlameTrowher: {fileID: 0}
+  FlameThrower: {fileID: 5877310531945370908}
   c: 0
 --- !u!114 &4822114842404039993
 MonoBehaviour:
@@ -7169,8 +7200,9 @@ MonoBehaviour:
   ArrowPrefab: {fileID: 1959737844756117622, guid: 2dd5eeaf4f821714a90a4e5a4980831f, type: 3}
   currentWeaponIndex: 0
   bulletsPerSecond: 0
+  bulletPoolSize: 100
+  arrowPoolSize: 20
   bulletLifeTime: 0
-  poolSize: 100
   magSize: 0
   reloadTimer: 0
   roundsPerShot: 1
@@ -7221,7 +7253,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9073554589986762486}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 80
   m_Drag: 10
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -7237,8 +7269,8 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
+  m_Interpolate: 1
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &8445995674850891853
 CapsuleCollider:
@@ -7306,7 +7338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c619766023f354f94a821ad8e23cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageZonePrefab: {fileID: 5234583455238417029, guid: c7fc5ec2edc0f3d4c9cdf5785d8cd445, type: 3}
+  damageZonePrefab: {fileID: 6914334234424846123, guid: 7cce6deb65226ff4f82e6710cd4a7ad0, type: 3}
   timeSpawn: 4
   damageDuration: 5
   DmgZonePicked: 0
@@ -7338,7 +7370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c86ccfff0700e4e845c09a929dd11a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 324833062561044795, guid: 7e865940339fa4240a4a0c43697cb074, type: 3}
+  bullet: {fileID: 9163630503359079387, guid: 1f00f4c49145c5745b680fef440224d6, type: 3}
   PowerUpTaken: 0
   Time: 2.5
 --- !u!114 &6030460499154165503
@@ -7370,6 +7402,51 @@ MonoBehaviour:
   closestEnemy: {fileID: 0}
   NoEnemy: {fileID: 0}
   MergedContainer: []
+--- !u!114 &8704606350092833105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073554589986762486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cefa949f607cbf44ab3647e63072e6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UpgradeSpwn3: 0
+  UpgradeSpwn5: 0
+  speed: 0
+  Damage: 0
+--- !u!114 &4913253727170008759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073554589986762486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 227cce42cc9d45d418852a456fb4b5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  speed: 0
+--- !u!114 &2651536780368041334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9073554589986762486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ab5ce67817ef440aad2bce2994373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Range: 0
+  Speed: 0
+  Damage: 0
 --- !u!1 &9073554589986764540
 GameObject:
   m_ObjectHideFlags: 0
@@ -7380,7 +7457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986476936}
   - component: {fileID: 9073554589991993910}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Grandma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7487,7 +7564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986483446}
   - component: {fileID: 9073554589991993924}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_FemaleSoldier
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7594,7 +7671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986478386}
   - component: {fileID: 9073554589991938354}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Industrial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7701,7 +7778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986479736}
   - component: {fileID: 9073554589991932588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Clown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7808,7 +7885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986503722}
   - component: {fileID: 9073554589992019240}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Firefighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7915,7 +7992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986559640}
   - component: {fileID: 9073554589991943542}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Shopkeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8022,7 +8099,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986462318}
   - component: {fileID: 9073554589991933970}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_HoodedMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8129,7 +8206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986563796}
   - component: {fileID: 9073554589991944512}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Mountie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8235,7 +8312,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986499636}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8268,7 +8345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986501072}
   - component: {fileID: 9073554589992021556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_AirportWorker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8375,7 +8452,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986551746}
   - component: {fileID: 9073554589991950360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Doctor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8482,7 +8559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986457642}
   - component: {fileID: 9073554589991957194}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Zombie_Farmer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8588,7 +8665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986494362}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpperLeg_Right_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8620,7 +8697,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9073554589986457996}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LowerLeg_Left_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8653,7 +8730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9073554589986481564}
   - component: {fileID: 9073554589991998254}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SA_Char_Survivor_Scout
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8807,6 +8884,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 64532769289277882, guid: 0780fd0586405584f9c72133e446af8b, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64532769289277882, guid: 0780fd0586405584f9c72133e446af8b, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -8840,6 +8921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_FlameThrower
       objectReference: {fileID: 0}
+    - target: {fileID: 182542, guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 479346, guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -8850,11 +8935,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479346, guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.96
+      value: 1.194
       objectReference: {fileID: 0}
     - target: {fileID: 479346, guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.86
+      value: 1.15
       objectReference: {fileID: 0}
     - target: {fileID: 479346, guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8966,6 +9051,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 479346, guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc, type: 3}
   m_PrefabInstance: {fileID: 5877310531931090952}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &5877310531945370908 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19801364, guid: 8c1f1e09e6c9ed947bdbd6914ae8f9bc, type: 3}
+  m_PrefabInstance: {fileID: 5877310531931090952}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8914421485227645667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9020,6 +9110,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2735684601635576590, guid: 77af9e2ebe95f4f47a6f18d8776124e1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6594105761744113596, guid: 77af9e2ebe95f4f47a6f18d8776124e1, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

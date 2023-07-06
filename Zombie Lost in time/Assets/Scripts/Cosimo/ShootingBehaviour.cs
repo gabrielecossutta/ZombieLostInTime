@@ -425,7 +425,6 @@ public class ShootingBehaviour : MonoBehaviour
 
         // Disabilita il proiettile e lo rimette nella pool
         bullet.GetComponent<TrailRenderer>().Clear();
-        //bullet.GetComponent<BulletCollision>().Disable();
         bullet.SetActive(false);
         pool.Enqueue(bullet);
     }
