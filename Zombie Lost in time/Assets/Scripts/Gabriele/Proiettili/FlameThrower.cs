@@ -19,6 +19,7 @@ public class ParticleCollider : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("FlameThrower");
             Status.Instance.FlameThrower.Play();
             Destroy(gameObject);
         }

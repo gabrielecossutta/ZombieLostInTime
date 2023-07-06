@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RandomBullet : Singleton<RandomBullet>
 {
-    public float speed = 10f;
-    public float Damage = 5f;
+    public float speed;
+    public float Damage;
     public GameObject Spawner1;
     public GameObject Spawner2;
     public GameObject Spawner3;
@@ -14,13 +14,21 @@ public class RandomBullet : Singleton<RandomBullet>
     public GameObject Bullet;
     public bool UpgradeSpwn3;
     public bool UpgradeSpwn5;
+
+    void Start()
+    {
+        speed = valoreRandomBullet.Instance.speed;
+        Damage = valoreRandomBullet.Instance.Damage;
+        UpgradeSpwn3 = valoreRandomBullet.Instance.UpgradeSpwn3;
+        UpgradeSpwn5 = valoreRandomBullet.Instance.UpgradeSpwn5;
+    }
     void Update()
     {
         // Calcolare lo spostamento in base alla direzione forward e alla velocità
         Vector3 movement = transform.forward * speed * Time.deltaTime;
         transform.Translate(movement);
         //colpisce
-
+        Destroy(gameObject, 7.5f);
         //si divide in 2 
     }
     private void OnTriggerEnter(Collider other)

@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _keyboardFirst;
     [SerializeField] private GameObject _gamepadFirst;
 
-    private bool isPaused;
+    public bool isPaused;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +32,14 @@ public class MenuManager : MonoBehaviour
         {
             if (!isPaused)
             {
+                FindObjectOfType<AudioManager>().Pause("FlameThrower");
+                FindObjectOfType<AudioManager>().Pause("DamageZone");
                 Pause();
             }
             else
             {
+                FindObjectOfType<AudioManager>().UnPause("FlameThrower");
+                FindObjectOfType<AudioManager>().UnPause("DamageZone");
                 UnPause();
             }
         }

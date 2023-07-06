@@ -89,7 +89,6 @@ public class ShootingBehaviour : MonoBehaviour
             {
                 timer_elapsed = 0f;
                 shootRoutine = true;
-
                 animator.SetBool("Shoot_b", true);
 
                 if (bulletsPerSecond > 2)
@@ -133,8 +132,30 @@ public class ShootingBehaviour : MonoBehaviour
         {
             animator.SetBool("Reload_b", false);
             ShootingRoutine();
+            WeaponSound(currentWeaponIndex);
         }
-
+        if (currentWeaponIndex == 4 && !FindObjectOfType<MenuManager>().isPaused)
+        {
+            if (!FindObjectOfType<UpgradeMenu>().isPaused)
+            {
+                if (!FindObjectOfType<ButtonHandlerForExit>().deathMenu.activeInHierarchy)
+                {
+                    FindObjectOfType<AudioManager>().PlayOneShot("MinigunShot");
+                }
+                else
+                {
+                    FindObjectOfType<AudioManager>().Stop("MinigunShot");
+                }
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Stop("MinigunShot");
+            }
+        }
+        else
+        {
+            FindObjectOfType<AudioManager>().Stop("MinigunShot");
+        }
         // Controlla le collisioni dei proiettili attivi
         CheckBulletCollisions();
     }
@@ -142,7 +163,6 @@ public class ShootingBehaviour : MonoBehaviour
     public void AddWeapon(Weapon weapon)
     {
         weapons.Add(weapon);
-
         // Imposta l'arma appena aggiunta se è la prima arma ottenuta
         if (weapons.Count == 1)
         {
@@ -374,7 +394,27 @@ public class ShootingBehaviour : MonoBehaviour
             currentBurst = burstSize;
         }
     }
-
+    void WeaponSound(int currWeaponIndex)
+    {
+        switch (currWeaponIndex)
+        {
+            case 0:
+                FindObjectOfType<AudioManager>().Play("BowShot");
+                break;
+            case 1:
+                FindObjectOfType<AudioManager>().Play("PistolShot");
+                break;
+            case 2:
+                FindObjectOfType<AudioManager>().Play("AkShot");
+                break;
+                case 3:
+                FindObjectOfType<AudioManager>().PlayOneShot("ShotgunShot");
+                break;
+                case 4:
+                //FindObjectOfType<AudioManager>().PlayOneShot("MinigunShot");
+                break;
+        }
+    }
     IEnumerator ResetBulletAfterDelay(GameObject bullet, float delay, Queue<GameObject> pool)
     {
         yield return new WaitForSeconds(delay);
@@ -399,6 +439,7 @@ public class ShootingBehaviour : MonoBehaviour
         {
             animator.SetBool("Reload_b", true);
             ShootingRoutine();
+            WeaponSound(currentWeaponIndex);
         }
 
     }

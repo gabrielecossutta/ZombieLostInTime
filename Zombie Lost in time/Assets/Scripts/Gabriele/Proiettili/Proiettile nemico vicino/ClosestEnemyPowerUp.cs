@@ -25,6 +25,7 @@ public class ClosestEnemyPowerUp : MonoBehaviour
                     Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
                 }
                 Executed = true;
+                FindObjectOfType<AudioManager>().Play("AIMShot");
                 StartCoroutine(SpawnBullet(Time)); //cooroutine che spawna un proiettile ogni "Time"
             }
         }
@@ -36,6 +37,7 @@ public class ClosestEnemyPowerUp : MonoBehaviour
         {
             Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
         }
+        FindObjectOfType<AudioManager>().Play("AIMShot");
         StartCoroutine(SpawnBullet(Time));
 
     }

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6377960233876186284
 MonoBehaviour:
@@ -102,6 +102,84 @@ MonoBehaviour:
   - name: ModernStage
     clip: {fileID: 8300000, guid: 7b5e6da751bcd0d48aa2c0d6a506f95e, type: 3}
     volume: 0.104
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BowShot
+    clip: {fileID: 8300000, guid: 8866a641e87c6954cbbcefd5d64868ce, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PistolShot
+    clip: {fileID: 8300000, guid: 8665153e8bfc93442b13912dc8adbb5b, type: 3}
+    volume: 0.149
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AkShot
+    clip: {fileID: 8300000, guid: 76eb8d2439b4cbb4dad724d2f4dcb64a, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShotgunShot
+    clip: {fileID: 8300000, guid: 668a67e49128aa64f865afa33618e8d5, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MinigunShot
+    clip: {fileID: 8300000, guid: 34247c196751d93429ec21c2685210ef, type: 3}
+    volume: 0.15
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FlameThrower
+    clip: {fileID: 8300000, guid: 637839010d094514cac4c4477b8f09c4, type: 3}
+    volume: 0.184
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: SplitShot
+    clip: {fileID: 8300000, guid: 779213fb765dd8c4aa1c5b755b85abdc, type: 3}
+    volume: 0.861
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AIMShot
+    clip: {fileID: 8300000, guid: 82b821bb7e3912b40b6105ff1eb802f2, type: 3}
+    volume: 0.861
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ShieldHit
+    clip: {fileID: 8300000, guid: 8a6ef62288717664989ce40ccd7e6e12, type: 3}
+    volume: 0.861
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PickupPowerUp
+    clip: {fileID: 8300000, guid: 530befdb67071884781e1929102375cc, type: 3}
+    volume: 0.861
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DamageZone
+    clip: {fileID: 8300000, guid: c05e32315f7da3b45b29bdb5d412a98a, type: 3}
+    volume: 0.861
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: HealthPickup
+    clip: {fileID: 8300000, guid: eae9d38ff4dc73d4fbc842501a7f83ec, type: 3}
+    volume: 0.861
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: WeaponPickup
+    clip: {fileID: 8300000, guid: 8690dce213909aa4fac02940514a4659, type: 3}
+    volume: 0.861
     pitch: 1
     loop: 0
     source: {fileID: 0}

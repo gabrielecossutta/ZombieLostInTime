@@ -51,6 +51,7 @@ public class PowerUp : MonoBehaviour
                     Debug.Log(powerUp + "Level Max");
                 }
             }
+            FindObjectOfType<AudioManager>().Play("PickupPowerUp");
             Destroy(collider.gameObject);
         }
     }
@@ -126,23 +127,23 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 2:
-                        BulletRotatingPowerUp.Instance.Damage += 5;
+                        ValoreRotaingBullet.Instance.Damage += 5;
                         break;
 
                     case 3:
-                        BulletRotatingPowerUp.Instance.Speed += 1;
+                        ValoreRotaingBullet.Instance.Speed += 3;
                         break;
 
                     case 4:
-                        BulletRotatingPowerUp.Instance.Range += 0.5f;
+                        ValoreRotaingBullet.Instance.Range += 2.5f;
                         break;
 
                     case 5:
-                        BulletRotatingPowerUp.Instance.Damage += 5;
+                        ValoreRotaingBullet.Instance.Damage += 5;
                         break;
 
                     case 6:
-                        BulletRotatingPowerUp.Instance.Speed += 1;
+                        ValoreRotaingBullet.Instance.Speed += 3;
                         break;
                 }
             break;
@@ -159,11 +160,11 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 2:
-                        BulletClosestEnemy.Instance.Damage += 2;
+                        valoreClosestBullet.Instance.Damage += 2;
                         break;
 
                     case 3:
-                        BulletClosestEnemy.Instance.speed += 0.5f;
+                        valoreClosestBullet.Instance.speed += 0.1f;
                         break;
 
                     case 4:
@@ -171,11 +172,11 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 5:
-                        BulletClosestEnemy.Instance.Damage += 2;
+                        valoreClosestBullet.Instance.Damage += 2;
                         break;
 
                     case 6:
-                        BulletClosestEnemy.Instance.speed += 0.5f;
+                        valoreClosestBullet.Instance.speed += 0.2f;
                         break;
                 }
             break;
@@ -192,11 +193,11 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 2:
-                        RandomBullet.Instance.Damage += 2;
+                        valoreRandomBullet.Instance.Damage += 2;
                         break;
 
                     case 3:
-                        RandomBullet.Instance.UpgradeSpwn3 = true;
+                        valoreRandomBullet.Instance.UpgradeSpwn3 = true;
                         break;
 
                     case 4:
@@ -204,11 +205,11 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 5:
-                        RandomBullet.Instance.Damage += 5;
+                        valoreRandomBullet.Instance.Damage += 5;
                         break;
 
                     case 6:
-                        RandomBullet.Instance.UpgradeSpwn5 = true;
+                        valoreRandomBullet.Instance.UpgradeSpwn5 = true;
                         break;
                 }
                 break;

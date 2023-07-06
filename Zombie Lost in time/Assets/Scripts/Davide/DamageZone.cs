@@ -42,6 +42,7 @@ public class DamageZone : MonoBehaviour
 
         damageZone = Instantiate(damageZonePrefab, spawnPoint, Quaternion.identity);
         PlusSize(0);
+        FindObjectOfType<AudioManager>().Play("DamageZone");
         Destroy(damageZone, damageDuration);
     }
     public void PlusSize(float size)

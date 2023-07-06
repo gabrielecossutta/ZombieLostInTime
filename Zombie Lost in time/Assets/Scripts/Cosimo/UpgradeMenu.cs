@@ -11,7 +11,7 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
 
     [HideInInspector] public int pointToLvlUp = 1;
     public int pointsOwned;
-
+    public bool isPaused;
     [Header("First Selected Options")]
     [SerializeField] private GameObject _playerMenuFirst;
     [SerializeField] private GameObject _weaponMenuFirst;
@@ -37,14 +37,16 @@ public class UpgradeMenu : Singleton<UpgradeMenu>
         UpgradePlayerStatsMenu.SetActive(false);
         UpgradeWeaponsStatsMenu.SetActive(false);
         Time.timeScale = 1f;
+        isPaused = false;
     }
 
     void Pause()
     {
         Time.timeScale = 0f;
+        isPaused = true;
     }
 
-    public void SetActivePlayerUpgradeMenu()
+public void SetActivePlayerUpgradeMenu()
     {
         UpgradeWeaponsStatsMenu.SetActive(false);
         UpgradePlayerStatsMenu.SetActive(true);
