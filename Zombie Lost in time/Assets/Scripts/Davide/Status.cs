@@ -117,6 +117,10 @@ public class Status : Singleton<Status>
         int excessExp = currentExp - expToLvlUp;
         currentExp = excessExp;
         expToLvlUp += 3;
+        if (excessExp >= expToLvlUp)
+        {
+            LevelUp();
+        }
         expBar.SetMaxExp(expToLvlUp);
         Debug.Log("Livello " + currentLevel);
         Debug.Log("Esperienza in eccesso:" + currentExp);
@@ -156,6 +160,10 @@ public class Status : Singleton<Status>
         if (c == 2)
         {
             MapLoader.Instance.ChangeScene3();
+        }
+        if (c == 3)
+        {
+            MapLoader.Instance.ChangeScene4();
         }
 
 
