@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
+    private bool Bounded;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
         animator.SetInteger("WeaponType_int", 0);
+        Bounded = false;
     }
 
     void FixedUpdate()
@@ -37,7 +39,7 @@ public class Enemy : MonoBehaviour
         // Controlla se il giocatore è nel range di attacco
         if (distanceToPlayer <= attackRange)
         {
-            //transform.LookAt(player); // i nemici guardano il player
+            transform.LookAt(player); // i nemici guardano il player
             animator.SetInteger("WeaponType_int", 12);
             animator.SetFloat("Speed_f", 0f);
         }
@@ -49,13 +51,13 @@ public class Enemy : MonoBehaviour
             if (TimerController.Instance.IsNight)
             {
                 // VANNO VIA DAL PLAYER
-                Vector3 direction = enemyRB.transform.position - player.transform.position;
-                Quaternion targetRotation = Quaternion.LookRotation(direction);
-                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
-                direction.Normalize();
-                Vector3 movement = direction * Speed;
-                enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
-
+                
+                    Vector3 direction = enemyRB.transform.position - player.transform.position;
+                    Quaternion targetRotation = Quaternion.LookRotation(direction);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, velocitaSguardo * Time.deltaTime);
+                    direction.Normalize();
+                    Vector3 movement = direction * Speed;
+                    enemyRB.MovePosition(enemyRB.position + movement * Time.deltaTime);
             }
             else
             {
@@ -109,5 +111,7 @@ public class Enemy : MonoBehaviour
     {
         TimerController.Instance.IsNight = false;
     }
+    
+
 }
 

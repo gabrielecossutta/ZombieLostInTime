@@ -8,6 +8,7 @@ using UnityEngine.EventSystems;
 public class Status : Singleton<Status>
 {
     [SerializeField] private int baseExpGain;
+    [SerializeField] private int bigExpGain;
     public int maxHealth;
     public int currentExp;
     public int currentHealth;
@@ -71,7 +72,7 @@ public class Status : Singleton<Status>
         }
         else if (other.CompareTag("ExpBoss"))           //Esperienza Boss
         {
-            ExpGained(baseExpGain);
+            ExpGained(bigExpGain);
             Destroy(other.gameObject);
             FindObjectOfType<AudioManager>().Play("CrystalPickup");
         }
@@ -105,6 +106,7 @@ public class Status : Singleton<Status>
             LevelUp();
         }
         expBar.SetExp(currentExp);
+        
     }
 
     public void LevelUp()                               //Funzione per il nuovo livello raggiunto

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2594,9 +2594,9 @@ RectTransform:
   m_Father: {fileID: 7664614858966699114}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397.9, y: 146.76}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 156, y: 192}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &559176939
@@ -5100,7 +5100,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 216014225100635564, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 216014225100635564, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossCanSpawn
@@ -5110,6 +5110,10 @@ PrefabInstance:
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 216014225100635564, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 216014225100635564, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 8
@@ -5148,7 +5152,7 @@ PrefabInstance:
       objectReference: {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
     - target: {fileID: 275887764040490844, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 275887764040490844, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossCanSpawn
@@ -5158,6 +5162,10 @@ PrefabInstance:
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 275887764040490844, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 275887764040490844, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 8
@@ -5288,7 +5296,11 @@ PrefabInstance:
       objectReference: {fileID: 786591663469633595}
     - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: maxHealth
-      value: 1500
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: bigExpGain
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: damageBoss
@@ -5336,7 +5348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792452843760187956, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3792452843760187956, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossCanSpawn
@@ -5346,6 +5358,10 @@ PrefabInstance:
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 3792452843760187956, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3792452843760187956, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 8
@@ -5416,7 +5432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4248959273636139159, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4248959273636139159, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossCanSpawn
@@ -5426,6 +5442,10 @@ PrefabInstance:
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 4248959273636139159, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4248959273636139159, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 8
@@ -5576,7 +5596,7 @@ PrefabInstance:
       objectReference: {fileID: 324833062561044795, guid: 4f4431f909522c34f99ae2be21620be1, type: 3}
     - target: {fileID: 6049870546604917490, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6049870546604917490, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossCanSpawn
@@ -5586,6 +5606,10 @@ PrefabInstance:
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 6049870546604917490, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6049870546604917490, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 8
@@ -5624,7 +5648,7 @@ PrefabInstance:
       objectReference: {fileID: 8359306513413383217, guid: e8d07c25d219ede42be6d49a6791ade9, type: 3}
     - target: {fileID: 6106033774855008242, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6106033774855008242, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossCanSpawn
@@ -5634,6 +5658,10 @@ PrefabInstance:
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 6106033774855008242, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6106033774855008242, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 8
@@ -5696,12 +5724,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7953987582872464665, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossSpawnRate
-      value: 89
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7953987582872464665, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 7953987582872464665, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7953987582872464665, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossPrefab.Array.size
       value: 4
@@ -5772,7 +5804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8956545192438615252, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: spawnRate
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8956545192438615252, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossCanSpawn
@@ -5782,6 +5814,10 @@ PrefabInstance:
       propertyPath: EnemyContainer
       value: 
       objectReference: {fileID: 396689554}
+    - target: {fileID: 8956545192438615252, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
+      propertyPath: obstacleCheckRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8956545192438615252, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: enemyPrefabs.Array.size
       value: 8
@@ -5828,7 +5864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.95
+      value: 116.3
       objectReference: {fileID: 0}
     - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5836,7 +5872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -270.74
+      value: -212.3
       objectReference: {fileID: 0}
     - target: {fileID: 9073554589986578790, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7650,7 +7686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.025, y: 0.8685715}
   m_AnchorMax: {x: 0.1761916, y: 0.9285715}
-  m_AnchoredPosition: {x: 11.999878, y: 0}
+  m_AnchoredPosition: {x: 11.999756, y: 0}
   m_SizeDelta: {x: 137, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &695473049776742027
@@ -7802,7 +7838,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.025, y: 0.7971429}
   m_AnchorMax: {x: 0.1761916, y: 0.86142856}
-  m_AnchoredPosition: {x: 11.999878, y: 0.2000122}
+  m_AnchoredPosition: {x: 11.999756, y: 0.2000122}
   m_SizeDelta: {x: 137, y: 11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1712895414112837719
