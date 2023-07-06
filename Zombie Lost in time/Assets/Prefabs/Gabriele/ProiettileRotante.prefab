@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7662126687387859369}
   - component: {fileID: 5095446569399442591}
   - component: {fileID: 5099097631630488469}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ProiettileRotante
   m_TagString: Untagged
   m_Icon: {fileID: 0}

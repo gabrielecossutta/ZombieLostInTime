@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class ShootingBehaviour : MonoBehaviour
 {
-    public List<Weapon> weapons = new List<Weapon>();
+    public List<Weapon> weapons = new();
     public GameObject BulletPrefab;
     public GameObject ArrowPrefab;
     public int currentWeaponIndex = 0;
     public float bulletsPerSecond;
 
+    [SerializeField] private int bulletPoolSize;
+    [SerializeField] private int arrowPoolSize;
     [SerializeField] private int bulletLifeTime;
-    [SerializeField] private int poolSize;
     [SerializeField] private int magSize;
     [SerializeField] private float reloadTimer;
     [Range(1, 10)][SerializeField] private int roundsPerShot;
@@ -72,13 +73,13 @@ public class ShootingBehaviour : MonoBehaviour
         BulletPool = new Queue<GameObject>();
         ArrowPool = new Queue<GameObject>();
 
-        for (int i = 0; i < poolSize; i++)
+        for (int i = 0; i < bulletPoolSize; i++)
         {
             GameObject gO = Instantiate(BulletPrefab);
             gO.SetActive(false);
             BulletPool.Enqueue(gO);
         }
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < arrowPoolSize; i++)
         {
             GameObject g1 = Instantiate(ArrowPrefab);
             g1.SetActive(false);
@@ -143,7 +144,7 @@ public class ShootingBehaviour : MonoBehaviour
         }
 
         // Controlla le collisioni dei proiettili attivi
-        CheckBulletCollisions();
+        //CheckBulletCollisions();
     }
 
     public void AddWeapon(Weapon weapon)
@@ -287,6 +288,7 @@ public class ShootingBehaviour : MonoBehaviour
                         }
                     }
                     // Disabilita il proiettile e lo rimette nella pool
+                    bullet.GetComponent<TrailRenderer>().Clear();
                     bullet.SetActive(false);
                     BulletPool.Enqueue(bullet);
                 }
@@ -320,6 +322,7 @@ public class ShootingBehaviour : MonoBehaviour
                         }
                     }
                     // Disabilita il proiettile e lo rimette nella pool
+                    arrow.GetComponent<TrailRenderer>().Clear();
                     arrow.SetActive(false);
                     ArrowPool.Enqueue(arrow);
                 }
@@ -421,6 +424,8 @@ public class ShootingBehaviour : MonoBehaviour
         yield return new WaitForSeconds(delay);
 
         // Disabilita il proiettile e lo rimette nella pool
+        bullet.GetComponent<TrailRenderer>().Clear();
+        //bullet.GetComponent<BulletCollision>().Disable();
         bullet.SetActive(false);
         pool.Enqueue(bullet);
     }

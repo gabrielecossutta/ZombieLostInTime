@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 664044176642224823, guid: 3cd0081a2bb1a8d409b9da01c9536a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2992356623939312852, guid: 3cd0081a2bb1a8d409b9da01c9536a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6322604785956010427, guid: 3cd0081a2bb1a8d409b9da01c9536a0b, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -58,11 +66,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7784962432953162401, guid: 3cd0081a2bb1a8d409b9da01c9536a0b, type: 3}
       propertyPath: m_Name
-      value: Bottle Variant
+      value: DamageZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 7784962432953162401, guid: 3cd0081a2bb1a8d409b9da01c9536a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7784962432953162401, guid: 3cd0081a2bb1a8d409b9da01c9536a0b, type: 3}
       propertyPath: m_TagString
       value: PowerUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7804845057282071203, guid: 3cd0081a2bb1a8d409b9da01c9536a0b, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

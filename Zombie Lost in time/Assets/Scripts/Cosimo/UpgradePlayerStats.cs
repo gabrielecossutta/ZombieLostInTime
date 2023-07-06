@@ -16,7 +16,7 @@ public class UpgradePlayerStats : Singleton<UpgradePlayerStats>
         if (UpgradeMenu.Instance.pointsOwned > 0)
         {
             Status.Instance.maxHealth += healthUpgrade;
-            //HUDBar.Instance.slider.maxValue = Status.Instance.maxHealth;
+            HUDBar.Instance.slider.maxValue = Status.Instance.maxHealth;
             UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
         }
     }

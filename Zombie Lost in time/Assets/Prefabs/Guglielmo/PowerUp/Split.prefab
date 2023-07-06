@@ -77,6 +77,10 @@ PrefabInstance:
       value: Split
       objectReference: {fileID: 0}
     - target: {fileID: 4103017992107899751, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103017992107899751, guid: ac29c374b747dce448ca5d010b4fe004, type: 3}
       propertyPath: m_TagString
       value: PowerUp
       objectReference: {fileID: 0}

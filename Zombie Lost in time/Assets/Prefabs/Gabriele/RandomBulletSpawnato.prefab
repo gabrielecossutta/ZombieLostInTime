@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5444217282680104886}
   - component: {fileID: 6025754944820938193}
   - component: {fileID: 1240926689335865917}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RandomBulletSpawnato
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 9192106188496259148}
   - component: {fileID: 4697087529004823429}
   - component: {fileID: 7869667939932124646}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RandomBulletSpawnato
   m_TagString: Untagged
   m_Icon: {fileID: 0}

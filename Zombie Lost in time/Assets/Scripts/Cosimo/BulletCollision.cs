@@ -3,6 +3,7 @@ using UnityEngine;
 public class BulletCollision : Singleton<BulletCollision>
 {
     [SerializeField] private ParticleSystem hitFx;
+    [SerializeField] private TrailRenderer trail;
 
     public void OnTriggerEnter(Collider other)
     {
@@ -19,10 +20,12 @@ public class BulletCollision : Singleton<BulletCollision>
             other.GetComponent<EnemyHealth>().TakeDamage(Status.Instance.damageBoss);
             Instantiate(hitFx, collisionPoint, Quaternion.identity);
         }
-        else if (other.gameObject.CompareTag("Obstacles") || other.gameObject.CompareTag("Portal"))
-        {
-            gameObject.SetActive(false);
-        }
+        trail.Clear();
+        gameObject.SetActive(false);
+        //else if (other.gameObject.CompareTag("Obstacles") || other.gameObject.CompareTag("Portal"))
+        //{
+        //    gameObject.SetActive(false);
+        //}
     }
 }
 

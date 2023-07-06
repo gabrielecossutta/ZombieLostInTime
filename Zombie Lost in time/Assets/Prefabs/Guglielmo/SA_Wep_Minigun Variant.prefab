@@ -13,8 +13,16 @@ PrefabInstance:
       value: SA_Wep_Minigun Variant
       objectReference: {fileID: 0}
     - target: {fileID: 176706, guid: 7c0922489226a8a44aa4a7b63311f0e9, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 176706, guid: 7c0922489226a8a44aa4a7b63311f0e9, type: 3}
       propertyPath: m_TagString
       value: Minigun
+      objectReference: {fileID: 0}
+    - target: {fileID: 186198, guid: 7c0922489226a8a44aa4a7b63311f0e9, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 407272, guid: 7c0922489226a8a44aa4a7b63311f0e9, type: 3}
       propertyPath: m_RootOrder
