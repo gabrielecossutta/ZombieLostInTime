@@ -4,7 +4,7 @@ using TMPro;
 public class ChangeText : MonoBehaviour
 {
     public TMP_Text textMeshPro;
-    private int lvl = 1;
+    private int lvl = 0;
 
     private void Start()
     {

@@ -1,22 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
 {
     [SerializeField] public float damageUpgrade;
     [SerializeField] public float fireRateUpgrade;
+    public TMP_Text textMeshPro;
 
-    int maxFireRateUpgrade = 6;
-    int cont = 0;
+    public int maxFireRateUpgrade;
+    public int cont = 0;
     public Button fireRateButton;
-    private GameObject playerRef;
+    public GameObject playerRef;
 
-    private void Start()
+    private void OnEnable()
     {
+        maxFireRateUpgrade = 6;
         playerRef = GameObject.FindGameObjectWithTag("Player");
     }
+
+    public void Check()
+    {
+        if (playerRef.GetComponent<ShootingBehaviour>().fireRateLvlUpgrade <= maxFireRateUpgrade)
+            textMeshPro.color = Color.red;
+        else
+            textMeshPro.color = Color.black;
+    }
+
     public void UpgradeDamage()
     {
         if (UpgradeMenu.Instance.pointsOwned > 0)
@@ -29,7 +39,7 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
 
     public void UpgradeFireRate()
     {
-        if (cont < maxFireRateUpgrade)
+        if (playerRef.GetComponent<ShootingBehaviour>().fireRateLvlUpgrade <= maxFireRateUpgrade)
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
             {
@@ -38,11 +48,11 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
                 UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
                 cont++;
             }
-            if (cont == maxFireRateUpgrade)
-            {
-                fireRateButton.interactable = false;
-            }
+
+            if (playerRef.GetComponent<ShootingBehaviour>().fireRateLvlUpgrade <= maxFireRateUpgrade)
+                textMeshPro.color = Color.red;
+            else
+                textMeshPro.color = Color.black;
         }
     }
-
 }

@@ -38,7 +38,7 @@ public class ShootingBehaviour : MonoBehaviour
     private int currentBurst;
     private int currentMag;
     private bool shootRoutine;
-    private int fireRateLvlUpgrade;
+    public int fireRateLvlUpgrade;
     private float multiplierFireRateUpgrade; //valore ottenuto dal lvl del fireRateLvlUpgrade * fireRateUpgradePercentage
 
     private Animator animator;
@@ -229,24 +229,28 @@ public class ShootingBehaviour : MonoBehaviour
             weaponSwitched = true;
             SetWeaponValues(weapons[0]);
             currentWeaponIndex = 0;
+            ChangeTextFireRate.Instance.ChangeFireRateWeaponLvl();
         }
         else if ((Input.GetKeyDown(KeyCode.Alpha2) || Input.GetButton("BButton")) && weapons.Count >= 2 && WeaponCollisionDetector.Instance.akOwned && currentWeaponIndex != 1)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[1]);
             currentWeaponIndex = 1;
+            ChangeTextFireRate.Instance.ChangeFireRateWeaponLvl();
         }
         else if ((Input.GetKeyDown(KeyCode.Alpha3) || Input.GetButton("AButton")) && weapons.Count >= 3 && WeaponCollisionDetector.Instance.shotgunDBOwned && currentWeaponIndex != 2)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[2]);
             currentWeaponIndex = 2;
+            ChangeTextFireRate.Instance.ChangeFireRateWeaponLvl();
         }
         else if ((Input.GetKeyDown(KeyCode.Alpha4) || Input.GetButton("XButton")) && weapons.Count >= 4 && WeaponCollisionDetector.Instance.MinigunOwned && currentWeaponIndex != 3)
         {
             weaponSwitched = true;
             SetWeaponValues(weapons[3]);
             currentWeaponIndex = 3;
+            ChangeTextFireRate.Instance.ChangeFireRateWeaponLvl();
         }
     }
 
