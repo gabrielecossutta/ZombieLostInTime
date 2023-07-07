@@ -13,20 +13,11 @@ public class ChangeText : MonoBehaviour
 
     public void AddValue()
     {
-        if (UpgradeMenu.Instance.pointsOwned > 0)
+        if (UpgradeMenu.Instance.pointsOwned > 0 && UpgradePlayerStats.Instance.cont < UpgradePlayerStats.Instance.maxSpeedUpgrade)
         {
             lvl++;
             textMeshPro.text = lvl.ToString();
         }
-        //if (UpgradeWeaponsStats.Instance.isMaxed)
-        //{
-        //    textMeshPro.text = "Level Max";
-        //}
-        //if (UpgradePlayerStats.Instance.isMaxed)
-        //{
-        //    textMeshPro.text = "Level Max";
-        //}
-
     }
 }
 

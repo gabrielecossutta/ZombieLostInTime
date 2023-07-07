@@ -4414,6 +4414,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 342753901514333475, guid: 656e484803508f542adfb9528e9b770a, type: 3}
+      propertyPath: maxSpeedUpgrade
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 462693153840420288, guid: 656e484803508f542adfb9528e9b770a, type: 3}
       propertyPath: m_text
       value: 0
