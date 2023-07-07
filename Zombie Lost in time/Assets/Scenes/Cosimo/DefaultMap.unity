@@ -1052,9 +1052,9 @@ MonoBehaviour:
   timerText: {fileID: 1703939767}
   survivedTimeText: {fileID: 303252423}
   IsNight: 0
-  dayDuration: 60
+  dayDuration: 10
   dayTimer: 0
-  nightDuration: 30
+  nightDuration: 5
   nightTimer: 0
   survivedTime: 0
   changingEra: 0
@@ -4922,7 +4922,7 @@ PrefabInstance:
       objectReference: {fileID: 786591663469633595}
     - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: maxHealth
-      value: 5000
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2924747088396760885, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bigExpGain
@@ -5194,7 +5194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7953987582872464665, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: bossSpawnRate
-      value: 89
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7953987582872464665, guid: c39716ff91d849d45af72376d83f6b9b, type: 3}
       propertyPath: EnemyContainer
