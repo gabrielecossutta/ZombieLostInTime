@@ -53,31 +53,31 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LevelUp
     clip: {fileID: 8300000, guid: 5bfe6d6efbc444c4e9537474638e96cd, type: 3}
-    volume: 0.645
+    volume: 0.208
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MenuSelect
     clip: {fileID: 8300000, guid: d623c6bed86eb0f41b3eacc04772295a, type: 3}
-    volume: 0.437
+    volume: 0.054
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MenuSound
     clip: {fileID: 8300000, guid: 8b8eca6b3dffd1847a78c45767e531c5, type: 3}
-    volume: 0.437
+    volume: 0.102
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: f4f9c8b224bee51428b23c2dbd2c1e74, type: 3}
-    volume: 1
+    volume: 0.108
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MedievalStage
     clip: {fileID: 8300000, guid: ee399a2eea9022c4ba550c5050a41285, type: 3}
-    volume: 0.022
+    volume: 0.03
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -89,25 +89,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: WesternStage
     clip: {fileID: 8300000, guid: e302347edccebc2418aa785133094b59, type: 3}
-    volume: 0.052
+    volume: 0.019
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: SamuraiStage
     clip: {fileID: 8300000, guid: 35d43608d582e594bbd65f218329b132, type: 3}
-    volume: 0.052
+    volume: 0.019
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: ModernStage
     clip: {fileID: 8300000, guid: 7b5e6da751bcd0d48aa2c0d6a506f95e, type: 3}
-    volume: 0.052
+    volume: 0.026
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: BowShot
     clip: {fileID: 8300000, guid: 8866a641e87c6954cbbcefd5d64868ce, type: 3}
-    volume: 0.255
+    volume: 0.104
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -119,19 +119,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: AkShot
     clip: {fileID: 8300000, guid: 76eb8d2439b4cbb4dad724d2f4dcb64a, type: 3}
-    volume: 0.203
+    volume: 0.104
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ShotgunShot
     clip: {fileID: 8300000, guid: 668a67e49128aa64f865afa33618e8d5, type: 3}
-    volume: 0.091
+    volume: 0.019
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: MinigunShot
     clip: {fileID: 8300000, guid: 34247c196751d93429ec21c2685210ef, type: 3}
-    volume: 0.078
+    volume: 0.019
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -143,13 +143,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: SplitShot
     clip: {fileID: 8300000, guid: 779213fb765dd8c4aa1c5b755b85abdc, type: 3}
-    volume: 0.212
+    volume: 0.214
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AIMShot
     clip: {fileID: 8300000, guid: 82b821bb7e3912b40b6105ff1eb802f2, type: 3}
-    volume: 0.182
+    volume: 0.104
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -161,25 +161,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PickupPowerUp
     clip: {fileID: 8300000, guid: 530befdb67071884781e1929102375cc, type: 3}
-    volume: 0.182
+    volume: 0.123
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: DamageZone
     clip: {fileID: 8300000, guid: c05e32315f7da3b45b29bdb5d412a98a, type: 3}
-    volume: 0.048
+    volume: 0.039
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: HealthPickup
     clip: {fileID: 8300000, guid: eae9d38ff4dc73d4fbc842501a7f83ec, type: 3}
-    volume: 0.459
+    volume: 0.084
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: WeaponPickup
     clip: {fileID: 8300000, guid: 8690dce213909aa4fac02940514a4659, type: 3}
-    volume: 0.346
+    volume: 0.156
     pitch: 1
     loop: 0
     source: {fileID: 0}
