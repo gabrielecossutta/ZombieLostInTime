@@ -22,25 +22,32 @@ public class MapLoader : Singleton<MapLoader>
 
     private void Update()
     {
-        if (!isChanging)
+        if (!isChanging )
         {
             ChangingEra();
         }
-
-        if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn)
+        
+        if (!TimerController.Instance.changingEra && !spawnerList[0].canSpawn && (Era != 4))
         {
             ResetPlayerPos(startPlayerPos);
             EraSelector(Era);
             RestartSpawn();
             Nottepertutti.Instance.ClearAll();
             isChanging = false;
-            Debug.Log("New Era");
+        }
+        if(TimerController.instance.latestEra)
+        {
+            ResetPlayerPos(startPlayerPos);
+            EraSelector(Era);
+            RestartSpawn();
+            Nottepertutti.Instance.ClearAll();
+            TimerController.instance.latestEra = false;
         }
     }
 
     public void ChangingEra()
     {
-        if (TimerController.Instance.changingEra)
+        if (TimerController.Instance.changingEra )
         {
             isChanging = true;
             Era++;
@@ -48,7 +55,13 @@ public class MapLoader : Singleton<MapLoader>
             {
                 spawnerList[i].GetComponent<Spawner>().SetCanSpawn(false);
             }
-            spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(false);
+                spawnerList[0].GetComponent<Spawner>().SetBossCanSpawn(false);
+
+                
+            
+            
+            
+
 
             Vector3 offset = new Vector3(4, 0.05f, 4);
             portal.transform.position = Player.transform.position + offset;
@@ -105,19 +118,18 @@ public class MapLoader : Singleton<MapLoader>
     public void ChangeScene4()
     {
         SceneManager.LoadSceneAsync("Map_05", LoadSceneMode.Additive).completed += OnSceneLoadComplete4;
-        FindObjectOfType<AudioManager>().Play("SamuraiStage");
+        FindObjectOfType<AudioManager>().Play("ModernStage");
     }
 
     private void OnSceneLoadComplete4(AsyncOperation asyncOp)
     {
         SceneManager.UnloadSceneAsync("Map_04");
-        FindObjectOfType<AudioManager>().Stop("WesternStage");
+        FindObjectOfType<AudioManager>().Stop("SamuraiStage");
     }
 
     public void ResetPlayerPos(Vector3 startPlayerPos)
     {
         Player.transform.position = startPlayerPos;
-        Debug.Log("Position changed");
         destroyEnemy = true;
     }
 

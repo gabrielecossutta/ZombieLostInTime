@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float spawnRate = 1f;
     [SerializeField] private float bossSpawnRate = 10f;
     [SerializeField] private GameObject[] enemyPrefabs;
-    [SerializeField] private List<GameObject> bossPrefab;
+    [SerializeField] public List<GameObject> bossPrefab;
     [SerializeField] public bool canSpawn = true;
     [SerializeField] private bool bossCanSpawn = true;
     public Transform EnemyContainer;
@@ -129,7 +129,7 @@ public class Spawner : MonoBehaviour
 
         while (true)
         {
-            if (canSpawn  && !HasObstacleInContact() && InBound())
+            if (canSpawn  && !HasObstacleInContact() && InBound() )
             {
                 int rand = Random.Range(EraStart, EraEnd);
                 GameObject enemyToSpawn = enemyPrefabs[rand];
@@ -150,10 +150,11 @@ public class Spawner : MonoBehaviour
         while (true)
         {
                 yield return waitBoss;
-            if (bossCanSpawn && !HasObstacleInContact() && InBound())
+            if (bossCanSpawn && !HasObstacleInContact() && InBound() )
             {
-                Instantiate(bossPrefab[howManyBoss], transform.position, Quaternion.identity, EnemyContainer);
-                bossPrefab.RemoveAt(howManyBoss);
+                Instantiate(bossPrefab[0], transform.position, Quaternion.identity, EnemyContainer);
+                bossPrefab.RemoveAt(0);
+                howManyBoss++;
             }
             else
             {
@@ -193,6 +194,12 @@ public class Spawner : MonoBehaviour
         }
 
         return false;
+    }
+
+    public void ForceSpawn()
+    {
+        Instantiate(bossPrefab[howManyBoss], new Vector3(0, 0, -263), Quaternion.identity, EnemyContainer);
+        bossPrefab.RemoveAt(howManyBoss);
     }
 
 }
