@@ -14,6 +14,7 @@ public class TimerController : Singleton<TimerController>
     public float nightTimer;
     public float survivedTime;
     public bool changingEra;
+    public bool latestEra;
 
     private void Start()
     {
@@ -61,7 +62,15 @@ public class TimerController : Singleton<TimerController>
 
         survivedTime += Time.deltaTime;
         // Aggiorna il testo del timer
-        survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + "s";
+        survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s ";
+
+        }
+        if(latestEra)
+        {
+            timerText.text = "Need to Die";
+            survivedTime += Time.deltaTime;
+            // Aggiorna il testo del timer
+            survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s ";
         }
     }
 }
