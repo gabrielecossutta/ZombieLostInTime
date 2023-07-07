@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniMapPowerUp
       objectReference: {fileID: 0}
+    - target: {fileID: 611851928769473671, guid: 03461a9e0caf2ec409b234ec539d18c0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7783624241621331920, guid: 03461a9e0caf2ec409b234ec539d18c0, type: 3}
       propertyPath: m_RootOrder
       value: -1

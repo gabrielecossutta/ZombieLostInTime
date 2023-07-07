@@ -21,7 +21,7 @@ public class TimerController : Singleton<TimerController>
         ResetDayTimer();
         ResetNightTimer();
         changingEra = false;
-
+        latestEra = false;
     }
 
     private void ResetDayTimer()
@@ -35,10 +35,12 @@ public class TimerController : Singleton<TimerController>
 
     private void Update()
     {
-        if (changingEra == false)
-        {
 
-            if(!IsNight)
+        if (changingEra == false )
+        {
+            
+
+            if (!IsNight)
             {
                 dayTimer -= Time.deltaTime;
                 timerText.text = "Night in: " + Mathf.RoundToInt(dayTimer).ToString();
@@ -46,32 +48,34 @@ public class TimerController : Singleton<TimerController>
                 {
                     IsNight = true;
                     ResetDayTimer();
+                    Debug.Log("Notte");
                 }
             }
             else
             {
                 nightTimer -= Time.deltaTime;
                 timerText.text = "Day in: " + Mathf.RoundToInt(nightTimer).ToString();
-                if (nightTimer <= 0f)
+                if (nightTimer <= 0f )
                 {
                     IsNight = false;
                     changingEra = true;
                     ResetNightTimer();
                 }
+               
             }
 
-        survivedTime += Time.deltaTime;
-        // Aggiorna il testo del timer
-        survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s ";
-
-        }
-        if(latestEra)
-        {
-            timerText.text = "Need to Die";
             survivedTime += Time.deltaTime;
             // Aggiorna il testo del timer
-            survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s ";
+            survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s";
         }
+        if (latestEra)
+        {
+
+            timerText.text = "Need to Die";
+            survivedTime += Time.deltaTime;
+            survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s";
+        }
+
     }
 }
 

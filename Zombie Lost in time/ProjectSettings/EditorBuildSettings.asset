@@ -23,5 +23,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lorenzo/Map_04.unity
     guid: e1cd643f3cce2a14e9cf37aad5dbf4e9
+  - enabled: 1
+    path: Assets/Scenes/Lorenzo/Map_05.unity
+    guid: 490ac7dde72a7c948b5f595248590945
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 00c2b588ef4474f498941368cc522de2, type: 2}
