@@ -9,16 +9,28 @@ public class DayNightCycle : MonoBehaviour
     {
         sunLight = GetComponent<Light>();
     }
-    void FixedUpdate()
+    private void Update()
     {
-        transform.Rotate(new Vector3(0.1f * CycleSpeed, 0.0f, 0.0f));
-        if (transform.rotation.eulerAngles.x > 0.0f && transform.rotation.eulerAngles.x < 160.0f)
+        if (!TimerController.Instance.IsNight)
         {
             sunLight.intensity = Mathf.Lerp(sunLight.intensity, 1.0f, Time.deltaTime * CycleSpeed * 2);
         }
-        if (transform.rotation.eulerAngles.x > 160.0f)
+        else
         {
             sunLight.intensity = Mathf.Lerp(sunLight.intensity, 0.0f, Time.deltaTime * CycleSpeed * 2);
         }
+    }
+
+    void FixedUpdate()
+    {
+        //transform.Rotate(new Vector3(0.1f * CycleSpeed, 0.0f, 0.0f));
+        //if (transform.rotation.eulerAngles.x > 0.0f && transform.rotation.eulerAngles.x < 160.0f)
+        //{
+        //    sunLight.intensity = Mathf.Lerp(sunLight.intensity, 1.0f, Time.deltaTime * CycleSpeed * 2);
+        //}
+        //if (transform.rotation.eulerAngles.x > 160.0f)
+        //{
+        //    sunLight.intensity = Mathf.Lerp(sunLight.intensity, 0.0f, Time.deltaTime * CycleSpeed * 2);
+        //}
     }
 }
