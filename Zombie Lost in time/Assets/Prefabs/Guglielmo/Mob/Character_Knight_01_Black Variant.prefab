@@ -352,16 +352,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 169604, guid: 507f5dc602b42c549a32a51aa9236bb1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2424088346713857398}
+      addedObject: {fileID: 2652}
     - targetCorrespondingSourceObject: {fileID: 169604, guid: 507f5dc602b42c549a32a51aa9236bb1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2871803947743155920}
+      addedObject: {fileID: 2656}
     - targetCorrespondingSourceObject: {fileID: 169604, guid: 507f5dc602b42c549a32a51aa9236bb1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5532510710321344612}
+      addedObject: {fileID: 2515}
     - targetCorrespondingSourceObject: {fileID: 169604, guid: 507f5dc602b42c549a32a51aa9236bb1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4294849027299431397}
+      addedObject: {fileID: 2441}
   m_SourcePrefab: {fileID: 100100000, guid: 507f5dc602b42c549a32a51aa9236bb1, type: 3}
 --- !u!4 &2382311845502003380 stripped
 Transform:
@@ -378,7 +378,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 169604, guid: 507f5dc602b42c549a32a51aa9236bb1, type: 3}
   m_PrefabInstance: {fileID: 2382311845502171646}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2424088346713857398
+--- !u!114 &2652
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -401,13 +401,21 @@ MonoBehaviour:
   enemyRB: {fileID: 0}
   drop:
   - {fileID: 5267032816261055682, guid: 5381eb3bb40ec32428e329055bebce22, type: 3}
-  - {fileID: 951408125886594574, guid: a192d45515659ac48b81663459493119, type: 3}
-  - {fileID: 5998212706929340147, guid: 02ce2327c6c775c40ab7bfdc0614bc25, type: 3}
-  - {fileID: 82143882328492046, guid: 7b35dbd5770d2824fa53257acf9bf59c, type: 3}
-  - {fileID: 3790626040167159002, guid: 21b526459730c75489ba4657d683547e, type: 3}
+  - {fileID: 3790626040167159002, guid: 6b957a02ff892104186f576020e38c03, type: 3}
+  - {fileID: 951408125886594574, guid: c252f33ebb8e8a1459a50a284e8d8766, type: 3}
+  - {fileID: 82143882328492046, guid: 3b971b77eda41b7489902ca0221c6eb4, type: 3}
+  - {fileID: 5998212706929340147, guid: c43e59373affcf4479097c2d0ad9f6a6, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 1683275412945906739, guid: 309128a120dd2664b91716065411d118, type: 3}
-  - {fileID: 537260373037575102, guid: 27a261dbb707da24ba4c086edcb10126, type: 3}
+  - {fileID: 537260373037575102, guid: 0849bf64a954387449dc35b53e951d8c, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
+  - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
@@ -418,7 +426,7 @@ MonoBehaviour:
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   attackRange: 3
   bossDrop: {fileID: 0}
---- !u!114 &2871803947743155920
+--- !u!114 &2656
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -430,10 +438,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae908bea4ab7d6409060647b01c39cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 10
   currentHealth: 0
   DamageFlameTrowher: 10
---- !u!136 &5532510710321344612
+--- !u!136 &2515
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -456,7 +464,7 @@ CapsuleCollider:
   m_Height: 1.85
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &4294849027299431397
+--- !u!54 &2441
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

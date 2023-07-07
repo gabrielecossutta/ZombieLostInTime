@@ -136,7 +136,6 @@ public class Status : Singleton<Status>
         {
             enemyKilledCounter = EnemyKilledCounter.Instance.enemyKilled;
             enemyKilledText.text = "Enemy Killed: " + enemyKilledCounter.ToString();
-            Debug.Log("The player is dead Status");
             //currentHealth = maxHealth;
             healthBar.SetHealth(currentHealth);
             FindObjectOfType<AudioManager>().StopAll();
@@ -162,8 +161,7 @@ public class Status : Singleton<Status>
             MapLoader.Instance.ChangeScene3();
         }
         if (c == 3)
-        {
-            Debug.Log("Ultima era");
+        { 
             TimerController.instance.latestEra = true;
             MapLoader.Instance.ChangeScene4();
         }

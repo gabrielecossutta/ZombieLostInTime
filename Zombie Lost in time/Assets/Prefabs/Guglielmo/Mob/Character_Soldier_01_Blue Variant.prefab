@@ -438,23 +438,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 196394, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3458375051487700447}
+      addedObject: {fileID: 2659}
     - targetCorrespondingSourceObject: {fileID: 196394, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1567589027130378109}
+      addedObject: {fileID: 2646}
     - targetCorrespondingSourceObject: {fileID: 196394, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8557168043489477349}
+      addedObject: {fileID: 2526}
     - targetCorrespondingSourceObject: {fileID: 196394, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6127822061507419040}
+      addedObject: {fileID: 2447}
   m_SourcePrefab: {fileID: 100100000, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
 --- !u!1 &2250524725411982516 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 196394, guid: aa03ca6a3953ccc4397f5f35d2aa0a6d, type: 3}
   m_PrefabInstance: {fileID: 2250524725411894174}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3458375051487700447
+--- !u!114 &2659
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -483,10 +483,10 @@ MonoBehaviour:
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   - {fileID: 1683275412945906739, guid: 309128a120dd2664b91716065411d118, type: 3}
-  - {fileID: 537260373037575102, guid: 27a261dbb707da24ba4c086edcb10126, type: 3}
+  - {fileID: 537260373037575102, guid: 0849bf64a954387449dc35b53e951d8c, type: 3}
   attackRange: 3
   bossDrop: {fileID: 0}
---- !u!114 &1567589027130378109
+--- !u!114 &2646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -498,10 +498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae908bea4ab7d6409060647b01c39cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 15
+  MaxHealth: 10
   currentHealth: 0
   DamageFlameTrowher: 10
---- !u!136 &8557168043489477349
+--- !u!136 &2526
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -524,7 +524,7 @@ CapsuleCollider:
   m_Height: 1.85
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &6127822061507419040
+--- !u!54 &2447
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,7 +532,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2250524725411982516}
   serializedVersion: 4
-  m_Mass: 15
+  m_Mass: 10
   m_Drag: 10
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}

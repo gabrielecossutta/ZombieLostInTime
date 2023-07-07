@@ -179,16 +179,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 187164, guid: 278fbc8682262ca4fa2ece1a816e7f66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6588715931591245512}
+      addedObject: {fileID: 2676}
     - targetCorrespondingSourceObject: {fileID: 187164, guid: 278fbc8682262ca4fa2ece1a816e7f66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4948495287654239972}
+      addedObject: {fileID: 2665}
     - targetCorrespondingSourceObject: {fileID: 187164, guid: 278fbc8682262ca4fa2ece1a816e7f66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2057874286114215571}
+      addedObject: {fileID: 2508}
     - targetCorrespondingSourceObject: {fileID: 187164, guid: 278fbc8682262ca4fa2ece1a816e7f66, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2733263333852037971}
+      addedObject: {fileID: 2440}
   m_SourcePrefab: {fileID: 100100000, guid: 278fbc8682262ca4fa2ece1a816e7f66, type: 3}
 --- !u!95 &7609368685483371991 stripped
 Animator:
@@ -205,7 +205,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 187164, guid: 278fbc8682262ca4fa2ece1a816e7f66, type: 3}
   m_PrefabInstance: {fileID: 7609368685490689637}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6588715931591245512
+--- !u!114 &2676
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -236,8 +236,8 @@ MonoBehaviour:
   - {fileID: 1683275412945906739, guid: 309128a120dd2664b91716065411d118, type: 3}
   - {fileID: 836853705700862579, guid: 927116bbc766b784bb761d7d84f18fa9, type: 3}
   attackRange: 5
-  bossDrop: {fileID: 2236345481691610676, guid: c5faa5fdd9caa184f91fa7fc921136ec, type: 3}
---- !u!114 &4948495287654239972
+  bossDrop: {fileID: 500256716001358287, guid: 8a3eab96b7db380438698d8ab4dac984, type: 3}
+--- !u!114 &2665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -249,10 +249,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ae908bea4ab7d6409060647b01c39cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 400
+  MaxHealth: 300
   currentHealth: 0
   DamageFlameTrowher: 10
---- !u!136 &2057874286114215571
+--- !u!136 &2508
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -275,7 +275,7 @@ CapsuleCollider:
   m_Height: 1.85
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &2733263333852037971
+--- !u!54 &2440
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

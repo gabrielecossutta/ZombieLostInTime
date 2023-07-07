@@ -143,17 +143,36 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    //private IEnumerator BossSpawning()
+    //{
+    //    WaitForSeconds waitBoss = new WaitForSeconds(bossSpawnRate);
+
+    //    while (true)
+    //    {
+    //            yield return waitBoss;
+    //        if (bossCanSpawn && !HasObstacleInContact() && InBound() )
+    //        {
+    //            Instantiate(bossPrefab[0], transform.position, Quaternion.identity, EnemyContainer);
+    //            bossPrefab.RemoveAt(0);
+    //            howManyBoss++;
+    //        }
+    //        else
+    //        {
+    //            yield return new WaitForSeconds(0.1f);
+    //        }
+    //    }
+    //}
+
     private IEnumerator BossSpawning()
     {
         WaitForSeconds waitBoss = new WaitForSeconds(bossSpawnRate);
 
         while (true)
         {
-                yield return waitBoss;
-            if (bossCanSpawn && !HasObstacleInContact() && InBound() )
+            yield return waitBoss;
+            if (bossCanSpawn)
             {
-                Instantiate(bossPrefab[0], transform.position, Quaternion.identity, EnemyContainer);
-                bossPrefab.RemoveAt(0);
+                ForceSpawn();
                 howManyBoss++;
             }
             else
@@ -198,8 +217,8 @@ public class Spawner : MonoBehaviour
 
     public void ForceSpawn()
     {
-        Instantiate(bossPrefab[howManyBoss], new Vector3(0, 0, -263), Quaternion.identity, EnemyContainer);
-        bossPrefab.RemoveAt(howManyBoss);
+        Instantiate(bossPrefab[0], new Vector3(0, 0, -263), Quaternion.identity, EnemyContainer);
+        bossPrefab.RemoveAt(0);
     }
 
 }

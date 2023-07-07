@@ -19,8 +19,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float attackRange = 3f;
     public GameObject bossDrop;
-    
-    
+    private bool WallTouched;
 
     void Start()
     {
@@ -29,6 +28,7 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator.SetFloat("Speed_f", 1);
         animator.SetInteger("WeaponType_int", 0);
+        WallTouched = false;
     }
 
     void FixedUpdate()
@@ -48,7 +48,7 @@ public class Enemy : MonoBehaviour
             animator.SetInteger("WeaponType_int", 0);
             animator.SetFloat("Speed_f", 1);
 
-            if (TimerController.Instance.IsNight)
+            if (TimerController.Instance.IsNight && WallTouched == false)
             {
                 // VANNO VIA DAL PLAYER
                 Vector3 direction = enemyRB.transform.position - player.transform.position;
@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
 
     private void AttackPlayer()
     {
-        if(Vector3.Distance(transform.position, player.position) <= attackRange)
+        if (Vector3.Distance(transform.position, player.position) <= attackRange)
         {
             // Applica danni al giocatore
             Status.Instance.TakeDamage(Damage);
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
     {
         if (TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
         {
-            Instantiate(drop[7], transform.position + Vector3.up, Quaternion.Euler(-13,-8,15));
+            Instantiate(drop[7], transform.position + Vector3.up, Quaternion.Euler(-13, -8, 15));
         }
         else if (!TimerController.Instance.IsNight && !CompareTag("EnemyBoss"))
         {
@@ -109,8 +109,16 @@ public class Enemy : MonoBehaviour
     public void setNotteFalse()
     {
         TimerController.Instance.IsNight = false;
+        WallTouched = false;
     }
-    
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Obstacles"))
+        {
+            WallTouched = true;
+        }
+    }
 }
 

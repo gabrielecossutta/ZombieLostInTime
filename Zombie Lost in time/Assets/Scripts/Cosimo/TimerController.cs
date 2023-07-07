@@ -36,7 +36,7 @@ public class TimerController : Singleton<TimerController>
     private void Update()
     {
 
-        if (changingEra == false )
+        if (changingEra == false && !latestEra )
         {
             
 
@@ -48,7 +48,6 @@ public class TimerController : Singleton<TimerController>
                 {
                     IsNight = true;
                     ResetDayTimer();
-                    Debug.Log("Notte");
                 }
             }
             else
@@ -63,18 +62,18 @@ public class TimerController : Singleton<TimerController>
                 }
                
             }
-
-            survivedTime += Time.deltaTime;
-            // Aggiorna il testo del timer
-            survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s";
+            //survivedTime += Time.deltaTime;
+            //// Aggiorna il testo del timer
+            //survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s";
         }
         if (latestEra)
         {
-
+            Debug.Log("Latestes era true");
             timerText.text = "Need to Die";
+            changingEra = true;
+        }
             survivedTime += Time.deltaTime;
             survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + " s";
-        }
 
     }
 }
