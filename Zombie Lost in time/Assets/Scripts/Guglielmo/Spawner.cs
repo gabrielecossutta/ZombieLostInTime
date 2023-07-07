@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         howManyBoss = 0;
-        bossNumber = 4;
+        bossNumber = 2;
         EraStart = 0;
         EraEnd = 2;
         StartSpawning();

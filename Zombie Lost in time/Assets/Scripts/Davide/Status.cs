@@ -163,7 +163,6 @@ public class Status : Singleton<Status>
         }
         if (c == 3)
         {
-            TimerController.instance.latestEra = true;
             MapLoader.Instance.ChangeScene4();
         }
 

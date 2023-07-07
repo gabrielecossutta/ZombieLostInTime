@@ -81,10 +81,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 64958155193152696, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 64958155193152696, guid: 8b547fd9a346db64393c0c3da4c99249, type: 3}
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
@@ -133,10 +129,6 @@ PrefabInstance:
     - target: {fileID: 554543204028946434, guid: 03461a9e0caf2ec409b234ec539d18c0, type: 3}
       propertyPath: m_Name
       value: MiniMapPowerUp
-      objectReference: {fileID: 0}
-    - target: {fileID: 611851928769473671, guid: 03461a9e0caf2ec409b234ec539d18c0, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7783624241621331920, guid: 03461a9e0caf2ec409b234ec539d18c0, type: 3}
       propertyPath: m_RootOrder
