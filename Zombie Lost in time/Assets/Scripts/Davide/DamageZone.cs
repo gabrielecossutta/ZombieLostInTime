@@ -23,7 +23,6 @@ public class DamageZone : MonoBehaviour
     {
         if (DmgZonePicked)
         {
-            Debug.Log("Start Damage Zone");
             if (timer >= timeSpawn)
             {
                 CreateDamageZone();
@@ -38,11 +37,12 @@ public class DamageZone : MonoBehaviour
     public void CreateDamageZone()
     {
         Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        Vector3 spawnOffset = new Vector3(Random.Range(-15f, 15f), 1f, Random.Range(-15f, 15f));
+        Vector3 spawnOffset = new Vector3(Random.Range(-15f, 15f), 0, Random.Range(-15f, 15f));
         Vector3 spawnPoint = playerPos + spawnOffset;
 
         damageZone = Instantiate(damageZonePrefab, spawnPoint, Quaternion.identity);
         PlusSize(0);
+        FindObjectOfType<AudioManager>().Play("DamageZone");
         Destroy(damageZone, damageDuration);
     }
     public void PlusSize(float size)

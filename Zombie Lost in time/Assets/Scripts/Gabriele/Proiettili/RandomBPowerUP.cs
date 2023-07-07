@@ -8,7 +8,8 @@ public class RandomBPowerUP : MonoBehaviour
     public bool PowerUpTaken = false;
     private bool Executed = false;
     public float Time = 1.5f;
-    void Update()
+
+    void FixedUpdate()
     {
         if (PowerUpTaken)
         {
@@ -16,14 +17,17 @@ public class RandomBPowerUP : MonoBehaviour
             {
                 Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position,Quaternion.Euler(0, Random.Range(0, 360), 0));
                 Executed = true;
+                FindObjectOfType<AudioManager>().Play("SplitShot");
                 StartCoroutine(SpawnBullet(Time)); //cooroutine che spawna un proiettile ogni "Time"
             }
         }
     }
+
     private IEnumerator SpawnBullet(float delay)
     {
         yield return new WaitForSeconds(delay);
         Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.Euler(0, Random.Range(0, 360), 0)); //Spawna un proiettile alla posizione del player
+        FindObjectOfType<AudioManager>().Play("SplitShot");
         StartCoroutine(SpawnBullet(Time));
     }
 }

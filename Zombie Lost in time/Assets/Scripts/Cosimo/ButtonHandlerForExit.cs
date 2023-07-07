@@ -16,13 +16,13 @@ public class ButtonHandlerForExit : MonoBehaviour
     private void OnDisable()
     {
         Time.timeScale = 1.0f;
-
     }
 
     private void Update()
     {
         if (Status.Instance.currentHealth <= 0)
         {
+            
             Time.timeScale = 0f;
             deathMenu.SetActive(true);
         }
@@ -32,6 +32,9 @@ public class ButtonHandlerForExit : MonoBehaviour
     {
         deathMenu.SetActive(false);
         SceneManager.LoadScene("DefaultMap");
+        SceneManager.LoadSceneAsync("Map_01", LoadSceneMode.Additive);
+        FindObjectOfType<AudioManager>().Play("MedievalStage");
+        TimerController.Instance.survivedTime = 0;
     }
 
     public void QuitGame()

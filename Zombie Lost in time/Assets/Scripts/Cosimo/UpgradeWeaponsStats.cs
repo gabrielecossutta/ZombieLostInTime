@@ -11,7 +11,12 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
     int maxFireRateUpgrade = 6;
     int cont = 0;
     public Button fireRateButton;
+    private GameObject playerRef;
 
+    private void Start()
+    {
+        playerRef = GameObject.FindGameObjectWithTag("Player");
+    }
     public void UpgradeDamage()
     {
         if (UpgradeMenu.Instance.pointsOwned > 0)
@@ -28,7 +33,8 @@ public class UpgradeWeaponsStats : Singleton<UpgradeWeaponsStats>
         {
             if (UpgradeMenu.Instance.pointsOwned > 0)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<ShootingBehaviour>().bulletsPerSecond += fireRateUpgrade;
+                playerRef.GetComponent<ShootingBehaviour>().SetUpgradeFireRate(fireRateUpgrade);
+                playerRef.GetComponent<ShootingBehaviour>().SetWeaponValues(playerRef.GetComponent<ShootingBehaviour>().GetCurrentWeapon());
                 UpgradeMenu.Instance.pointsOwned -= UpgradeMenu.Instance.pointToLvlUp;
                 cont++;
             }

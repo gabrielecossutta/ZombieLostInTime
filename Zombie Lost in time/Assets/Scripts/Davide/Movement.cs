@@ -10,20 +10,20 @@ public class Movement : MonoBehaviour
     private Rigidbody Rb;
     private Animator animator;
     private ShootingBehaviour currentWeapon;
-    private string currentWeaponName;
-
+    private int currentWeaponIndex;
     private void Start()
     {
         animator = GetComponent<Status>().animator;
-        animator.SetInteger("WeaponType_int", 1);
+        animator.SetInteger("WeaponType_int", 11);
         Rb = GetComponent<Rigidbody>();
         currentWeapon = GetComponent<ShootingBehaviour>();
-        currentWeaponName = currentWeapon.GetCurrentWeaponName();
+        currentWeaponIndex = currentWeapon.currentWeaponIndex;
     }
 
     private void Update()
     {
         SetAnimatorWeaponParameter();
+        SetAnimatorBodyPositionParameter();
     }
 
     private void FixedUpdate()
@@ -31,64 +31,45 @@ public class Movement : MonoBehaviour
         MovementInput();
     }
 
-    void SetAnimatorParameter()
+    void SetAnimatorBodyPositionParameter()
     {
-        if (currentWeapon.GetCurrentWeaponName() == "Revolver")
+        string weaponName = currentWeapon.GetCurrentWeaponName();
+
+        switch (weaponName)
         {
-            if (animator.GetFloat("Speed_f") == 1)
-            {
-                animator.SetFloat("Body_Vertical_f", 0.3f);
-                animator.SetFloat("Body_Horizontal_f", 0f);
-            }
-            else
-            {
-                animator.SetFloat("Body_Vertical_f", 0f);
-                animator.SetFloat("Body_Horizontal_f", 0f);
-                animator.SetFloat("Head_Horizontal_f", -0.1f);
-            }
+            case "Revolver":
+                if (animator.GetFloat("Speed_f") != 0)
+                {
+                    animator.SetFloat("Body_Vertical_f", 0.3f);
+                    animator.SetFloat("Body_Horizontal_f", 0f);
+                    animator.SetFloat("Head_Horizontal_f", -0.1f);
+                }
+                else
+                {
+                    animator.SetFloat("Body_Vertical_f", 0f);
+                    animator.SetFloat("Body_Horizontal_f", 0f);
+                    animator.SetFloat("Head_Horizontal_f", -0.1f);
+                }
+                break;
+
+            case "Bow":
+            case "Ak-47":
+            case "ShotgunDB":
+            case "Minigun":
+                if (animator.GetFloat("Speed_f") != 0)
+                {
+                    animator.SetFloat("Body_Vertical_f", 0.3f);
+                    animator.SetFloat("Body_Horizontal_f", 0.6f);
+                    animator.SetFloat("Head_Horizontal_f", -0.6f);
+                }
+                else
+                {
+                    animator.SetFloat("Body_Vertical_f", 0f);
+                    animator.SetFloat("Body_Horizontal_f", 0.6f);
+                    animator.SetFloat("Head_Horizontal_f", -0.6f);
+                }
+                break;
         }
-        else if (currentWeapon.GetCurrentWeaponName() == "Ak-47")
-            {
-                if (animator.GetFloat("Speed_f") == 1)
-                {
-                    animator.SetFloat("Body_Vertical_f", 0.3f);
-                    animator.SetFloat("Body_Horizontal_f", 0.6f);
-                }
-                else
-                {
-                    animator.SetFloat("Body_Vertical_f", 0f);
-                    animator.SetFloat("Body_Horizontal_f", 0.6f);
-                    animator.SetFloat("Head_Horizontal_f", -0.6f);
-                }
-            }
-        else if (currentWeapon.GetCurrentWeaponName() == "ShotgunDB")
-            {
-                if (animator.GetFloat("Speed_f") == 1)
-                {
-                    animator.SetFloat("Body_Vertical_f", 0.3f);
-                    animator.SetFloat("Body_Horizontal_f", 0.6f);
-                }
-                else
-                {
-                    animator.SetFloat("Body_Vertical_f", 0f);
-                    animator.SetFloat("Body_Horizontal_f", 0.6f);
-                    animator.SetFloat("Head_Horizontal_f", -0.6f);
-                }
-            }
-        else if (currentWeapon.GetCurrentWeaponName() == "Minigun")
-            {
-                if (animator.GetFloat("Speed_f") == 1)
-                {
-                    animator.SetFloat("Body_Vertical_f", 0.3f);
-                    animator.SetFloat("Body_Horizontal_f", 0.6f);
-                }
-                else
-                {
-                    animator.SetFloat("Body_Vertical_f", 0f);
-                    animator.SetFloat("Body_Horizontal_f", 0.6f);
-                    animator.SetFloat("Head_Horizontal_f", -0.6f);
-                }
-            }
     }
 
     void MovementInput()
@@ -101,13 +82,11 @@ public class Movement : MonoBehaviour
             direction = new Vector3(x, 0, z).normalized; //vettore direzione a cui vogliamo andare
             Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
             animator.SetFloat("Speed_f", 1);
-            SetAnimatorParameter();
         }
         else
         {
             Rb.velocity = Vector3.zero;
             animator.SetFloat("Speed_f", 0);
-            SetAnimatorParameter();
         }
 
         if (Mathf.Abs(Input.GetAxis("HorizontalGamepad")) > 0.1f || Mathf.Abs(Input.GetAxis("VerticalGamepad")) > 0.1f)
@@ -121,13 +100,11 @@ public class Movement : MonoBehaviour
 
             Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
             animator.SetFloat("Speed_f", 1);
-            SetAnimatorParameter();
 
             if (direction == Vector3.zero)
             {
                 Rb.velocity = Vector3.zero;
                 animator.SetFloat("Speed_f", 0);
-                SetAnimatorParameter();
             }
         }
 
@@ -156,13 +133,13 @@ public class Movement : MonoBehaviour
 
             Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
             animator.SetFloat("Speed_f", 1);
-            SetAnimatorParameter();
+            SetAnimatorBodyPositionParameter();
         }
         else
         {
             Rb.velocity = Vector3.zero;
             animator.SetFloat("Speed_f", 0);
-            SetAnimatorParameter();
+            SetAnimatorBodyPositionParameter();
         }
     }
 
@@ -187,33 +164,41 @@ public class Movement : MonoBehaviour
 
             Rb.velocity = direction * (speed + Status.Instance.speedUpgradedValue);
             animator.SetFloat("Speed_f", 1);
-            SetAnimatorParameter();
+            SetAnimatorBodyPositionParameter();
         }
         else
         {
             Rb.velocity = Vector3.zero;
             animator.SetFloat("Speed_f", 0);
-            SetAnimatorParameter();
+            SetAnimatorBodyPositionParameter();
         }
     }
 
     void SetAnimatorWeaponParameter()
     {
-        if (currentWeapon.GetCurrentWeaponName() == "Revolver")
+        if (currentWeaponIndex != currentWeapon.currentWeaponIndex)
         {
-            animator.SetInteger("WeaponType_int", 1);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "Ak-47")
-        {
-            animator.SetInteger("WeaponType_int", 2);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "ShotgunDB")
-        {
-            animator.SetInteger("WeaponType_int", 4);
-        }
-        else if (currentWeapon.GetCurrentWeaponName() == "Minigun")
-        {
-            animator.SetInteger("WeaponType_int", 9);
+            currentWeaponIndex = currentWeapon.currentWeaponIndex;
+            if (currentWeapon.GetCurrentWeaponName() == "Bow")
+            {
+                animator.SetInteger("WeaponType_int", 11);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "Revolver")
+            {
+                animator.SetInteger("WeaponType_int", 1);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "Ak-47")
+            {
+                animator.SetInteger("WeaponType_int", 2);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "ShotgunDB")
+            {
+                animator.SetInteger("WeaponType_int", 4);
+            }
+            else if (currentWeapon.GetCurrentWeaponName() == "Minigun")
+            {
+                animator.SetInteger("WeaponType_int", 9);
+            }
         }
     }
 }

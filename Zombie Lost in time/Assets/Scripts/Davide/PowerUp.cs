@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +6,7 @@ public class PowerUp : MonoBehaviour
     public List<PowerUpType> powerUpList = new List<PowerUpType>();
     private Dictionary<PowerUpType, int> powerUpType = new Dictionary<PowerUpType, int>();
     public int MaxLevel = 6;
+
     private void Start()
     {
         foreach (PowerUpType powerUp in System.Enum.GetValues(typeof(PowerUpType)))
@@ -14,6 +14,7 @@ public class PowerUp : MonoBehaviour
             powerUpList.Add(powerUp);
         }
     }
+
     public void OnDestroy()
     {
         foreach (var PowerUpList in powerUpList)
@@ -23,32 +24,38 @@ public class PowerUp : MonoBehaviour
         powerUpType.Clear();
         powerUpList.Clear();
     }
+
     public void OnTriggerEnter(Collider collider)
     {
         if (collider.CompareTag("PowerUp"))
         {
-            PowerUpType powerUp = collider.gameObject.GetComponent<PowerUpEnums>().powerUpType;
+            PowerUpData pwrUpDatas = collider.gameObject.GetComponent<PowerUpEnums>().powerUpData;
+            PowerUpType powerUp = pwrUpDatas.powerUpType;
             if (!powerUpType.ContainsKey(powerUp) && powerUpList.Contains(powerUp))
             {
                 powerUpType.Add(powerUp, 0);
-                Debug.Log("Preso power up");
+                powerUpType[powerUp]++;
+                UpgradePowerUp(powerUp, powerUpType[powerUp]);
+                ToolManager.Instance.AddInvP(pwrUpDatas);
             }
-            if (powerUpType.ContainsKey(powerUp))
+            else if (powerUpType.ContainsKey(powerUp))
             {
                 if (powerUpType[powerUp] < MaxLevel)
                 {
                     powerUpType[powerUp]++;
                     UpgradePowerUp(powerUp, powerUpType[powerUp]);
-                    Debug.Log(powerUp + "Livello:" + powerUpType[powerUp]);
+                    ToolManager.Instance.AddInvP(pwrUpDatas);
                 }
                 else if (powerUpType[powerUp] == MaxLevel)
                 {
                     Debug.Log(powerUp + "Level Max");
                 }
             }
+            FindObjectOfType<AudioManager>().Play("PickupPowerUp");
             Destroy(collider.gameObject);
         }
     }
+
     public void AddPowerUp(PowerUpType powerUp)
     {
             switch (powerUp)
@@ -65,15 +72,12 @@ public class PowerUp : MonoBehaviour
                     this.GetComponent<ClosestEnemyPowerUp>().PowerUpTaken = true;
                     break;
 
-                case PowerUpType.Flamethrower:
-                    //this.GetComponent<Flamethrower>().PowerUpTaken = true;
-                    break;
-
                 case PowerUpType.SplitBullet:
                     this.GetComponent<RandomBPowerUP>().PowerUpTaken = true;
                     break;
             }
     }
+
     public void UpgradePowerUp(PowerUpType Type, int currentlevel)
     {
         switch (Type)
@@ -98,7 +102,7 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 4:
-                        this.GetComponent<DamageZone>().timeSpawn -= 1; 
+                        this.GetComponent<DamageZone>().timeSpawn -= 1;
                         break;
 
                     case 5:
@@ -123,23 +127,23 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 2:
-                        BulletRotatingPowerUp.Instance.Damage += 5;
+                        ValoreRotaingBullet.Instance.Damage += 5;
                         break;
 
                     case 3:
-                        BulletRotatingPowerUp.Instance.Speed += 1;
+                        ValoreRotaingBullet.Instance.Speed += 3;
                         break;
 
                     case 4:
-                        BulletRotatingPowerUp.Instance.Range += 0.5f;
+                        ValoreRotaingBullet.Instance.Range += 2.5f;
                         break;
 
                     case 5:
-                        BulletRotatingPowerUp.Instance.Damage += 5;
+                        ValoreRotaingBullet.Instance.Damage += 5;
                         break;
 
                     case 6:
-                        BulletRotatingPowerUp.Instance.Speed += 1;
+                        ValoreRotaingBullet.Instance.Speed += 3;
                         break;
                 }
             break;
@@ -156,11 +160,11 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 2:
-                        BulletClosestEnemy.Instance.Damage += 2;
+                        valoreClosestBullet.Instance.Damage += 2;
                         break;
 
                     case 3:
-                        BulletClosestEnemy.Instance.speed += 0.5f;
+                        valoreClosestBullet.Instance.speed += 0.025f;
                         break;
 
                     case 4:
@@ -168,47 +172,14 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 5:
-                        BulletClosestEnemy.Instance.Damage += 2;
+                        valoreClosestBullet.Instance.Damage += 2;
                         break;
 
                     case 6:
-                        BulletClosestEnemy.Instance.speed += 0.5f;
+                        valoreClosestBullet.Instance.speed += 0.025f;
                         break;
                 }
             break;
-
-            case PowerUpType.Flamethrower:
-
-                switch (currentlevel)
-                {
-                    case 0:
-                        break;
-
-                    case 1:
-                        AddPowerUp(Type);
-                        break;
-
-                    case 2:
-                        //player.GetComponent<Flamethrower>().PlusSize(2);
-                        break;
-
-                    case 3:
-                        //player.GetComponent<Flamethrower>().DualFlameSkill = true;
-                        break;
-
-                    case 4:
-                        //player.GetComponent<Flamethrower>().duration += 3;
-                        break;
-
-                    case 5:
-                        //player.GetComponent<Flamethrower>().PlusSize(2);
-                        break;
-
-                    case 6:
-                        //player.GetComponent<Flamethrower>().QuadraFlameSkill = true;
-                        break;
-                }
-                break;
 
             case PowerUpType.SplitBullet:
 
@@ -222,11 +193,11 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 2:
-                        RandomBullet.Instance.Damage += 2;
+                        valoreRandomBullet.Instance.Damage += 2;
                         break;
 
                     case 3:
-                        RandomBullet.Instance.UpgradeSpwn3 = true;
+                        valoreRandomBullet.Instance.UpgradeSpwn3 = true;
                         break;
 
                     case 4:
@@ -234,11 +205,11 @@ public class PowerUp : MonoBehaviour
                         break;
 
                     case 5:
-                        RandomBullet.Instance.Damage += 5;
+                        valoreRandomBullet.Instance.Damage += 5;
                         break;
 
                     case 6:
-                        RandomBullet.Instance.UpgradeSpwn5 = true;
+                        valoreRandomBullet.Instance.UpgradeSpwn5 = true;
                         break;
                 }
                 break;

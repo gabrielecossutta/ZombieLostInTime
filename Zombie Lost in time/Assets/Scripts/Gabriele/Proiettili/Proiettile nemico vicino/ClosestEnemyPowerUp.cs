@@ -7,15 +7,30 @@ public class ClosestEnemyPowerUp : MonoBehaviour
     public GameObject bullet;  //riferimento proiettile
     public bool PowerUpTaken = false;
     private bool Executed = false;
-    public float Time = 2.5f;
+    public float Time;
+
+    private void Start()
+    {
+        Time = 3.5f;
+    }
+
     void Update()
     {
         if (PowerUpTaken)
         {
             if (!Executed)// booleana per spawnare solo 1 proiettile
             {
-                Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity);
+                if (NemicoPiùVicino.Instance.closestEnemy != null)
+                {
+                    Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+                    Vector3 enemyPosition = NemicoPiùVicino.Instance.closestEnemy.transform.position;
+                    Vector3 direction = enemyPosition - playerPosition;
+                    Quaternion rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90,0,0);
+                    Instantiate(bullet, playerPosition + (Vector3.up * 2), rotation);
+
+                }
                 Executed = true;
+                FindObjectOfType<AudioManager>().Play("AIMShot");
                 StartCoroutine(SpawnBullet(Time)); //cooroutine che spawna un proiettile ogni "Time"
             }
         }
@@ -23,7 +38,17 @@ public class ClosestEnemyPowerUp : MonoBehaviour
     private IEnumerator SpawnBullet(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Instantiate(bullet, GameObject.FindGameObjectWithTag("Player").transform.position, Quaternion.identity); //Spawna un proiettile alla posizione del player
+        if (NemicoPiùVicino.Instance.closestEnemy != null)
+        {
+            Vector3 playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+            Vector3 enemyPosition = NemicoPiùVicino.Instance.closestEnemy.transform.position;
+            Vector3 direction = enemyPosition - playerPosition;
+            Quaternion rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90, 0, 0);
+
+            Instantiate(bullet, playerPosition + (Vector3.up * 2), rotation);
+        }
+        FindObjectOfType<AudioManager>().Play("AIMShot");
         StartCoroutine(SpawnBullet(Time));
+
     }
 }

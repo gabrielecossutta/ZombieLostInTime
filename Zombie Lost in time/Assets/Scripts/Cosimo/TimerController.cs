@@ -7,13 +7,12 @@ public class TimerController : Singleton<TimerController>
 {
     public TMP_Text timerText; // Riferimento all'elemento di testo TMP per mostrare il timer
     public TMP_Text survivedTimeText; // Riferimento all'elemento di testo TMP per mostrare il survivedTime
-    public GameObject DeathPanel;
     public bool IsNight = false;
     public float dayDuration; // Durata del gioco in secondi
     public float dayTimer;
     public float nightDuration;
     public float nightTimer;
-    private float survivedTime;
+    public float survivedTime;
     public bool changingEra;
 
     private void Start()
@@ -21,6 +20,7 @@ public class TimerController : Singleton<TimerController>
         ResetDayTimer();
         ResetNightTimer();
         changingEra = false;
+
     }
 
     private void ResetDayTimer()
@@ -59,7 +59,7 @@ public class TimerController : Singleton<TimerController>
                 }
             }
 
-        survivedTime = Time.time;
+        survivedTime += Time.deltaTime;
         // Aggiorna il testo del timer
         survivedTimeText.text = "Survived for: " + Mathf.RoundToInt(survivedTime).ToString() + "s";
         }
