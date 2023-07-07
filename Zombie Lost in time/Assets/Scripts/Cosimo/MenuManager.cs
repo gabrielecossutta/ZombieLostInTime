@@ -10,12 +10,14 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject _settingsMenuCanvasGO;
     [SerializeField] private GameObject _keyboardCanvasGO;
     [SerializeField] private GameObject _gamepadCanvasGO;
+    [SerializeField] private GameObject _gameCanvasGO;
 
     [Header("First Selected Options")]
     [SerializeField] private GameObject _mainMenuFirst;
     [SerializeField] private GameObject _settingsMenuFirst;
     [SerializeField] private GameObject _keyboardFirst;
     [SerializeField] private GameObject _gamepadFirst;
+    [SerializeField] private GameObject _gameFirst;
 
     public bool isPaused;
     // Start is called before the first frame update
@@ -112,6 +114,7 @@ public class MenuManager : MonoBehaviour
     {
         _keyboardCanvasGO.SetActive(false);
         _gamepadCanvasGO.SetActive(false);
+        _gameCanvasGO.SetActive(false);
         _settingsMenuCanvasGO.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(_settingsMenuFirst);
@@ -122,6 +125,7 @@ public class MenuManager : MonoBehaviour
     {
         _settingsMenuCanvasGO.SetActive(false);
         _keyboardCanvasGO.SetActive(true);
+        _gameCanvasGO.SetActive(false);
         _gamepadCanvasGO.SetActive(false);
 
         EventSystem.current.SetSelectedGameObject(_keyboardFirst);
@@ -131,8 +135,18 @@ public class MenuManager : MonoBehaviour
     {
         _settingsMenuCanvasGO.SetActive(false);
         _keyboardCanvasGO.SetActive(false);
+        _gameCanvasGO.SetActive(false);
         _gamepadCanvasGO.SetActive(true);
 
         EventSystem.current.SetSelectedGameObject(_gamepadFirst);
+    }
+    public void OnGameControlsPress()
+    {
+        _settingsMenuCanvasGO.SetActive(false);
+        _keyboardCanvasGO.SetActive(false);
+        _gameCanvasGO.SetActive(true);
+        _gamepadCanvasGO.SetActive(false);
+
+        EventSystem.current.SetSelectedGameObject(_gameFirst);
     }
 }
