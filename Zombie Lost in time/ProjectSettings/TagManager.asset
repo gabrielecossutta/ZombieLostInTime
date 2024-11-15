@@ -3,19 +3,37 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Bullet
+  - Health
+  - DamageBoss
+  - ExpBase
+  - ExpBoss
+  - DamageBase
+  - EmptyDrop
+  - EnemyBig
+  - Barrel
+  - Ak-47
+  - ShotgunDB
+  - Minigun
+  - Obstacles
+  - EnemyBoss
+  - Portal
+  - PowerUp
+  - Revolver
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Terrain
+  - AvoidCamera
+  - MiniMap
+  - Player
+  - AvoidBullet
   - 
   - 
   - 
